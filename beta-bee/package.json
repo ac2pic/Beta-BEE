@@ -1,0 +1,8 @@
+{
+    "name": "beta-bee",
+    "version": "0.1.0",
+    "description": "Emilie neutral arts",
+    "prestart": "prestart.js",
+    "module": true,
+    "ccmodDependencies": {}
+}

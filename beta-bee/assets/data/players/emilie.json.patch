@@ -1,0 +1,4 @@
+[{
+	"type": "INCLUDE",
+	"src": "mod:patches/data/players/emilie_neutral_arts.json"
+}]
