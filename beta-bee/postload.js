@@ -1,0 +1,1 @@
+sc.PLAYABLE_OPTIONS = ["Emilie", "Lea",  "Qine"];
