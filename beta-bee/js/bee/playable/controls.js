@@ -105,7 +105,6 @@ ig.module("bee.playable.controls").requires("game.feature.model.options-model").
 			const member = this.switchTo;
 			const entity = sc.party.partyEntities[member];
 			const model = sc.party.models[member];
-			const playableModel = sc.playableModel.getConfig(this.switchTo);
 			if (entity) {
 				
 				if (entity.jumping || 
