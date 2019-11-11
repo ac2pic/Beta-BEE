@@ -58,6 +58,10 @@ ig.module("bee.playable.controls").requires("game.feature.model.options-model").
 				return false;
 			const playerModel = sc.model.player;
 
+			// Just incase the current player
+			// is not registered as a party member
+			if (!sc.PLAYABLE_OPTIONS.includes(playerModel.name))
+				return false;
 			if (playerEntity.dying !== sc.DYING_STATE.ALIVE)
 				return false;
 			if (playerEntity.jumping)
