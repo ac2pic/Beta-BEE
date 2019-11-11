@@ -53,7 +53,7 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage").de
 					let credits = combatant.enemyType.credit;
 					let level = combatant.enemyType.level;
 					if (combatant.level.override) {
-						credits = sc.EnemyLevelScaling.adaptCredits(credits, level, a.level.override);
+						credits = sc.EnemyLevelScaling.adaptCredits(credits, level, combatant.level.override);
 					}
 					for (const name in this.configs) {
 						const member = this.configs[name];
@@ -124,9 +124,11 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage").de
 		return partyGui.memberGuis.filter(e => e.model === model)[0];
 	}
 	
+	const PLAYABLE_VERSION = 1;
 	// this is for syncing
 	// PartyMemberModel and PlayerModel
 	sc.PlayableConfig = ig.Class.extend({
+		version: 0,
 		count: 0,
 		itemFavs: [],
 		itemNew: [],
@@ -135,6 +137,7 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage").de
 		level: 1,
 		exp: 0,
 		hp: 0,
+		baseParams: {},
 		currentElementMode: 0,
 		core: {},
 		equip: {},
@@ -165,7 +168,7 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage").de
 			}
 		},
 		isFirstTime() {
-			return this.count === 1;
+			return this.count === 1 || this.version !== PLAYABLE_VERSION;
 		},
 		isPlayer() {
 			return this.playerModel instanceof sc.PlayerModel;
@@ -192,12 +195,14 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage").de
 				
 				// need to do this now because changing
 				// element mode changes the hp
+				const element = this.currentElementMode;
+				model.params.baseParams = ig.copy(this.baseParams);
 				model.params.currentHp = this.hp;
-				
+
 				// instant change
 				sc.Model.notifyObserver(model.params, sc.COMBAT_PARAM_MSG.HP_CHANGED, true);
+				model.setElementMode(this.currentElementMode);	
 				
-				model.setElementMode(this.currentElementMode);
 				
 				
 				if (model.exp !== this.exp) {
@@ -231,6 +236,8 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage").de
 				if (model.exp !== this.exp) {
 					console.log('Player Exp:', model.exp, this.exp);
 				}
+				model.params.baseParams = ig.copy(this.baseParams);
+
 				model.preLoad(this.buildPreLoad());
 				ig.lang.labels.sc.gui.options["hp-bars"].group[1] = `Party Only`;
 				
@@ -271,14 +278,18 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage").de
 				this.level = model.level;
 				this.exp = model.exp;
 				this.currentElementMode = model.currentElementMode;
-				this.hp = model.params.currentHp;
+				const hpDiff = model.params.currentHp - model.params.getStat("hp");
+				
+				model.params.increaseHp(hpDiff, true);
+				this.baseParams = ig.copy(model.params.baseParams);
 				this.core = model.core;
 				this.items = ig.copy(model.items);
 				this.equip = ig.copy(model.equip);
 				this.spLevel = model.spLevel;
-				this.skills = model.skills;
-				this.skillPoints = model.skillPoints;
-				this.skillPointsExtra = model.skillPointsExtra;			
+				this.skills = ig.copy(model.skills);
+				this.skillPoints = ig.copy(model.skillPoints);
+				this.skillPointsExtra = ig.copy(model.skillPointsExtra);
+				this.version = PLAYABLE_VERSION;		
 			} else if(this.isParty()) {
 				const model = this.partyModel;
 				
@@ -288,13 +299,14 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage").de
 				this.spLevel = model.spLevel;
 				this.currentElementMode = model.currentElementMode;
 				this.hp = model.params.currentHp;
-				
+				this.baseParams = ig.copy(model.params.baseParams);
 				// needs to be expanded
 				this.skills = []; 
 				for(const skill of model.skills) {
 					this.skills[skill.id] = skill;
 				}
-			}	
+				this.version = PLAYABLE_VERSION;
+			}
 		},
 		addPlayerObserver: function() {
 			if (this.isPlayer()) {
@@ -397,6 +409,7 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage").de
 			data.credit = this.credit;
 			data.level = this.level;
 			data.exp = this.exp;
+			data.baseParams = this.baseParams;
 			data.currentElementMode = this.currentElementMode;
 			data.hp = this.hp;
 			data.core = this.core;
@@ -406,9 +419,11 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage").de
 			data.skills = this.skills;
 			data.skillPoints = this.skillPoints;
 			data.skillPointsExtra = this.skillPointsExtra;
+			data.version = data.version || 0;
 			return data;
 		},
 		setLoadData: function(data) {
+			this.version = data.version || 0;
 			this.count = data.count || this.count;
 			this.itemFavs = data.itemFavs || this.itemFavs;
 			this.itemNew = data.itemNew || this.itemNew;
@@ -418,6 +433,7 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage").de
 			if (!isNaN(data.exp)) {
 				this.exp = data.exp;
 			}
+			this.baseParams = data.baseParams || {};
 			if (!isNaN(data.currentElementMode)) {
 				this.currentElementMode = data.currentElementMode;
 			}
@@ -433,6 +449,7 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage").de
 			this.skillPointsExtra = data.skillPointsExtra || this.skillPointsExtra;
 		},
 		reset: function() {
+			this.version = 0;
 			this.count = 0;
 			this.itemFavs = [];
 			this.itemNew = [];
@@ -440,6 +457,7 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage").de
 			this.credit = 0;
 			this.level = 1;
 			this.exp = 0;
+			this.baseParams = {};
 			this.currentElementMode = 0;
 			this.hp = 1;
 			this.core = {};
