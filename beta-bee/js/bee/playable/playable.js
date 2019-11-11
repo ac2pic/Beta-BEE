@@ -197,9 +197,14 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage").de
 				const element = this.currentElementMode;
 
 				// set it to the correct params before notifying
-				model.params.baseParams = model.elementConfigs[element].baseParams;
-				model.params.currentHp = this.hp;
 
+				// fixes hp bug and getting statusInflict error 
+				const baseParams = model.elementConfigs[element].baseParams;
+				for (const param in baseParams) {
+					model.params.baseParams[param] = baseParams[param];
+				}
+				 
+				model.params.currentHp = this.hp;
 				// instant change
 				sc.Model.notifyObserver(model.params, sc.COMBAT_PARAM_MSG.HP_CHANGED, true);
 				model.setElementMode(this.currentElementMode);	
@@ -257,7 +262,7 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage").de
 			config.chapter = sc.model.player.chapter;
 			config.currentElementMode = this.currentElementMode;
 			config.hp = this.hp;
-			config.core = this.core;
+			config.core = ig.copy(this.core);
 			config.items = ig.copy(this.items);
 			config.equip = ig.copy(this.equip);
 			config.spLevel = this.spLevel;
@@ -271,9 +276,9 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage").de
 			// just in case both are active
 			if (this.isPlayer()) {
 				const model = this.playerModel;
-				this.itemFavs = model.itemFavs;
-				this.itemNew = model.itemNew;
-				this.itemToggles = model.itemToggles;
+				this.itemFavs = ig.copy(model.itemFavs);
+				this.itemNew = ig.copy(model.itemNew);
+				this.itemToggles = ig.copy(model.itemToggles);
 				this.credit = model.credit;
 				this.level = model.level;
 				this.exp = model.exp;
@@ -281,7 +286,7 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage").de
 				const hpDiff = model.params.currentHp - model.params.getStat("hp");
 				
 				model.params.increaseHp(hpDiff, true);
-				this.core = model.core;
+				this.core = ig.copy(model.core);
 				this.items = ig.copy(model.items);
 				this.equip = ig.copy(model.equip);
 				this.spLevel = model.spLevel;
@@ -373,9 +378,26 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage").de
 						}
 						break;
 					}
+					case sc.PLAYER_MSG.CORE_CHANGED:
+						this.core = ig.copy(instance.core);
+						break;
+					case sc.PLAYER_MSG.ITEM_FAVORITES_CHANGED:
+					// todo: simplify these code
+					case sc.PLAYER_MSG.ITEM_USED:
+					case sc.PLAYER_MSG.ITEM_OBTAINED:
+					case sc.PLAYER_MSG.ITEM_REMOVED:
 					case sc.PLAYER_MSG.ITEM_TOGGLED: {
-						for (let i = 0; i < this.itemToggles.length; ++i) {
+						for (let i = 0; i < instance.items.length; ++i) {
+							this.items[i] = instance.items[i];
+						}
+						for (let i = 0; i < instance.itemToggles.length; ++i) {
 							this.itemToggles[i] = instance.itemToggles[i];
+						}
+						for (let i = 0; i < instance.itemFavs.length; ++i) {
+							this.itemFavs[i] = instance.itemFavs[i];
+						}
+						for (let i = 0; i < instance.itemNew.length; ++i) {
+							this.itemNew[i] = instance.itemNew[i];
 						}
 						break;
 					}
