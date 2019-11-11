@@ -50,7 +50,7 @@ ig.module("bee.party.party").requires("game.feature.party.party", "game.feature.
 
 	sc.SkillTree.inject({
 		overrideAutoSkills: false,
-		
+		autoSkillsOverride: [],
 		autoSkill: function(skills, level, skillRanking) {
 			if (this.overrideAutoSkills) {
 				skills.splice(0);
