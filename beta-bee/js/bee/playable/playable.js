@@ -1,6 +1,7 @@
-ig.module("bee.playable.playable").requires("impact.feature.storage.storage").defines(function() {
+ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "bee.calendar.calendar").defines(function() {
 	sc.PlayableModel = ig.GameAddon.extend({
 		configs: {},
+		schedules: {},
 		init: function() {
 			this.parent("Playable");
 			ig.storage.register(this);
@@ -28,7 +29,8 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage").de
 			}
 		},
 		addConfig(name) {
-			this.configs[name] = new sc.PlayableConfig();
+			this.configs[name] = new sc.PlayableConfig(name);
+			this.schedules[name] = new sc.PlayableSchedule(name);
 		},
 		hasConfig(name) {
 			return this.configs[name] instanceof sc.PlayableConfig;
