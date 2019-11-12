@@ -121,7 +121,7 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 				this.timeOfDay.remove(true);
 				this.set(nextDay, sc.TIME_OF_DAY.MIDNIGHT);
 			}
-			this.timeOfDay.set(newPeriod);
+			this.timeOfDay.change(newPeriod);
 		},
 		get: function() {
 			const data = {};
