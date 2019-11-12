@@ -5,6 +5,10 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 		notify: function(value, args = []) {
 			sc.Model.notifyObserver(this, value, args);
 		},
+		addObserver: function(instance) {
+			sc.Model.addObserver(this, instance);
+		},
+		next: function() { return true; },
 		set: function() {},
 		change: function() {},
 		getSaveData: function() {},
@@ -58,6 +62,14 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 				this.remove(true);
 				this.set(oldPeriod);
 			} 
+		},
+		next: function() {
+			let nextPeriod = this.period + 1;
+			if (nextPeriod < TIME_OF_DAY.length) {
+				this.set(nextPeriod);
+				return true;
+			}
+			return false;
 		},
 		remove: function(notifyChange) {
 			if (notifyChange) {
@@ -115,7 +127,7 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 			}
 			this.timeOfDay.set(newPeriod, notifyChange);
 		},
-		change: function(newDay, newPeriod) {
+		change: function(newDay, newPeriod, notifyChange = true) {
 			for(let nextDay = this.day + 1; nextDay <= newDay; ++nextDay) {
 				this.timeOfDay.change(sc.TIME_OF_DAY.EVENING);
 				this.timeOfDay.remove(true);
@@ -129,6 +141,14 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 			data.period = this.timeOfDay.get();
 			return data;
 		},
+		next: function() {
+			let nextDay = this.day + 1;
+			this.change(nextDay, sc.TIME_OF_DAY_MSG.MIDNIGHT);
+			return true;
+		},
+		nextPeriod: function() {
+			return this.timeOfDay.next();
+		},
 		reset: function() {
 			this.day = 0;
 			this.timeOfDay.reset();
@@ -138,6 +158,10 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 			data.day = this.day;
 			data.period = this.timeOfDay.getSaveData();
 			return data;
+		},
+		addObserver: function(instance) {
+			this.parent(instance);
+			this.timeOfDay.addObserver(instance);
 		},
 		setLoadData: function(data) {
 			const day = data.day;
@@ -235,6 +259,12 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 		set: function(newDay, newPeriod, notifyChange) {
 			this.day.set(newDay, newPeriod, notifyChange);
 		},
+		nextDay: function() {
+			return this.day.next();
+		},
+		nextPeriod: function() {
+			return this.day.nextPeriod();	
+		},
 		get: function() {
 			const value = this.day.get();
 			for (let property in value) {
@@ -245,9 +275,17 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 		onReset: function() {
 			this.day.reset();
 		},
+		addObserver: function(instance) {
+			this.day.addObserver(instance);
+		},
 		notify: function(dayEvent, timeOfDayEvent) {
-			this.day.notify(dayEvent);
-			this.day.timeOfDay.notify(timeOfDayEvent);
+			if (!isNaN(dayEvent)) {
+				this.day.notify(dayEvent);
+			}
+
+			if (!isNaN(timeOfDayEvent)) {
+				this.day.timeOfDay.notify(timeOfDayEvent);
+			}
 		},
 		change: function(newDay, newPeriod) {
 			this.day.change(newDay, newPeriod);
