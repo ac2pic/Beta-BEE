@@ -28,6 +28,16 @@ ig.module("bee.player.player-model").requires("game.feature.player.player-model"
 			}
 			this.parent(config);
 			sc.Model.notifyObserver(this, sc.PLAYER_MSG.PLAYER_SET, [this.name, this]);
+		},
+		onVarAccess: function(path, pathArr) {
+			if (pathArr[0] === "player") {
+				if (pathArr[1] === "name") {
+					return this.name;
+				} else if (pathArr[1] === "class") {
+					return this.config && this.config.clazz;
+				}
+			}
+			return this.parent(path, pathArr);
 		}
 		
 	});	
