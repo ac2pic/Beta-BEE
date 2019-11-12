@@ -9,3 +9,5 @@ import "./js/bee/party/party.js";
 import "./js/bee/inject/hp-hud.js";
 
 import "./js/bee/calendar/calendar.js";
+
+import "./js/bee/calendar/event-steps.js";
