@@ -2,7 +2,7 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 
 	sc.BaseCalendarComponent = ig.Class.extend({
 		observers: [],
-		notify: function(value, args) {
+		notify: function(value, args = []) {
 			sc.Model.notifyObserver(this, value, args);
 		},
 		set: function() {},
@@ -196,6 +196,10 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 		},
 		onReset: function() {
 			this.day.reset();
+		},
+		notify: function(dayEvent, timeOfDayEvent) {
+			this.day.notify(dayEvent);
+			this.day.timeOfDay.notify(timeOfDayEvent);
 		},
 		change: function(newDay, newPeriod) {
 			this.day.change(newDay, newPeriod);
