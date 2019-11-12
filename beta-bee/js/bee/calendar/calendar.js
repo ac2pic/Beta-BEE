@@ -140,11 +140,11 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 			return data;
 		},
 		setLoadData: function(data) {
-			this.day = data.day;
+			const day = data.day;
 			if (isNaN(day)) {
 				this.day = 0;
 			} else {
-				this.day = data.day;
+				this.day = day;
 			}
 			this.timeOfDay.setLoadData(data.period);
 		}			
@@ -179,20 +179,68 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 	sc.CalendarModel = ig.GameAddon.extend({
 		day: new sc.DayState,
 		modelChanged: observerFunc,
+		formatFunction: null,
 		init: function() {
 			this.parent("Calendar");
 			ig.storage.register(this);
 			sc.Model.addObserver(this.day, this);
 			sc.Model.addObserver(this.day.timeOfDay, this);
+			ig.vars.registerVarAccessor("calendar", this, null);
+			const DAY_STUFF = ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"];
+			this.setFormatFunction(function(value, format) {
+				let newValue;
+				switch(format) {
+					case "day": {
+						newValue = DAY_STUFF[value%DAY_STUFF.length];
+						break;
+					}
+					case "period":
+					default:
+						newValue = value;
+						break;
+				}
+				return newValue;
+			});
+		},
+		onVarAccess: function(request, pathArr) {
+			if (pathArr[0] === "calendar") {
+				if (pathArr.length === 2) {
+					const dayData = this.day.get();
+					const typeOfFormat = pathArr[1];
+					const valueToFormat = dayData[typeOfFormat];
+					return this.format(valueToFormat, typeOfFormat);
+				} else if(pathArr.length === 3) {
+					return this.format(pathArr[1], pathArr[2]);
+				}
+			}
+		},
+		setFormatFunction: function(func) {
+			if (typeof func === "function") {
+				this.formatFunction = func;
+			}
+		},
+		format: function(valueToFormat, typeOfFormat) {
+			const func = this.formatFunction;
+			if (func) {
+				return func(valueToFormat, typeOfFormat);
+			}
+			return valueToFormat;
 		},
 		onStorageSave: function(data) {
 			data.calendar = this.day.getSaveData();
+		},
+		onStoragePreLoad: function(data) {
+			this.day.setLoadData(data);
 		},
 		set: function(newDay, newPeriod, notifyChange) {
 			this.day.set(newDay, newPeriod, notifyChange);
 		},
 		get: function() {
-			return this.day.get();
+			const value = this.day.get();
+			for (let property in value) {
+				value[property] = this.format(value[property], property);
+			}
+			return value;
 		},
 		onReset: function() {
 			this.day.reset();
@@ -203,9 +251,6 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 		},
 		change: function(newDay, newPeriod) {
 			this.day.change(newDay, newPeriod);
-		},
-		onStoragePreLoad: function(data) {
-			this.day.setLoadData(data);
 		}
 	});
 
