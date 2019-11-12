@@ -25,24 +25,35 @@ ig.module("bee.playable.schedule").requires("bee.playable.playable").defines(fun
 					const events = ["STARTED", "ENDED"];
 					for(const event of events) {
 						const currentEventSchedule = currentSchedule[event] || [];
-						currentPeriod[event] = currentEventSchedule.map((e) => {
-							return new sc.SCHEDULE_EVENTS[e.type](e.settings);
-						})
-					} 
+						this.generateScheduleEvents(currentPeriod[event], currentEventSchedule);
+					}
 				}
 			}
+		},
+		generateScheduleEvents: function(schedule, scheduleEvents = []) {
+			for (const {type, settings} of scheduleEvents) {
+				if (!sc.SCHEDULE_EVENTS[type])
+					continue;
+				if (sc.SCHEDULE_EVENTS[type].branchable) {
+
+				} else {
+					
+				}
+			}
+			// new sc.SCHEDULE_EVENTS[e.type](e.settings);
 		},
 		onerror: function(data) {
 			console.log(`F. ${this.name} didn't load it's schedule.`);
 		},
-		execute: function(period, event) {
-			let schedule = this.daySchedule[period];
+		execute: function(schedule) {
+
 			if (!schedule)
 				return;
-			schedule = schedule[event] || [];
-
 			for(let i = 0; i < schedule.length; ++i) {
-				schedule[i].run();
+				if (schedule[i].canExecute()) {
+
+					schedule[i].run();
+				}
 			}
 		},
 		modelChanged: function (instance, event, args) {
@@ -61,18 +72,31 @@ ig.module("bee.playable.schedule").requires("bee.playable.playable").defines(fun
 				}
 			} else if (instance === sc.calendar.day.timeOfDay) {
 				const period = instance.get();
+				let event;
 				switch (event) {
 					case sc.TIME_OF_DAY_MSG.STARTED: {
-						this.execute(period, 'STARTED');
+						event = "STARTED";
 						break;
 					}
 					case sc.TIME_OF_DAY_MSG.ENDED: {
-						this.execute(period, 'ENDED');
+						event = "ENDED";
 						break;
 					}
 					default:
+						event = "";
 						break;
 				}
+				if (event) {
+					let schedule = this.daySchedule[period];
+					if (schedule) {
+						const schedulePeriod = schedule[period];
+						if (schedulePeriod[event]) {
+							this.execute(schedulePeriod[event]);
+						} 
+						
+					}
+				}
+				
 			}
 		}
 	});

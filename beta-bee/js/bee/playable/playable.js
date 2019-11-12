@@ -11,6 +11,8 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 			sc.Model.addObserver(sc.party, this);
 			sc.Model.addObserver(sc.model.player, this);
 			sc.combat.addCombatListener(this);
+
+			ig.vars.registerVarAccessor("playable", this, null);
 		},
 		onStorageSave: function(data) {
 			data.playableMembers = {};
@@ -24,7 +26,9 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 				for (const playableMemberName in data.playableMembers) {
 					const configData = data.playableMembers[playableMemberName] || {};
 					const config = this.getConfig(playableMemberName);
-					config.setLoadData(configData);
+					if (config) {
+						config.setLoadData(configData);
+					}
 				}
 			}
 		},
@@ -108,6 +112,17 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 					}
 				}
 			}
+		 },
+		 onVarAccess: function(path, pathArr) {
+			if (pathArr[0] === "playable") {
+				if (pathArr[2] === "config") {
+					const config = this.getConfig(pathArr[1]);
+					if (!config)
+						return null;
+					return config.onVarAccess("", pathArr.slice(3));
+				}
+			}
+			return null;
 		 }
 	});
 
@@ -488,6 +503,14 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 			this.skillPointsExtra = Array(5).fill(0);
 			this.partyModel = null;
 			this.playerModel = null;			
+		},
+		onVarAccess: function(path, pathArr) {
+			if (pathArr[0] === "version") {
+				return this.version;
+			} else if (pathArr[0] === "credit") {
+				return this.credit;
+			}
+			return null;
 		}
 	});
 });

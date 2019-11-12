@@ -237,6 +237,7 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 					return this.format(pathArr[1], pathArr[2]);
 				}
 			}
+			return null;
 		},
 		setFormatFunction: function(func) {
 			if (typeof func === "function") {
