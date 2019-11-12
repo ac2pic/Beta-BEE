@@ -1,0 +1,12 @@
+[{
+	"MORNING" : {
+		"STARTED": [{
+			"type": "LOG",
+			"settings": {
+				"value": "First day in the morning."
+			}
+			
+		}],
+		"ENDED": []
+	}
+}]
