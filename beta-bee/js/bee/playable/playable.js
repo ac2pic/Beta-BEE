@@ -5,9 +5,32 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 		init: function() {
 			this.parent("Playable");
 			ig.storage.register(this);
+			const calendar = sc.calendar.add('schedules');
+			// calendar.setDayInterval(["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"]);
+			calendar.setPeriodInterval(["MIDNIGHT", "MORNING", "NOON", "AFTERNOON", "EVENING"]);
+			calendar.setFormatFunction(function(instance, value, typeOfValue) {
+				let newValue;
+				switch (typeOfValue) {
+					case "period": {
+						const periodInstance = instance.getPeriodInstance();
+						newValue = periodInstance.calc(value);
+						break;
+					}
+					case "day": {
+						const daynInstance = instance.getDayInstance();
+						newValue = daynInstance.calc(value);
+						break;
+					}
+					default:
+						newValue = value;
+						break;
+				}
+				return newValue;
+			});
 			for (const playableMember of sc.PLAYABLE_OPTIONS) {
-				this.addConfig(playableMember);
+				this.addConfig(playableMember, calendar);
 			}
+
 			sc.Model.addObserver(sc.party, this);
 			sc.Model.addObserver(sc.model.player, this);
 			sc.combat.addCombatListener(this);
@@ -32,9 +55,10 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 				}
 			}
 		},
-		addConfig(name) {
+		addConfig(name, calendar) {
 			this.configs[name] = new sc.PlayableConfig(name);
 			this.schedules[name] = new sc.PlayableSchedule(name);
+			this.schedules[name].setCalendar(calendar);
 		},
 		hasConfig(name) {
 			return this.configs[name] instanceof sc.PlayableConfig;
@@ -42,6 +66,7 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 		getConfig(name) {
 			return this.configs[name];
 		},
+
 		// has to be after sc.GameModel.onReset 
 		// Lea's config gets added there
 		resetOrder: Infinity,
@@ -115,11 +140,9 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 		 },
 		 onVarAccess: function(path, pathArr) {
 			if (pathArr[0] === "playable") {
-				if (pathArr[2] === "config") {
-					const config = this.getConfig(pathArr[1]);
-					if (!config)
-						return null;
-					return config.onVarAccess("", pathArr.slice(3));
+				const config = this.getConfig(pathArr[1]);
+				if (config) {
+					return config.onVarAccess("", pathArr.slice(2));
 				}
 			}
 			return null;
@@ -145,6 +168,7 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 	// this is for syncing
 	// PartyMemberModel and PlayerModel
 	sc.PlayableConfig = ig.Class.extend({
+		name: "Best Player",
 		version: 0,
 		count: 0,
 		itemFavs: [],
@@ -164,7 +188,8 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 		skillPointsExtra: [],
 		partyModel: null,
 		playerModel: null,
-		init: function() {
+		init: function(name) {
+			this.name = name;
 			this.reset();
 		},
 		setPartyMemberModel: function(model) {
@@ -190,7 +215,7 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 			return this.playerModel instanceof sc.PlayerModel;
 		},
 		isParty() {
-			return this.partyModel instanceof sc.PartyMemberModel
+			return this.partyModel instanceof sc.PartyMemberModel;
 		},
 		applyToModels: function() {
 			this.applyToPartyModel();
@@ -222,8 +247,10 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 				}
 				 
 				model.params.currentHp = this.hp;
+
 				// instant change
 				sc.Model.notifyObserver(model.params, sc.COMBAT_PARAM_MSG.HP_CHANGED, true);
+
 				model.setElementMode(this.currentElementMode);	
 				
 				
@@ -247,8 +274,6 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 				hpBar.currentHp = this.hp;
 				hpBar.maxHp = model.params.baseParams.hp;
 				hpBar.targetHp = this.hp;
-				
-				
 			} 
 		},
 		applyToPlayerModel: function() {
@@ -505,10 +530,14 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 			this.playerModel = null;			
 		},
 		onVarAccess: function(path, pathArr) {
-			if (pathArr[0] === "version") {
-				return this.version;
-			} else if (pathArr[0] === "credit") {
-				return this.credit;
+			switch (pathArr[0]) {
+				case "version":
+				case "credit":
+				case "count":
+				case "name":
+					return this[pathArr[0]];
+				default:
+					break;
 			}
 			return null;
 		}
