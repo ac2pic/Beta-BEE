@@ -5,6 +5,10 @@ ig.module("bee.calendar.event-steps").requires("impact.feature.base.event-steps"
 		notify: false,
 		_wm: new ig.Config({
 			attributes: {
+				name: {
+					_type: "String",
+					_info: "The calendar name"
+				},
 				day: {
 					_type: "NumberExpression",
 					_info: "What day to set it to. Must be positive integer."
@@ -35,14 +39,22 @@ ig.module("bee.calendar.event-steps").requires("impact.feature.base.event-steps"
 			}
 		}),
 		init: function(data) {
-			assertContent(data, "day", "period");
+			assertContent(data, "name", "day", "period");
+			this.name = name;
 			this.day = data.day;
-			this.period = sc.TIME_OF_DAY[data.period];
+			this.period = data.period;
 			this.changeType = data.changeType || "iterate";
 			this.notify = data.notify || false;
 			this.deferNotify = data.deferNotify || false;
 		},
 		start: function() {
+			const name = ig.Event.getExpressionValue(this.name);
+			const calendar = sc.calendar.get(name);
+
+			if (!calendar) {
+				throw Error(`There is no calendar with name "${name}".`);
+			}
+
 			const day = ig.Event.getExpressionValue(this.day);
 			const period = ig.Event.getExpressionValue(this.period);
 			if (this.deferNotify) {
@@ -50,17 +62,17 @@ ig.module("bee.calendar.event-steps").requires("impact.feature.base.event-steps"
 			}
 			switch (this.changeType) {
 				case "iterate": {
-					sc.calendar.change(day, period, this.notify);
+					calendar.change(day, period, this.notify);
 					break;
 				}
 				case "set":
 				default: {
-					sc.calendar.set(day, period, this.notify);
+					calendar.set(day, period, this.notify);
 					break;
 				}	
 			}
 			if (this.deferNotify) {
-				sc.calendar.notify(sc.DAY_MSG.STARTED, sc.TIME_OF_DAY_MSG.STARTED);
+				calendar.notify(sc.DAY_MSG.STARTED, sc.TIME_OF_DAY_MSG.STARTED);
 			}
 		}
 	});
@@ -71,6 +83,10 @@ ig.module("bee.calendar.event-steps").requires("impact.feature.base.event-steps"
 		notify: false,
 		_wm: new ig.Config({
 			attributes: {
+				name: {
+					_type: "String",
+					_info: "The calendar name"
+				},
 				day: {
 					_type: "NumberExpression",
 					_info: "What day to set it to. Must be positive integer."
@@ -87,17 +103,26 @@ ig.module("bee.calendar.event-steps").requires("impact.feature.base.event-steps"
 			}
 		}),
 		init: function(data) {
-			assertContent(data, "day", "period");
+			assertContent(data, "name", "day", "period");
+			this.name = data.name;
 			this.day = data.day;
-			this.period = sc.TIME_OF_DAY[data.period];
+			this.period = data.period;
 			this.notify = data.notify || false;
 		},
 		start: function() {
+			const name = ig.Event.getExpressionValue(this.name);
+			const calendar = sc.calendar.get(name);
+
+			if (!calendar) {
+				throw Error(`There is no calendar with name "${name}".`);
+			}
+
+
 			const day = ig.Event.getExpressionValue(this.day);
 			const period = ig.Event.getExpressionValue(this.period);
-			sc.calendar.set(day, period, false);
+			calendar.set(day, period, false);
 			if (this.notify) {
-				sc.calendar.notify(sc.DAY_MSG.STARTED, sc.TIME_OF_DAY_MSG.STARTED);
+				calendar.notify(sc.DAY_MSG.STARTED, sc.TIME_OF_DAY_MSG.STARTED);
 			}
 		}
 	});

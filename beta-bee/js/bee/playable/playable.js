@@ -5,69 +5,46 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 		init: function() {
 			this.parent("Playable");
 			ig.storage.register(this);
+			const calendar = sc.calendar.add('schedules');
+			const date = new sc.DayState;
+
+			calendar.setDate(date);
+
+			const period = date.getPeriod();
+			period.setInterval(["MIDNIGHT", "MORNING", "NOON", "AFTERNOON", "EVENING"]);
+
+
 			for (const playableMember of sc.PLAYABLE_OPTIONS) {
-				this.addConfig(playableMember);
+				this.addConfig(playableMember, calendar);
 			}
+
 			sc.Model.addObserver(sc.party, this);
 			sc.Model.addObserver(sc.model.player, this);
 			sc.combat.addCombatListener(this);
+
+			ig.vars.registerVarAccessor("playable", this, null);
 		},
-		onStorageSave: function(data) {
-			data.playableMembers = {};
-			for (const playableMemberName in this.configs) {
-				const config = this.getConfig(playableMemberName);
-				data.playableMembers[playableMemberName] = config.getSaveData();
-			}
-		},
-		onStoragePreLoad: function(data) {
-			if (data.playableMembers) {
-				for (const playableMemberName in data.playableMembers) {
-					const configData = data.playableMembers[playableMemberName] || {};
-					const config = this.getConfig(playableMemberName);
-					config.setLoadData(configData);
+		onVarAccess: function(path, pathArr) {
+			if (pathArr[0] === "playable") {
+				const config = this.getConfig(pathArr[1]);
+				if (config) {
+					const newPath = [pathArr[0]].concat(pathArr.slice(2));
+					return config.onVarAccess(newPath.join("."), newPath);
 				}
 			}
+			return null;
 		},
-		addConfig(name) {
-			this.configs[name] = new sc.PlayableConfig(name);
+		addConfig(name, calendar) {
+			const config = this.configs[name] = new sc.PlayableConfig(name);
 			this.schedules[name] = new sc.PlayableSchedule(name);
+			this.schedules[name].setCalendar(calendar);
+			this.schedules[name].setConfig(config);
 		},
 		hasConfig(name) {
 			return this.configs[name] instanceof sc.PlayableConfig;
 		},
 		getConfig(name) {
 			return this.configs[name];
-		},
-		// has to be after sc.GameModel.onReset 
-		// Lea's config gets added there
-		resetOrder: Infinity,
-		onReset: function() {
-			for (const name in this.configs) {
-				const member = this.configs[name];
-				member.reset();
-			}
-		},
-		onCombatEvent: function(combatant, event) {
-			switch(event) {
-				case sc.COMBAT_EVENT.DEFEATED: {
-					if (!combatant.enemyType)
-						return;
-					let credits = combatant.enemyType.credit;
-					let level = combatant.enemyType.level;
-					if (combatant.level.override) {
-						credits = sc.EnemyLevelScaling.adaptCredits(credits, level, combatant.level.override);
-					}
-					for (const name in this.configs) {
-						const member = this.configs[name];
-						if (!member.isPlayer() && member.isParty()) {
-							member.credit += credits;
-						}
-					}
-					break;
-				}
-				default:
-					break;
-			}
 		},
 		modelChanged: function(instance, event, args) {
 			if (instance === sc.party) {
@@ -108,7 +85,56 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 					}
 				}
 			}
-		 }
+		 },
+		// has to be after sc.GameModel.onReset 
+		// Lea's config gets added there
+		resetOrder: Infinity,
+		onReset: function() {
+			for (const name in this.configs) {
+				const member = this.configs[name];
+				member.reset();
+			}
+		},
+		onCombatEvent: function(combatant, event) {
+			switch(event) {
+				case sc.COMBAT_EVENT.DEFEATED: {
+					if (!combatant.enemyType)
+						return;
+					let credits = combatant.enemyType.credit;
+					let level = combatant.enemyType.level;
+					if (combatant.level.override) {
+						credits = sc.EnemyLevelScaling.adaptCredits(credits, level, combatant.level.override);
+					}
+					for (const name in this.configs) {
+						const member = this.configs[name];
+						if (!member.isPlayer() && member.isParty()) {
+							member.credit += credits;
+						}
+					}
+					break;
+				}
+				default:
+					break;
+			}
+		},
+		onStorageSave: function(data) {
+			data.playableMembers = {};
+			for (const playableMemberName in this.configs) {
+				const config = this.getConfig(playableMemberName);
+				data.playableMembers[playableMemberName] = config.getSaveData();
+			}
+		},
+		onStoragePreLoad: function(data) {
+			if (data.playableMembers) {
+				for (const playableMemberName in data.playableMembers) {
+					const configData = data.playableMembers[playableMemberName] || {};
+					const config = this.getConfig(playableMemberName);
+					if (config) {
+						config.setLoadData(configData);
+					}
+				}
+			}
+		}
 	});
 
 
@@ -130,6 +156,7 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 	// this is for syncing
 	// PartyMemberModel and PlayerModel
 	sc.PlayableConfig = ig.Class.extend({
+		name: "Best Player",
 		version: 0,
 		count: 0,
 		itemFavs: [],
@@ -149,7 +176,8 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 		skillPointsExtra: [],
 		partyModel: null,
 		playerModel: null,
-		init: function() {
+		init: function(name) {
+			this.name = name;
 			this.reset();
 		},
 		setPartyMemberModel: function(model) {
@@ -175,7 +203,7 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 			return this.playerModel instanceof sc.PlayerModel;
 		},
 		isParty() {
-			return this.partyModel instanceof sc.PartyMemberModel
+			return this.partyModel instanceof sc.PartyMemberModel;
 		},
 		applyToModels: function() {
 			this.applyToPartyModel();
@@ -207,8 +235,10 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 				}
 				 
 				model.params.currentHp = this.hp;
+
 				// instant change
 				sc.Model.notifyObserver(model.params, sc.COMBAT_PARAM_MSG.HP_CHANGED, true);
+
 				model.setElementMode(this.currentElementMode);	
 				
 				
@@ -232,8 +262,6 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 				hpBar.currentHp = this.hp;
 				hpBar.maxHp = model.params.baseParams.hp;
 				hpBar.targetHp = this.hp;
-				
-				
 			} 
 		},
 		applyToPlayerModel: function() {
@@ -488,6 +516,20 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 			this.skillPointsExtra = Array(5).fill(0);
 			this.partyModel = null;
 			this.playerModel = null;			
+		},
+		onVarAccess: function(path, pathArr) {
+			if (pathArr[0] === "playable") {
+				switch (pathArr[1]) {
+					case "version":
+					case "credit":
+					case "count":
+					case "name":
+						return this[pathArr[1]];
+					default:
+						break;
+				}
+			}
+			return null;
 		}
 	});
 });
