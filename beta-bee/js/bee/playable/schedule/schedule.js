@@ -99,8 +99,10 @@ ig.module("bee.playable.schedule").requires("bee.playable.playable").defines(fun
 
 			for (let i = 0; i < deferDays.length; ++i) {
 				deferDays[i].day = maxDay + i;
-				data.push(deferDays[i]);
 			}
+
+			// merge them
+			data.push(...deferDays);
 
 			// actually set them up
 			// know that it is somewhat valid
