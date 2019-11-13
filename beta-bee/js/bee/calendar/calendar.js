@@ -37,7 +37,13 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 				return !(value < 0 || value >= this.interval.length);
 			}
 			return true;
-		} 
+		},
+		isValidValue: function (value) {
+			if (this.interval.length) {
+				return this.interval.includes(value);
+			}
+			return true;
+		}
 	});
 
 	sc.TIME_OF_DAY_MSG = {
