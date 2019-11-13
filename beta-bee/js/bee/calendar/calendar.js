@@ -26,11 +26,13 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 		setInterval: function(interval = []) { 
 			this.interval = interval;
 		},
-		calc: function(value) { 
-			if (this.interval.length) {
-				return this.interval[value%this.interval.length];
+		calc: function(value) {
+			if (this.isInRange(value)) {
+				if (this.interval.length) {
+					return this.interval[value%this.interval.length];
+				}
 			}
-			return value;
+			return null;
 		},
 		isInRange: function (value) {
 			if (this.interval.length) {
@@ -53,6 +55,12 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 
 	sc.TimeOfDayState = sc.BaseCalendarComponent.extend({
 		period: 0,
+		onVarAccess: function(path, pathArr) {
+			if (pathArr[1] === "period") {
+				return this.calc(pathArr[0]);
+			}
+			return null;
+		},
 		set: function(period, notifyChange = true) {
 			// don't need to do anything if nothing changed
 			if (this.period === period) {
@@ -128,7 +136,36 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 
 	sc.DayState = sc.BaseCalendarComponent.extend({
 		day: 0,
-		timeOfDay: new sc.TimeOfDayState,
+		timeOfDay: null,
+		init: function() {
+			this.timeOfDay = new sc.TimeOfDayState;
+		},
+		isInRange: function (value) {
+			if (!isFinite(value) || value === null)
+				return false;
+			return value >= this.day;
+		},
+		calc: function(value) {
+			value = Number(value);
+			if (this.isInRange(value)) {
+				return value;
+			}
+			return null;
+		},
+		onVarAccess: function(path, pathArr) {
+			if (pathArr[1] === "date") {
+				return this.calc(pathArr[0]);
+			} else if (pathArr[1] === "period") {
+				return this.timeOfDay.onVarAccess(path, pathArr);
+			}
+			let data = this.get(pathArr[1] !== "raw");
+			if (pathArr[0] === "period") {
+				return data.period;
+			} else if (pathArr[0] === "date") {
+				return data.day;
+			}
+			return null;
+		},
 		addObserver: function(instance) {
 			this.parent(instance);
 			this.timeOfDay.addObserver(instance);
@@ -211,15 +248,17 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 			this.date = date;
 		},
 		onVarAccess: function(request, pathArr) {
-			if (pathArr[0] === "calendar") {
-				// calendar.schedules.count.raw
-				if (pathArr.length === 3) {
-					pathArr.push("");
-				}
-			 	if (pathArr.length === 4) {
-					const raw = pathArr[3] === "raw" ;
-					const result = this.get(!raw)[pathArr[2]];
-					return result;
+			if (pathArr.length > 1) {
+				if(pathArr[0] === "calendar") {
+					// calendar.1.date
+					// calendar.1.period
+					// calendar.period
+					// calendar.period.raw 
+					
+					if (pathArr.length <= 3) {
+						const newArr = pathArr.slice(1);
+						return this.date.onVarAccess(newArr.join("."), newArr);
+					}
 				}
 			}
 			return null;
@@ -237,11 +276,11 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 			return this.date.getPeriod();
 		},
 		notify: function(dateEvent, periodEvent) {
-			if (isFinite(dayEvent)) {
+			if (isFinite(dateEvent)) {
 				this.date.notify(dateEvent);
 			}
 
-			if (isFinite(timeOfDayEvent)) {
+			if (isFinite(periodEvent)) {
 				const period = this.date.getPeriod();
 				period.notify(periodEvent);
 			}
