@@ -123,17 +123,20 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 	sc.DayState = sc.BaseCalendarComponent.extend({
 		day: 0,
 		timeOfDay: new sc.TimeOfDayState,
+		addObserver: function(instance) {
+			this.parent(instance);
+			this.timeOfDay.addObserver(instance);
+		},
+		removeObserver: function(instance) {
+			this.parent(instance);
+			this.timeOfDay.removeObserver(instance);
+		},
+		isInRange: function (value) {
+			return isFinite(value) && value >= this.day;
+		},
 		set: function(newDay, newPeriod, notifyChange = true) {
-			if (isNaN(newDay)) {
-				throw Error('Day must be a number.');
-			}
-
-			if (newDay < 0) {
-				throw Error('Day must be positive.');
-			}
-			
-			if (newDay <= this.day) {
-				throw Error(`Day must be greater than ${this.day}.`);
+			if (this.isInRange(newDay)) {
+				throw Error(`Day must be at least ${this.day} but is ${newDay}.`);
 			}
 			if (notifyChange) {
 				this.notify(sc.DAY_MSG.ENDED);
@@ -171,9 +174,8 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 		nextPeriod: function() {
 			return this.timeOfDay.next();
 		},
-		reset: function() {
-			this.day = 0;
-			this.timeOfDay.reset();
+		getPeriod: function() {
+			return this.timeOfDay;
 		},
 		getSaveData: function() {
 			const data = {};
@@ -181,112 +183,86 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 			data.period = this.timeOfDay.getSaveData();
 			return data;
 		},
-		addObserver: function(instance) {
-			this.parent(instance);
-			this.timeOfDay.addObserver(instance);
-		},
-		removeObserver: function(instance) {
-			this.parent(instance);
-			this.timeOfDay.removeObserver(instance);
-		},
 		setLoadData: function(data) {
 			const day = data.day;
-			if (isNaN(day)) {
+			if (!isFinite(day)) {
 				this.day = 0;
 			} else {
 				this.day = day;
 			}
 			this.timeOfDay.setLoadData(data.period);
 		},
-		getTimeOfDayInstance: function() {
-			return this.timeOfDay;
+		reset: function() {
+			this.day = 0;
+			this.timeOfDay.reset();
 		}
 	});
 
 	sc.CalendarState = ig.Class.extend({
-		day: null,
+		date: null,
 		formatFunction: null,
-		init: function() {
-			this.day = new sc.DayState;
-		},
-		setPeriodInterval: function(value) {
-			const timeOfDay = this.getPeriodInstance();
-			timeOfDay.setInterval(value);
-		},
-		setDayInterval: function(value) {
-			this.day.setInterval(value);
-		},
-		setFormatFunction: function(func) {
-			if (typeof func === "function") {
-				this.formatFunction = func;
-			}
-		},
-		format: function(valueToFormat, typeOfFormat) {
-			const func = this.formatFunction;
-			if (typeof func === "function") {
-				return func(this, valueToFormat, typeOfFormat);
-			}
-			return valueToFormat;
+		setDate: function(date) {
+			this.date = date;
 		},
 		onVarAccess: function(request, pathArr) {
 			if (pathArr[0] === "calendar") {
-				if (pathArr.length === 2) {
-					const dayData = this.day.get();
-					const typeOfFormat = pathArr[1];
-					const valueToFormat = dayData[typeOfFormat];
-					return this.format(valueToFormat, typeOfFormat);
-				} else if(pathArr.length === 3) {
-					return this.format(pathArr[1], pathArr[2]);
-				} else if (pathArr.length === 4) {
+				// calendar.schedules.count.raw
+				if (pathArr.length === 3) {
+					pathArr.push("");
+				}
+			 	if (pathArr.length === 4) {
 					const raw = pathArr[3] === "raw" ;
-					return this.get(!raw)[pathArr[1]];
+					const result = this.get(!raw)[pathArr[2]];
+					return result;
 				}
 			}
+			return null;
 		},
 		addObserver: function(instance) {
-			this.day.addObserver(instance);
+			this.date.addObserver(instance);
 		},
 		removeObserver: function(instance) {
-			this.day.removeObserver(instance);
+			this.date.removeObserver(instance);
 		},
-		getDayInstance: function() {
-			return this.day;
+		getDate: function() {
+			return this.date;
 		},
-		getPeriodInstance: function() {
-			return this.day.getTimeOfDayInstance();
+		getPeriod: function() {
+			return this.date.getPeriod();
 		},
-		notify: function(dayEvent, timeOfDayEvent) {
-			if (!isNaN(dayEvent)) {
-				this.day.notify(dayEvent);
+		notify: function(dateEvent, periodEvent) {
+			if (isFinite(dayEvent)) {
+				this.date.notify(dateEvent);
 			}
 
-			if (!isNaN(timeOfDayEvent)) {
-				this.day.timeOfDay.notify(timeOfDayEvent);
+			if (isFinite(timeOfDayEvent)) {
+				const period = this.date.getPeriod();
+				period.notify(periodEvent);
 			}
 		},
-		change: function(newDay, newPeriod) {
-			this.day.change(newDay, newPeriod);
+		set: function(newDate, newPeriod, notifyChange) {
+			this.date.set(newDate, newPeriod, notifyChange);
 		},
-		set: function(newDay, newPeriod, notifyChange) {
-			this.day.set(newDay, newPeriod, notifyChange);
+		change: function(newDate, newPeriod) {
+			this.date.change(newDate, newPeriod);
 		},
 		get: function(format = true) {
-			return this.day.get(format);
+			return this.date.get(format);
 		},
-		nextDay: function() {
-			return this.day.next();
+		nextDate: function() {
+			return this.date.next();
 		},
 		nextPeriod: function() {
-			return this.day.nextPeriod();	
+			return this.date.nextPeriod();	
 		},
 		getSaveData: function() {
-			return this.day.getSaveData();
+			return this.date.getSaveData();
 		},
 		setLoadData: function(data) {
-			this.day.setLoadData(data);
+			this.date.setLoadData(data);
 		},
 		reset: function() {
-			this.day.reset();
+			this.date.reset();
 		}
 	});
 
@@ -302,12 +278,12 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 				const calendar = this.get(pathArr[1]);
 				if (calendar) {
 					const newPath = [pathArr[0]].concat(pathArr.slice(2));
-					return calendar.onVarAccess(request, newPath);
+					return calendar.onVarAccess(newPath.join("."), newPath);
 				}
 			}
 			return null;
 		},
-		add: function(name) {
+		add: function(name, date) {
 			const instance = new sc.CalendarState;
 			this.calendarStates[name] = instance;
 			return instance;
