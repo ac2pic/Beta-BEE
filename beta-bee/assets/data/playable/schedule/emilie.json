@@ -1,4 +1,11 @@
 [{
+	"day": 500,
+	"comment": "SHOULD BE 3RD ELEMENT"
+},{
+	"comment": "SHOULD BE LAST (day = 501)"
+},{
+	"day": 6,
+	"comment": "SHOULD BE 2ND ELEMENT",
 	"MIDNIGHT": {
 		"STARTED": [{
 			"type": "IF",
@@ -25,4 +32,7 @@
 			}]
 		}]
 	}
+},{
+	"day": 2,
+	"comment": "SHOULD BE FIRST"
 }]
