@@ -1,64 +1,80 @@
 ig.module("bee.playable.schedule.events").defines(function() {
-	function createScheduleEventGenerator(base, baseConfig) {
-		return function(name, objectCode, config) {
+	function createScheduleEventGenerator(base, baseConfig = {}) {
+		return function(objectCode, config = {}) {
 			const baseConfigCopy = ig.copy(baseConfig);
 			for (const baseConfigKey in baseConfigCopy) {
 				if (config[baseConfigKey] === undefined) {
 					config[baseConfigKey] = baseConfigCopy[baseConfigKey];
 				}
 			}
-			sc.SCHEDULE_EVENTS[name] = base.extend(objectCode);
 			for (let configEntry in config) {
-				sc.SCHEDULE_EVENTS[name][configEntry] = config[configEntry];
+				objectCode[configEntry] = config[configEntry];
 			}
+
+			const eventClass = base.extend(objectCode);
+			for (let configEntry in config) {
+				eventClass[configEntry] = config[configEntry];
+			}
+			
+			return eventClass;
 		}
 
 	}
 
 	sc.SCHEDULE_EVENTS = {};
 
+
 	sc.BaseScheduleEvent = ig.Class.extend({
-		init: function() {},
+		init: function(data, config) {
+			this.data = data;
+			this.config = config;
+		},
 		run: function() {},
 		canExecute: function() { return true;}
 	});
 
-	const baseEventGenerator = createScheduleEventGenerator(sc.BaseScheduleEvent, {
+	const eventGenerator = createScheduleEventGenerator(sc.BaseScheduleEvent, {
 		branchable: false
 	});
 	
-
-	sc.BaseBranchEvent = sc.BaseScheduleEvent.extend({
-		getBranch: function() { return [];}
+	sc.SCHEDULE_EVENTS.LOG = eventGenerator({
+		init: function(data, config) {
+			this.parent(data, config);
+		},
+		run: function() {
+			const message = ig.TextParser.bakeVars(this.data.value);
+			console.log(message);
+		}
 	});
 
-	case baseBranchEventGenerator = createScheduleEventGenerator(sc.BaseScheduleEvent, {
+
+	// Branching starts
+	
+	const branchEventStaticVars = {
 		branchable: true,
 		branches: []
-	})
+	};
 
+	sc.BaseBranchEvent = eventGenerator({
+		getBranch: function() { return null; }
+	}, branchEventStaticVars);
 
+	const branchEventGenerator = createScheduleEventGenerator(sc.BaseBranchEvent, branchEventStaticVars);
 
-
-
-	baseEventGenerator('LOG', sc.BaseScheduleEvent);
-
-	baseBranchEventGenerator('IF',{
+	sc.SCHEDULE_EVENTS.IF = branchEventGenerator({
 		condition: null,
-		ifBranch: [],
-		elseBranch: null, 
-		init: function(data) {
-			this.condition = ig.VarCondition(data.condition);
-			if (Array.isArray(data.then)) {
-				this.ifBranch = data.then;
-			}
-
-			if (Array.isArray(data.else)) {
-				this.elseBranch = data.else;
-			}
+		then: [],
+		else: [], 
+		init: function(data, config) {
+			this.parent(data, config);
+			this.condition = new ig.VarCondition(data.condition);
 		},
 		getBranch: function() {
-
+			const {then: thenBranch, else: elseBranch} = this.data;
+			if (this.condition.evaluate()) {
+				return thenBranch;
+			}
+			return elseBranch;
 		}
 	}, {
 		branches: ["then", "else"]
