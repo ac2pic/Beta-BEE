@@ -112,13 +112,13 @@ ig.module("bee.playable.schedule").requires("bee.playable.playable").defines(fun
 
 				currentDay.day = daySchedule.day;
 				for (const periodName in daySchedule) {
-					if(!period.isValidValue(periodName))
-						continue;
-					const currentSchedule = daySchedule[periodName];
-					const currentPeriod = currentDay[periodName] = {};
-					const events = ["STARTED", "ENDED"];
-					for(const event of events) {
-						currentPeriod[event] = this.generateScheduleEvents(currentSchedule[event]);
+					if(period.isValidValue(periodName)) {
+						const currentSchedule = daySchedule[periodName];
+						const currentPeriod = currentDay[periodName] = {};
+						const events = ["STARTED", "ENDED"];
+						for(const event of events) {
+							currentPeriod[event] = this.generateScheduleEvents(currentSchedule[event]);
+						}
 					}
 				}
 			}
