@@ -1,3 +1,5 @@
+import "./mood.js";
+
 ig.module("bee.playable.playable.config").requires("bee.playable.playable").defines(function() {
 	let hudGui = undefined;
 	
@@ -12,7 +14,8 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 	const PLAYABLE_VERSION = 2;
 	// this is for syncing
 	// PartyMemberModel and PlayerModel
-	sc.PlayableConfig = ig.Class.extend({
+	sc.PlayableConfig = ig.JsonLoadable.extend({
+		cacheType: "PlayableConfig",
 		name: "Best Player",
 		version: 0,
 		count: 0,
@@ -31,11 +34,29 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 		skills: [],
 		skillPoints: [],
 		skillPointsExtra: [],
+		mood: null,
 		partyModel: null,
 		playerModel: null,
+		schedule: null,
 		init: function(name) {
+			this.parent(name.toLowerCase());
 			this.name = name;
+			this.mood = new sc.PlayableMood;
 			this.reset();
+		},
+		getJsonPath: function() {
+			return ig.root + this.path.toPath("data/playable/", ".json");
+		},
+		onload: function(data) {
+			this.mood.setConfig(data.mood);
+			this.schedule.set(data.schedule);
+		},
+		onerror: function(error) {
+			console.log(error);
+		},
+		setSchedule: function(schedule) {
+			this.schedule = schedule;
+			this.schedule.setConfig(this);
 		},
 		setPartyMemberModel: function(model) {
 			this.removePartyObserver();
