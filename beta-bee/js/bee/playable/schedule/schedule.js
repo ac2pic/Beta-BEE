@@ -1,15 +1,27 @@
 import "./events.js";
 
 ig.module("bee.playable.schedule").requires("bee.playable.playable").defines(function() {
+
 	sc.PlayableSchedule = ig.JsonLoadable.extend({
 		schedules: [],
 		daySchedule: {},
 		periodSchedule: {},
+		calendar: null,
+		config: null,
 		cacheType: "PlayableSchedule",
 		init: function(name) {
-			this.name = name;
 			this.parent(name.toLowerCase());
-			sc.calendar.addObserver(this);
+			this.name = name;
+		},
+		setConfig: function(config) {
+			this.config = config;
+		},
+		setCalendar: function(calendar) {
+			if (this.calendar) {
+				this.calendar.removeObserver(this);
+			}
+			this.calendar = calendar;
+			this.calendar.addObserver(this);
 		},
 		getJsonPath: function() {
 			return ig.root + this.path.toPath("data/playable/schedule/", ".json");
@@ -24,43 +36,55 @@ ig.module("bee.playable.schedule").requires("bee.playable.playable").defines(fun
 					const currentPeriod = currentDay[period] = {};
 					const events = ["STARTED", "ENDED"];
 					for(const event of events) {
-						const currentEventSchedule = currentSchedule[event] || [];
-						this.generateScheduleEvents(currentPeriod[event], currentEventSchedule);
+						currentPeriod[event] = this.generateScheduleEvents(currentSchedule[event]);
 					}
 				}
 			}
 		},
 		generateScheduleEvents: function(schedule, scheduleEvents = []) {
-			for (const {type, settings} of scheduleEvents) {
-				if (!sc.SCHEDULE_EVENTS[type])
+			for (const event of schedule) {
+				if (!event)
 					continue;
-				if (sc.SCHEDULE_EVENTS[type].branchable) {
 
-				} else {
-					
-				}
+				const eventClass = sc.SCHEDULE_EVENTS[event.type];
+				if (!eventClass)
+					continue;
+
+				const eventCopy = ig.copy(event);
+				
+				if (eventClass.branchable) {
+					const branches = eventClass.branches;
+					for (const branch of branches) {
+						eventCopy[branch] = this.generateScheduleEvents(event[branch]);
+					}
+				} 
+				scheduleEvents.push(new eventClass(eventCopy, this.config));
 			}
-			// new sc.SCHEDULE_EVENTS[e.type](e.settings);
+			return scheduleEvents;
 		},
 		onerror: function(data) {
 			console.log(`F. ${this.name} didn't load it's schedule.`);
 		},
 		execute: function(schedule) {
-
 			if (!schedule)
 				return;
 			for(let i = 0; i < schedule.length; ++i) {
-				if (schedule[i].canExecute()) {
-
-					schedule[i].run();
+				const task = schedule[i];
+				if (task.canExecute()) {
+					if(task.branchable) {
+						this.execute(task.getBranch());	
+					} else {
+						schedule[i].run();
+					}
 				}
 			}
 		},
 		modelChanged: function (instance, event, args) {
-			if (instance === sc.calendar.day) {
+			if (instance === this.calendar.getDayInstance()) {
+				const {day} = instance.get(false);
 				switch (event) {
 					case sc.DAY_MSG.STARTED: {
-						this.daySchedule = this.schedules[instance.day] || {};
+						this.daySchedule = this.schedules[day] || {};
 						break;
 					}
 					case sc.DAY_MSG.ENDED: {
@@ -70,30 +94,27 @@ ig.module("bee.playable.schedule").requires("bee.playable.playable").defines(fun
 					default:
 						break;
 				}
-			} else if (instance === sc.calendar.day.timeOfDay) {
+			} else if (instance === this.calendar.getPeriodInstance()) {
 				const period = instance.get();
-				let event;
+				let scheduleEvent;
 				switch (event) {
 					case sc.TIME_OF_DAY_MSG.STARTED: {
-						event = "STARTED";
+						scheduleEvent = "STARTED";
 						break;
 					}
 					case sc.TIME_OF_DAY_MSG.ENDED: {
-						event = "ENDED";
+						scheduleEvent = "ENDED";
 						break;
 					}
 					default:
-						event = "";
+						scheduleEvent = "";
 						break;
 				}
-				if (event) {
+				if (scheduleEvent) {
 					let schedule = this.daySchedule[period];
 					if (schedule) {
-						const schedulePeriod = schedule[period];
-						if (schedulePeriod[event]) {
-							this.execute(schedulePeriod[event]);
-						} 
-						
+						const schedulePeriod = schedule[scheduleEvent];
+						this.execute(schedulePeriod);
 					}
 				}
 				
