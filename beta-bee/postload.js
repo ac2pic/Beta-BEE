@@ -1,4 +1,4 @@
-sc.PLAYABLE_OPTIONS = ["Emilie"];
+sc.PLAYABLE_OPTIONS = ["Emilie", "Lea"];
 window.BEE_DEBUG = true;
 
 // 
