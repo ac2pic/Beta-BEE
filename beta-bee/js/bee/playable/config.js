@@ -1,5 +1,3 @@
-import "./mood.js";
-
 ig.module("bee.playable.playable.config").requires("bee.playable.playable").defines(function() {
 	let hudGui = undefined;
 	
@@ -42,7 +40,6 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 			this.parent(name.toLowerCase());
 			this.name = name;
 			this.mood = new sc.PlayableMood;
-			this.reset();
 		},
 		getJsonPath: function() {
 			return ig.root + this.path.toPath("data/playable/", ".json");
@@ -57,6 +54,9 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 		setSchedule: function(schedule) {
 			this.schedule = schedule;
 			this.schedule.setConfig(this);
+		},
+		getMood: function() {
+			return this.mood;
 		},
 		setPartyMemberModel: function(model) {
 			this.removePartyObserver();
@@ -347,6 +347,7 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 			data.skillPoints = this.skillPoints;
 			data.skillPointsExtra = this.skillPointsExtra;
 			data.version = this.version;
+			data.mood = this.mood.getSaveData();
 			return data;
 		},
 		setLoadData: function(data) {
@@ -373,6 +374,7 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 			this.skills = data.skills || this.skills;
 			this.skillPoints = data.skillPoints || this.skillPoints;
 			this.skillPointsExtra = data.skillPointsExtra || this.skillPointsExtra;
+			this.mood.setLoadData(data.mood);
 		},
 		reset: function() {
 			this.version = 0;
@@ -393,11 +395,16 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 			this.skillPoints = Array(5).fill(1);
 			this.skillPointsExtra = Array(5).fill(0);
 			this.partyModel = null;
-			this.playerModel = null;			
+			this.playerModel = null;
+			this.mood.reset();	
+			this.schedule.reset();	
 		},
 		onVarAccess: function(path, pathArr) {
 			if (pathArr[0] === "playable") {
 				switch (pathArr[1]) {
+					case "mood": {
+						return this.mood.get();
+					}
 					case "version":
 					case "credit":
 					case "count":
