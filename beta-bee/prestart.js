@@ -20,4 +20,6 @@ import "./js/bee/calendar/event-steps.js";
 
 import "./js/bee/playable/playable.js";
 
+import './js/bee/playable/config.js';
+
 import "./js/bee/playable/schedule/schedule.js";
