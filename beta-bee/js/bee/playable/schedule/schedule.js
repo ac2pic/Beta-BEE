@@ -212,6 +212,9 @@ ig.module("bee.playable.schedule").requires("bee.playable.playable").defines(fun
 				}
 				
 			}
+		},
+		reset: function() {
+			this.daySchedule = {};
 		}
 	});
 });
