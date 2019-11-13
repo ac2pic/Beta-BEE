@@ -5,7 +5,6 @@ ig.module("bee.playable.schedule").requires("bee.playable.playable").defines(fun
 	sc.PlayableSchedule = ig.JsonLoadable.extend({
 		schedules: [],
 		daySchedule: {},
-		periodSchedule: {},
 		calendar: null,
 		config: null,
 		cacheType: "PlayableSchedule",
@@ -80,7 +79,7 @@ ig.module("bee.playable.schedule").requires("bee.playable.playable").defines(fun
 			}
 		},
 		modelChanged: function (instance, event, args) {
-			if (instance === this.calendar.getDayInstance()) {
+			if (instance === this.calendar.getDate()) {
 				const {day} = instance.get(false);
 				switch (event) {
 					case sc.DAY_MSG.STARTED: {
@@ -94,7 +93,7 @@ ig.module("bee.playable.schedule").requires("bee.playable.playable").defines(fun
 					default:
 						break;
 				}
-			} else if (instance === this.calendar.getPeriodInstance()) {
+			} else if (instance === this.calendar.getPeriod()) {
 				const period = instance.get();
 				let scheduleEvent;
 				switch (event) {
