@@ -24,15 +24,13 @@ ig.module("bee.playable.schedule").requires("bee.playable.playable").defines(fun
 		return binarySearch(arr, value, midpoint + 1, max);
 	}
 
-	sc.PlayableSchedule = ig.JsonLoadable.extend({
+	sc.PlayableSchedule = ig.Class.extend({
 		scheduleDayNumbers: [],
 		schedules: [],
 		daySchedule: {},
 		calendar: null,
 		config: null,
-		cacheType: "PlayableSchedule",
 		init: function(name) {
-			this.parent(name.toLowerCase());
 			this.name = name;
 		},
 		setConfig: function(config) {
@@ -45,10 +43,7 @@ ig.module("bee.playable.schedule").requires("bee.playable.playable").defines(fun
 			this.calendar = calendar;
 			this.calendar.addObserver(this);
 		},
-		getJsonPath: function() {
-			return ig.root + this.path.toPath("data/playable/schedule/", ".json");
-		},
-		onload: function(data) {
+		set: function(data) {
 			const deferDays = [];
 
 			const outOfOrderDays = [];
