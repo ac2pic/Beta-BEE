@@ -35,9 +35,10 @@ ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "b
 			return null;
 		},
 		addConfig(name, calendar) {
-			this.configs[name] = new sc.PlayableConfig(name);
+			const config = this.configs[name] = new sc.PlayableConfig(name);
 			this.schedules[name] = new sc.PlayableSchedule(name);
 			this.schedules[name].setCalendar(calendar);
+			this.schedules[name].setConfig(config);
 		},
 		hasConfig(name) {
 			return this.configs[name] instanceof sc.PlayableConfig;
