@@ -3,6 +3,8 @@
 
 import "./js/bee/inject/hp-hud.js";
 
+import "./js/bee/inject/exp-hud.js";
+
 import "./js/bee/player/player-model.js";
 
 import "./js/bee/inject/player/player-level.js";
