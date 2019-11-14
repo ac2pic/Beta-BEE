@@ -111,11 +111,9 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 				for (const param in baseParams) {
 					model.params.baseParams[param] = baseParams[param];
 				}
-				 
-				model.params.currentHp = this.hp;
-
-				// instant change
-				sc.Model.notifyObserver(model.params, sc.COMBAT_PARAM_MSG.HP_CHANGED, true);
+				
+				// save old hp value 
+				const hp = this.hp;
 
 				model.setElementMode(this.currentElementMode);	
 				
@@ -132,7 +130,13 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 				
 				sc.skilltree.autoSkillsOverride = [];
 				sc.skilltree.overrideAutoSkills = false;
-				
+
+
+				model.params.currentHp = hp;
+
+				// instant change
+				sc.Model.notifyObserver(model.params, sc.COMBAT_PARAM_MSG.HP_CHANGED, true);
+
 				const hudGui = getPartyHudGui(model);
 				
 				// this visually forces hp bar to stored hp
@@ -257,7 +261,7 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 					// when party switches element mode
 					case sc.PARTY_MEMBER_MSG.ELEMENT_MODE_CHANGE: {
 						this.currentElementMode = instance.currentElementMode;
-						this.hp = instance.params.currentHp
+						this.hp = instance.params.currentHp;
 						break;	
 					}
 					default:
