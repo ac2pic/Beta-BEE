@@ -9,6 +9,11 @@ import "./js/bee/player/player-model.js";
 
 import "./js/bee/inject/player/player-level.js";
 
+
+// load all that relies on nothing
+
+import "./js/bee/playable/energy.js";
+
 // load all that relies on a game module
 
 import "./js/bee/playable/controls.js";
