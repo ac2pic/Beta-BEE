@@ -1,1 +1,1 @@
-{"name":"beta-bee","version":"0.2.1","description":"Emilie neutral arts","prestart":"prestart.js","postload":"postload.js","module":true,"ccmodDependencies":{"hardcoded-config-injector":"^0.1.0"}}
+{"name":"beta-bee","version":"0.2.1-0","description":"Emilie neutral arts","prestart":"prestart.js","postload":"postload.js","module":true,"ccmodDependencies":{"hardcoded-config-injector":"^0.1.0"}}
