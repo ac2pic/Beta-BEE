@@ -27,10 +27,6 @@ ig.module("bee.playable.controls").requires("game.feature.model.options-model").
 		
 		sc.party.addPartyMember(playerEntityName, null, null, true);
 		
-		
-		
-		
-		
 		// this makes it appears as if 
 		// they didn't move
 		
@@ -52,6 +48,7 @@ ig.module("bee.playable.controls").requires("game.feature.model.options-model").
 
 	sc.PlayableController = ig.GameAddon.extend({
 		switchTo: null,
+		delay: false,
 		canSwitch: function() {
 			const playerEntity = ig.game.playerEntity;
 			if (!playerEntity)
@@ -69,15 +66,21 @@ ig.module("bee.playable.controls").requires("game.feature.model.options-model").
 			const respawn = playerEntity.respawn;
 			if (respawn.timer !== 0)
 				return false;
-			
 			if (sc.model.isLoading() || sc.model.isTeleport())
 				return false;
 			if (sc.model.isPaused() || sc.model.isMenu()) 
 				return false;
 			return sc.model.isGame();
 		},
+		shouldDelay: function() {
+			const playerEntity = ig.game.playerEntity;
+			if (playerEntity) {
+				return playerEntity.currentAction !== null;
+			}
+			return false;
+		},
 		onPreUpdate: function() {
-			if (this.switchTo) {
+			if (this.switchTo && !this.delay) {
 				// when switching and respawning
 				// the effects may still show on 
 				// the new player
@@ -94,30 +97,57 @@ ig.module("bee.playable.controls").requires("game.feature.model.options-model").
 			}
 					
 		},
+
 		onPostUpdate: function() {
 			if (!this.switchTo)
 				return;
 			
-			if (!this.canSwitch()) {
-				this.switchTo = null;
-				return;
-			}
-			const member = this.switchTo;
-			const entity = sc.party.partyEntities[member];
-			const model = sc.party.models[member];
-			if (entity) {
-				
-				if (entity.jumping || 
-					!model.isAlive() ||
-					entity.respawn.timer !== 0) {
-					this.switchTo = null;
-					return;
+			if (!this.shouldDelay()) {
+				if (!this.canSwitch()) {
+					if (!this.delay) {
+						this.switchTo = null;
+						return;
+					} else {
+						this.delay = true;
+					}
 				} else {
-					if (window.DEBUG) {
-						debugger;	
+					this.delay = false;
+				}
+
+			} else {
+				this.delay = true;
+			}
+
+			
+
+			if (!this.delay) {
+				const member = this.switchTo;
+				const entity = sc.party.partyEntities[member];
+				const model = sc.party.models[member];
+				if (entity) {
+					
+					if (entity.jumping || 
+						!model.isAlive() ||
+						entity.respawn.timer !== 0) {
+						this.switchTo = null;
+						return;
+					} else {
+						if (window.DEBUG) {
+							debugger;	
+						}
 					}
 				}
 			}
+		},
+		reset: function() {
+			this.delay = false;
+			this.switchTo = null;
+		},
+		onTeleport: function() {
+			this.reset();
+		},
+		onReset: function() {
+			this.reset();
 		}
 	});
 	
