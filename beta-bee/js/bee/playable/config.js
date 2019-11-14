@@ -125,9 +125,10 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 				
 				// update level for new partyMember
 				// this updates the stats
-				model.setLevel(this.level, this.exp); 
-				
-				
+				const exp = this.exp;
+				model.setLevel(this.level, 0); 
+				model.addExperience(exp, 0,0,true, sc.LEVEL_CURVES.LINEAR);	
+
 				sc.skilltree.autoSkillsOverride = [];
 				sc.skilltree.overrideAutoSkills = false;
 
@@ -137,6 +138,7 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 				// instant change
 				sc.Model.notifyObserver(model.params, sc.COMBAT_PARAM_MSG.HP_CHANGED, true);
 
+				
 				const hudGui = getPartyHudGui(model);
 				
 				// this visually forces hp bar to stored hp
@@ -155,9 +157,22 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 					console.log('Player Exp:', model.exp, this.exp);
 				}
 
+				const exp = this.exp;
 				model.preLoad(this.buildPreLoad());
-				ig.lang.labels.sc.gui.options["hp-bars"].group[1] = `Party Only`;
+
+				// need a deep copy
+				const currentParty = ig.copy(sc.party.currentParty);
 				
+				// When the player gets exp, the party gets exp
+				// this should disable it
+				sc.party.currentParty.length = 0;
+				
+				model.addExperience(exp, 0,0,true, sc.LEVEL_CURVES.LINEAR);
+				
+				// restore currentParty
+				sc.party.currentParty.push(...currentParty);
+				
+				ig.lang.labels.sc.gui.options["hp-bars"].group[1] = `Party Only`;
 				model.params.currentHp = this.hp;
 				// force update it
 				sc.Model.notifyObserver(model.params, sc.COMBAT_PARAM_MSG.HP_CHANGED, true);
@@ -170,7 +185,7 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 			config.itemToggles = this.itemToggles;
 			config.credit = this.credit;
 			config.level = this.level;
-			config.exp = this.exp;
+			config.exp = 0;
 			config.chapter = sc.model.player.chapter;
 			config.currentElementMode = this.currentElementMode;
 			config.hp = this.hp;
@@ -362,7 +377,7 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 			this.itemToggles = data.itemToggles || this.itemToggles;
 			this.credit = data.credit || this.credit;
 			this.level = data.level || this.level;
-			if (!isNaN(data.exp)) {
+			if (isFinite(data.exp)) {
 				this.exp = data.exp;
 			}
 			if (!isNaN(data.currentElementMode)) {
