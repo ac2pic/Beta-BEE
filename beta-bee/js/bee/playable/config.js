@@ -39,6 +39,7 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 		skillPoints: [],
 		skillPointsExtra: [],
 		mood: null,
+		energy: null,
 		partyModel: null,
 		playerModel: null,
 		schedule: null,
@@ -46,6 +47,7 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 			this.parent(name.toLowerCase());
 			this.name = name;
 			this.mood = new sc.PlayableMood;
+			this.energy = new sc.PlayableEnergy;
 		},
 		getJsonPath: function() {
 			return ig.root + this.path.toPath("data/playable/", ".json");
@@ -63,6 +65,9 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 		},
 		getMood: function() {
 			return this.mood;
+		},
+		getEnergy: function() {
+			return this.energy;
 		},
 		setPartyMemberModel: function(model) {
 			this.removePartyObserver();
@@ -380,6 +385,7 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 			data.skillPointsExtra = this.skillPointsExtra;
 			data.version = this.version;
 			data.mood = this.mood.getSaveData();
+			data.energy = this.energy.getSaveData();
 			return data;
 		},
 		setLoadData: function(data) {
@@ -407,6 +413,7 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 			this.skillPoints = data.skillPoints || this.skillPoints;
 			this.skillPointsExtra = data.skillPointsExtra || this.skillPointsExtra;
 			this.mood.setLoadData(data.mood);
+			this.energy.setLoadData(data.energy);
 		},
 		reset: function() {
 			this.version = 0;
@@ -430,12 +437,16 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 			this.playerModel = null;
 			this.mood.reset();	
 			this.schedule.reset();	
+			this.energy.reset();
 		},
 		onVarAccess: function(path, pathArr) {
 			if (pathArr[0] === "playable") {
 				switch (pathArr[1]) {
 					case "mood": {
 						return this.mood.get();
+					}
+					case "energy" : {
+						return this.energy.get();
 					}
 					case "version":
 					case "credit":
