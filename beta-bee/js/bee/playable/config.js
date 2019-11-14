@@ -1,5 +1,5 @@
 ig.module("bee.playable.playable.config").requires("bee.playable.playable").defines(function() {
-	let hudGui = undefined;
+	let hudGui;
 	
 	function getPartyHudGui(model) {
 		if (!hudGui) {
@@ -8,7 +8,13 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 		const partyGui = hudGui.partyGui;		
 		return partyGui.memberGuis.filter(e => e.model === model)[0];
 	}
-	
+
+	function getPlayerExpHud() {
+		if (!hudGui) {
+			hudGui = ig.gui.guiHooks.filter(e => e.gui instanceof sc.StatusHudGui).pop().gui;	
+		}
+		return hudGui.upperGui.hook.children.filter(e => e.gui instanceof sc.ExpHudGui).pop().gui;
+	}
 	const PLAYABLE_VERSION = 2;
 	// this is for syncing
 	// PartyMemberModel and PlayerModel
@@ -167,8 +173,15 @@ ig.module("bee.playable.playable.config").requires("bee.playable.playable").defi
 				// this should disable it
 				sc.party.currentParty.length = 0;
 				
+				// disables exp hud display
+				getPlayerExpHud().ignore = true;
+
 				model.addExperience(exp, 0,0,true, sc.LEVEL_CURVES.LINEAR);
+				model.clearLevelUp();
 				
+				// reenables it
+				getPlayerExpHud().ignore = false;
+
 				// restore currentParty
 				sc.party.currentParty.push(...currentParty);
 				
