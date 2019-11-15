@@ -1,8 +1,12 @@
 ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function() {
 
 	sc.BaseCalendarComponent = ig.Class.extend({
+		forceUpdate: false,
 		observers: [],
 		interval: [],
+		setForceUpdate: function(value) {
+			this.forceUpdate = !!value;
+		},
 		notify: function(value, args = []) {
 			sc.Model.notifyObserver(this, value, args);
 		},
@@ -62,13 +66,12 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 			return null;
 		},
 		set: function(period, notifyChange = true) {
-			// don't need to do anything if nothing changed
-			if (this.period === period) {
-				return;
+			if (!this.forceUpdate) {
+				if (!this.isInRange(period)) {
+					throw Error(`${period} is not in the specified timeInterval.`);
+				}	
 			}
-			if (!this.isInRange(period)) {
-				throw Error(`${period} is not in the specified timeInterval.`);
-			}
+
 			this.period = period;
 
 			if (notifyChange) {
@@ -80,7 +83,7 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 			if (!this.isInRange(period)) {
 				throw Error(`${period} is not in the specified timeInterval.`);
 			}
-
+			
 			if (period < this.period) {
 				throw Error(`Time of Day must at or later than ${this.calc(this.period)}.`);
 			}
@@ -140,6 +143,10 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 		init: function() {
 			this.timeOfDay = new sc.TimeOfDayState;
 		},
+		setForceUpdate: function(value) {
+			this.parent(value);
+			this.timeOfDay.setForceUpdate(value);
+		},
 		isInRange: function (value) {
 			if (!isFinite(value) || value === null)
 				return false;
@@ -174,13 +181,13 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 			this.parent(instance);
 			this.timeOfDay.removeObserver(instance);
 		},
-		isInRange: function (value) {
-			return isFinite(value) && value >= this.day;
-		},
 		set: function(newDay, newPeriod, notifyChange = true) {
-			if (this.isInRange(newDay)) {
-				throw Error(`Day must be at least ${this.day} but is ${newDay}.`);
+			if (!this.forceUpdate) {
+				if (!this.isInRange(newDay)) {
+					throw Error(`Day must be at least ${this.day} but is ${newDay}.`);
+				}	
 			}
+
 			if (notifyChange) {
 				this.notify(sc.DAY_MSG.ENDED);
 			}
