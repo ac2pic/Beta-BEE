@@ -9,6 +9,9 @@ import "./js/bee/player/player-model.js";
 
 import "./js/bee/inject/player/player-level.js";
 
+import "./js/bee/inject/player/player-config.js";
+
+import "./js/bee/inject/event-steps.js";
 
 // load all that relies on nothing
 
