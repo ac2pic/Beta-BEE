@@ -25,6 +25,11 @@ ig.module("bee.playable.schedule.events").defines(function() {
 
 
 	sc.BaseScheduleEvent = ig.Class.extend({
+		/**
+		 * 
+		 * @param {Object} data - Schedule Event paramaters 
+		 * @param {sc.PlayableConfig} config
+		 */
 		init: function(data, config) {
 			this.data = data;
 			this.config = config;
@@ -38,15 +43,11 @@ ig.module("bee.playable.schedule.events").defines(function() {
 	});
 	
 	sc.SCHEDULE_EVENTS.LOG = eventGenerator({
-		init: function(data, config) {
-			this.parent(data, config);
-		},
 		run: function() {
 			const message = ig.TextParser.bakeVars(this.data.value);
 			console.log(message);
 		}
 	});
-
 
 	// Branching starts
 	
@@ -79,5 +80,5 @@ ig.module("bee.playable.schedule.events").defines(function() {
 	}, {
 		branches: ["then", "else"]
 	});
-	
+
 });
