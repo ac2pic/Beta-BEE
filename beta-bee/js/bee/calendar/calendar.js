@@ -66,10 +66,8 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 			return null;
 		},
 		set: function(period, notifyChange = true) {
-			if (!this.forceUpdate) {
-				if (!this.isInRange(period)) {
-					throw Error(`${period} is not in the specified timeInterval.`);
-				}	
+			if (!this.isInRange(period)) {
+				throw Error(`${period} is not in the specified timeInterval.`);
 			}
 
 			this.period = period;
@@ -87,12 +85,11 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 			if (period < this.period) {
 				throw Error(`Time of Day must at or later than ${this.calc(this.period)}.`);
 			}
-
 			let maxPeriod = Math.min(period + 1, timeOfDay.length);
 			for(let oldPeriod = this.period + 1; oldPeriod < maxPeriod; ++oldPeriod) {
 				this.remove(true);
 				this.set(oldPeriod);
-			} 
+			}
 		},
 		next: function() {
 			let nextPeriod = this.period + 1;
@@ -142,10 +139,6 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 		timeOfDay: null,
 		init: function() {
 			this.timeOfDay = new sc.TimeOfDayState;
-		},
-		setForceUpdate: function(value) {
-			this.parent(value);
-			this.timeOfDay.setForceUpdate(value);
 		},
 		isInRange: function (value) {
 			if (!isFinite(value) || value === null)
@@ -199,12 +192,14 @@ ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function
 			this.timeOfDay.set(newPeriod, notifyChange);
 		},
 		change: function(newDay, newPeriod, notifyChange = true) {
+			this.setForceUpdate(true);
 			for(let nextDay = this.day + 1; nextDay <= newDay; ++nextDay) {
 				this.timeOfDay.gotoLast();
 				this.timeOfDay.remove(true);
 				this.set(nextDay, 0);
 			}
 			this.timeOfDay.change(newPeriod);
+			this.setForceUpdate(false);
 		},
 		get: function(format = true) {
 			const data = {};
