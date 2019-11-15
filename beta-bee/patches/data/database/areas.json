@@ -1,0 +1,28 @@
+{
+	"update-area": {
+		"name": {
+			"en_US": "Update Area",
+			"de_DE": "Update Area",
+			"ja_JP": "Update Area",
+			"ko_KR": "Update Area",
+			"zh_CN": "Update Area",
+			"langUid": 1
+		},
+		"description": {
+			"en_US": "",
+			"de_DE": "You should not be seeing this",
+			"ja_JP": "You should not be seeing this",
+			"ko_KR": "You should not be seeing this",
+			"zh_CN": "You should not be seeing this",
+			"langUid": 3
+		},
+		"areaType": "PATH",
+		"order": 0,
+		"track": false,
+		"chests": 0,
+		"position": {
+			"x": -200,
+			"y": -200
+		}
+	}
+}

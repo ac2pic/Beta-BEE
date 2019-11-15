@@ -14,7 +14,7 @@
         "mapStyle": "",
         "weather": "",
         "npcRunners": "",
-        "area": ""
+        "area": "update-area"
     },
     "screen": {
         "x": 0,
