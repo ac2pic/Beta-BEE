@@ -11,14 +11,15 @@ ig.module("bee.playable.controls").requires("game.feature.model.options-model").
 			console.error(`Can't switch to ${partyName}.`);
 			return;
 		}
+
+		
+		sc.party.setContactType(partyName, sc.PARTY_MEMBER_TYPE.UNKNOWN);
+
 		const partyPos = calculateNewPos(partyEntity);
 		
 		const playerEntity = ig.game.playerEntity;
 		const playerEntityName = playerEntity.model.name;
 		const playerPos = calculateNewPos(playerEntity);
-		
-		ig.game.playerEntity.cancelAction();
-		
 		
 		// make the switch 
 		sc.party.removePartyMember(partyName, null, true);
@@ -26,10 +27,11 @@ ig.module("bee.playable.controls").requires("game.feature.model.options-model").
 		
 		
 		sc.party.addPartyMember(playerEntityName, null, null, true);
-		
+		sc.party.setContactType(playerEntityName, sc.PARTY_MEMBER_TYPE.FRIEND);
+
+
 		// this makes it appears as if 
 		// they didn't move
-		
 		ig.game.playerEntity.setPos(partyPos.x, partyPos.y, partyPos.z);
 		
 		const oldPlayer = sc.party.partyEntities[playerEntityName];
@@ -66,11 +68,16 @@ ig.module("bee.playable.controls").requires("game.feature.model.options-model").
 			const respawn = playerEntity.respawn;
 			if (respawn.timer !== 0)
 				return false;
-			if (sc.model.isLoading() || sc.model.isTeleport())
+			
+			if (sc.model.isLoading() || 
+				sc.model.isPaused() ||	
+				sc.model.isTeleport() ||
+				sc.model.isMenu() ||
+				!sc.model.isGame())
 				return false;
-			if (sc.model.isPaused() || sc.model.isMenu()) 
-				return false;
-			return sc.model.isGame();
+				
+			const attachedEntities = playerEntity.entityAttached;
+			return attachedEntities.filter(e => !!e.getRemainingTime).length === 0;
 		},
 		shouldDelay: function() {
 			const playerEntity = ig.game.playerEntity;
