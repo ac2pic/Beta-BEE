@@ -6,12 +6,12 @@ ig.module("bee.calendar.event-steps").requires("impact.feature.base.event-steps"
 		_wm: new ig.Config({
 			attributes: {
 				name: {
-					_type: "String",
+					_type: "StringExpression",
 					_info: "The calendar name"
 				},
-				day: {
+				date: {
 					_type: "NumberExpression",
-					_info: "What day to set it to. Must be positive integer."
+					_info: "What date to set it to. Must be positive integer."
 				},
 				changeType: {
 					_type: "String",
@@ -23,8 +23,8 @@ ig.module("bee.calendar.event-steps").requires("impact.feature.base.event-steps"
 					_default: "set"
 				},
 				period: {
-					_type: "String",
-					_info: "What time of day to set it to."
+					_type: "NumberExpression",
+					_info: "What period to set it to."
 				},
 				deferNotify: {
 					_type: "Boolean",
@@ -39,9 +39,9 @@ ig.module("bee.calendar.event-steps").requires("impact.feature.base.event-steps"
 			}
 		}),
 		init: function(data) {
-			assertContent(data, "name", "day", "period");
-			this.name = name;
-			this.day = data.day;
+			assertContent(data, "name", "date", "period");
+			this.name = data.name;
+			this.date = data.date;
 			this.period = data.period;
 			this.changeType = data.changeType || "iterate";
 			this.notify = data.notify || false;
@@ -54,20 +54,21 @@ ig.module("bee.calendar.event-steps").requires("impact.feature.base.event-steps"
 			if (!calendar) {
 				throw Error(`There is no calendar with name "${name}".`);
 			}
-
-			const day = ig.Event.getExpressionValue(this.day);
+			const date = ig.Event.getExpressionValue(this.date);
 			const period = ig.Event.getExpressionValue(this.period);
+			
 			if (this.deferNotify) {
 				this.notify = false;
 			}
+			
 			switch (this.changeType) {
 				case "iterate": {
-					calendar.change(day, period, this.notify);
+					calendar.change(date, period, this.notify);
 					break;
 				}
 				case "set":
 				default: {
-					calendar.set(day, period, this.notify);
+					calendar.set(date, period, this.notify);
 					break;
 				}	
 			}
