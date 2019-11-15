@@ -1,4 +1,4 @@
-ig.module("bee.playable.schedule.events").defines(function() {
+ig.module("game.feature.bee.playable.schedule.events").defines(function() {
 	function createScheduleEventGenerator(base, baseConfig = {}) {
 		return function(objectCode, config = {}) {
 			const baseConfigCopy = ig.copy(baseConfig);

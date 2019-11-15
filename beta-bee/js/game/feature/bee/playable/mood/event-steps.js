@@ -1,4 +1,4 @@
-ig.module("bee.playable.mood.event-steps").requires("impact.feature.base.event-steps", "bee.playable.mood.mood").defines(function() {
+ig.module("game.feature.bee.playable.mood.event-steps").requires("impact.feature.base.event-steps", "game.feature.bee.playable.mood.mood").defines(function() {
 	ig.EVENT_STEP.CHANGE_PLAYABLE_MOOD = ig.EventStepBase.extend({
 		mood: 0,
 		_wm: new ig.Config({

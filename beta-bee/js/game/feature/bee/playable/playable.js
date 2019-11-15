@@ -1,4 +1,4 @@
-ig.module("bee.playable.playable").requires("impact.feature.storage.storage", "bee.calendar.calendar").defines(function() {
+ig.module("game.feature.bee.playable.playable").requires("impact.feature.storage.storage", "game.feature.bee.calendar.calendar").defines(function() {
 	sc.PlayableModel = ig.GameAddon.extend({
 		configs: {},
 		schedules: {},

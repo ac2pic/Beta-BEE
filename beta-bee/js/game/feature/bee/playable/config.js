@@ -1,4 +1,4 @@
-ig.module("bee.playable.playable.config").requires("bee.playable.playable").defines(function() {
+ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playable.playable").defines(function() {
 	let hudGui;
 	
 	function getPartyHudGui(model) {

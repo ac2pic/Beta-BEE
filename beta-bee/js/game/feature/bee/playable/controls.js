@@ -1,4 +1,4 @@
-ig.module("bee.playable.controls").requires("game.feature.model.options-model").defines(function()  {
+ig.module("game.feature.bee.playable.controls").requires("game.feature.model.options-model").defines(function()  {
 	function calculateNewPos(entity) {
 		const pos = ig.game.getEntityPosition(entity);
 		return Vec3.createC(pos.x, pos.y , pos.z);

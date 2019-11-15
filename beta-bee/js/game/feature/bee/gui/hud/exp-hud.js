@@ -1,4 +1,4 @@
-ig.module("bee.inject.exp-hud").requires("game.feature.gui.hud.exp-hud").defines(function() {
+ig.module("game.feature.bee.gui.hud.exp-hud").requires("game.feature.gui.hud.exp-hud").defines(function() {
 	sc.ExpHudGui.inject({
 		ignore: false,
 		modelChanged: function() {

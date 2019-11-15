@@ -1,4 +1,4 @@
-ig.module("bee.calendar.calendar").requires("impact.base.game").defines(function() {
+ig.module("game.feature.bee.calendar.calendar").requires("impact.base.game").defines(function() {
 
 	sc.BaseCalendarComponent = ig.Class.extend({
 		forceUpdate: false,

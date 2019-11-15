@@ -1,6 +1,4 @@
-import "./events.js";
-
-ig.module("bee.playable.schedule").requires("bee.playable.playable").defines(function() {
+ig.module("game.feature.bee.playable.schedule.schedule").requires("game.feature.bee.playable.playable").defines(function() {
 
 	function binarySearch(arr, value, min = -1, max = -1) {
 		if (min === -1 && max === -1) {

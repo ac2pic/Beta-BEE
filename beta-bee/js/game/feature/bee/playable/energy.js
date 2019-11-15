@@ -1,4 +1,4 @@
-ig.module("bee.playable.energy").defines(function() {
+ig.module("game.feature.bee.playable.energy").defines(function() {
 	sc.PlayableEnergy = ig.Class.extend({
 		energy: 0,
 		set: function(energy) {

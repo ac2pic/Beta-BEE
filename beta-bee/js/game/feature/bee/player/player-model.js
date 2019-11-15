@@ -1,4 +1,4 @@
-ig.module("bee.player.player-model").requires("game.feature.player.player-model").defines(function() {
+ig.module("game.feature.bee.player.player-model").requires("game.feature.player.player-model").defines(function() {
 	function addEnumValue(instance, name) {
 		
 		if (instance[name] !== undefined) {

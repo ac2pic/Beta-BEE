@@ -1,4 +1,4 @@
-ig.module("bee.inject.hp-hud").requires("game.feature.gui.hud.hp-hud").defines(function() {
+ig.module("game.feature.bee.gui.hud.hp-hud").requires("game.feature.gui.hud.hp-hud").defines(function() {
 	sc.HpHudGui.inject({
 		modelChanged: function(instance, event, args) {
 			if (!args) {

@@ -1,4 +1,4 @@
-ig.module("bee.playable.mood.mood").defines(function() {
+ig.module("game.feature.bee.playable.mood.mood").defines(function() {
 	const MOODS = ["HAPPY", "SAD", "NEUTRAL", "ANGRY", "DEPRESSED"];
 
 	sc.PLAYABLE_MOODS = {};

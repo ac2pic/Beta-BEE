@@ -1,4 +1,4 @@
-ig.module("bee.calendar.event-steps").requires("impact.feature.base.event-steps").defines(function() {
+ig.module("game.feature.bee.calendar.event-steps").requires("impact.feature.base.event-steps").defines(function() {
 	ig.EVENT_STEP.CHANGE_CALENDAR_DATE = ig.EventStepBase.extend({
 		day: 0,
 		period: "",
