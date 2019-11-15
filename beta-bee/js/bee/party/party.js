@@ -30,7 +30,6 @@ ig.module("bee.party.party").requires("game.feature.party.party", "game.feature.
 			for (const partyMember in this.partyEntities) {
 				sc.Model.notifyObserver(this, sc.PARTY_MSG.ADDED_MEMBER, [partyMember, this.models[partyMember]]);
 			}
-			
 		},
 		addPartyMember: function(name, npcEntity, e , skipEffect, temporary) {
 			const willBeAdded = !this.isPartyMember(name);
@@ -55,7 +54,7 @@ ig.module("bee.party.party").requires("game.feature.party.party", "game.feature.
 			if (this.overrideAutoSkills) {
 				skills.splice(0);
 				const newSkills = this.autoSkillsOverride.map((e) => this.skills[e.id]);
-				skills.splice.apply(skills, [0,0].concat(newSkills));
+				skills.splice(0,0,...newSkills);
 				return;
 			}
 			this.parent(skills, level, skillRanking);
