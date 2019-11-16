@@ -1,4 +1,4 @@
-ig.module("bee.party.party").requires("game.feature.party.party", "game.feature.party.party-member-model").defines(function() {
+ig.module("game.feature.bee.party.party").requires("game.feature.party.party").defines(function() {
 	function addEnumValue(instance, name) {
 		
 		if (instance[name] !== undefined) {
@@ -44,38 +44,6 @@ ig.module("bee.party.party").requires("game.feature.party.party", "game.feature.
 			}
 			this.parent(name, npcEntity, skipEffect);
 			
-		}
-	});
-
-	sc.SkillTree.inject({
-		overrideAutoSkills: false,
-		autoSkillsOverride: [],
-		autoSkill: function(skills, level, skillRanking) {
-			if (this.overrideAutoSkills) {
-				skills.splice(0);
-				const newSkills = this.autoSkillsOverride.map((e) => this.skills[e.id]);
-				skills.splice(0,0,...newSkills);
-				return;
-			}
-			this.parent(skills, level, skillRanking);
-		}
-	});
-	sc.PartyMemberModel.inject({
-		updateAutoEquip: function() {
-			if (!sc.PLAYABLE_OPTIONS.includes(this.name)) {
-				return this.parent();
-			}
-			return NO;
-		},
-		canEatSandwich: function() {
-			if(!sc.PLAYABLE_OPTIONS.includes(this.name)) {
-				return this.parent();
-			}
-			return NO;
-		},
-		setElementMode: function(element) {
-			this.parent(element);
-			sc.Model.notifyObserver(this, sc.PARTY_MEMBER_MSG.ELEMENT_MODE_CHANGE);
 		}
 	});
 });
