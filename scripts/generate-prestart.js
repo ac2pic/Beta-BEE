@@ -79,6 +79,13 @@ do {
 	withDependecies = withDependecies.map(e => [e[0], e[1].filter(e => !modulePairs.includes(e))]);
 	const newList = withDependecies.filter(e => e[1].length === 0).map(e => e[0]);
 	withDependecies = withDependecies.filter(e => e[1].length > 0);
+	
+	// newList must be non zero to
+	// prevent an infinite loop 
+	if (newList.length === 0 && withDependecies.length > 0)  {
+		console.log(withDependecies);
+		throw Error('Circular dependency detected.');
+	}
 	modulePairs.push(...newList);
 } while (withDependecies.length);
 
