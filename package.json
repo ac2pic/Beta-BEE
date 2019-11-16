@@ -1,0 +1,20 @@
+{
+  "name": "beta-bee",
+  "main": "",
+  "scripts": {
+    "gen:prestart": "node scripts/generate-prestart.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CCDirectLink/Beta-BEE.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CCDirectLink/Beta-BEE/issues"
+  },
+  "homepage": "https://github.com/CCDirectLink/Beta-BEE#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.2"
+  }
+}
