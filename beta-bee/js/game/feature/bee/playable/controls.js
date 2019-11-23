@@ -90,7 +90,7 @@ ig.module("game.feature.bee.playable.controls").requires("game.feature.model.opt
 		shouldDelay: function() {
 			const playerEntity = ig.game.playerEntity;
 			if (playerEntity) {
-				return playerEntity.currentAction !== null;
+				return !!playerEntity.currentAction;
 			}
 			return false;
 		},
@@ -143,7 +143,7 @@ ig.module("game.feature.bee.playable.controls").requires("game.feature.model.opt
 				this.delayCount++;
 			}
 			
-			if (this.shouldDelay === 1) {
+			if (this.delayCount === 1) {
 				sc.Model.notifyObserver(this, sc.PLAYABLE_CONTROL.QUEUE);
 			}
 			if (!this.delay) {
