@@ -30,7 +30,7 @@ import "./js/game/feature/bee/quick-menu/gui/quick-misc.js";
 
 import "./js/game/feature/bee/skills/skilltree.js";
 
-import "./js/game/feature/bee/storage/storage.js";
+// import "./js/game/feature/bee/storage/storage.js";
 
 import "./js/game/feature/bee/gui/playable/swap.js";
 
