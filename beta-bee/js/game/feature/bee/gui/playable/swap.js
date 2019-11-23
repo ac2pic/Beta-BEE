@@ -34,7 +34,7 @@ ig.module("game.feature.bee.gui.playable.swap").requires("game.feature.bee.playa
 		},
 		init: function() {
 			this.parent();
-			this.hook.zIndex = Infinity;
+			this.hook.zIndex = 99;
 			this.setSize(20,20);
 			this.setAlign(ig.GUI_ALIGN.X_CENTER, ig.GUI_ALIGN.Y_TOP);
 		},
@@ -193,6 +193,7 @@ ig.module("game.feature.bee.gui.playable.swap").requires("game.feature.bee.playa
 			if (this.current) {
 				this.current.cancel();
 				this.blocked = false;
+				this.current = null;
 			}
 		},
 		modelChanged: function(model, event) {
@@ -206,6 +207,12 @@ ig.module("game.feature.bee.gui.playable.swap").requires("game.feature.bee.playa
 					this.queue.push(new ig.PartySwapQueueTest);
 				}
 			}
+		},
+		onReset: function() {
+			this.queue.splice(0).forEach(element => {
+				element.cancel();
+			});
+			this.forceCancelCurrent();
 		}
 	});
 	
