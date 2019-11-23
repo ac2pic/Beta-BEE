@@ -8,6 +8,8 @@ import "./js/game/feature/bee/gui/hud/exp-hud.js";
 
 import "./js/game/feature/bee/gui/hud/hp-hud.js";
 
+import "./js/game/feature/bee/menu/gui/save/save-misc.js";
+
 import "./js/game/feature/bee/party/party.js";
 
 import "./js/game/feature/bee/playable/controls.js";
@@ -24,7 +26,11 @@ import "./js/game/feature/bee/player/player-level.js";
 
 import "./js/game/feature/bee/player/player-model.js";
 
+import "./js/game/feature/bee/quick-menu/gui/quick-misc.js";
+
 import "./js/game/feature/bee/skills/skilltree.js";
+
+import "./js/game/feature/bee/storage/storage.js";
 
 import "./js/game/feature/bee/gui/playable/swap.js";
 
