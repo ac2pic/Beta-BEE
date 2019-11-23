@@ -57,8 +57,6 @@ ig.module("game.feature.bee.playable.controls").requires("game.feature.model.opt
 	sc.PlayableController = ig.GameAddon.extend({
 		observers: [],
 		switchTo: null,
-		delay: false,
-		delayCount: 0,
 		canSwitch: function() {
 			const playerEntity = ig.game.playerEntity;
 			if (!playerEntity)
@@ -73,36 +71,39 @@ ig.module("game.feature.bee.playable.controls").requires("game.feature.model.opt
 				return false;
 			if (playerEntity.jumping)
 				return false;
+			if (playerEntity.currentAnim === "fall")
+				return false;
 			const respawn = playerEntity.respawn;
 			if (respawn.timer !== 0)
 				return false;
 			
+			if (!!playerEntity.currentAction)
+				return false;
+
 			if (sc.model.isLoading() || 
 				sc.model.isPaused() ||	
 				sc.model.isTeleport() ||
 				sc.model.isMenu() ||
 				!sc.model.isGame())
 				return false;
-				
+			
 			const attachedEntities = playerEntity.entityAttached;
-			return attachedEntities.filter(e => !!e.getRemainingTime).length === 0;
-		},
-		shouldDelay: function() {
-			const playerEntity = ig.game.playerEntity;
-			if (playerEntity) {
-				return !!playerEntity.currentAction;
-			}
-			return false;
+			return attachedEntities.filter(e => {
+				if(e.getRemainingTime)  {
+					return e.getRemainingTime() > 0.5;
+				}
+				
+				return false;
+			}).length === 0;
 		},
 		onPreUpdate: function() {
-			if (this.switchTo && !this.delay) {
+			if (this.switchTo) {
 
 				sc.Model.notifyObserver(this, sc.PLAYABLE_CONTROL.SWITCHED, [sc.model.player.name, this.switchTo]);
 				// when switching and respawning
 				// the effects may still show on 
 				// the new player
 				switchTo(this.switchTo);
-				
 				this.switchTo = null;
 			} else {
 				for (let i = 1; i <= 3; ++i) {
@@ -119,54 +120,33 @@ ig.module("game.feature.bee.playable.controls").requires("game.feature.model.opt
 		onPostUpdate: function() {
 			if (!this.switchTo)
 				return;
+
+			if (!this.canSwitch()) {
+				this.switchTo = null;
+				sc.Model.notifyObserver(this, sc.PLAYABLE_CONTROL.BLOCKED);
+				return;
+			} 
+
+
 			
-			if (!this.shouldDelay()) {
-				if (!this.canSwitch()) {
-					if (!this.delay) {
-						this.switchTo = null;
-						this.delayCount = 0;
-						sc.Model.notifyObserver(this, sc.PLAYABLE_CONTROL.BLOCKED);
-						return;
-					} else {
-						this.delay = true;
-					}
+			const member = this.switchTo;
+			const entity = sc.party.partyEntities[member];
+			const model = sc.party.models[member];
+			if (entity) {
+				
+				if (entity.jumping || 
+					!model.isAlive() ||
+					entity.respawn.timer !== 0) {
+					this.switchTo = null;
+					return;
 				} else {
-					this.delay = false;
-					this.delayCount = 0;
-				}
-
-			} else {
-				this.delay = true;	
-			}
-
-			if (this.delay) {
-				this.delayCount++;
-			}
-			
-			if (this.delayCount === 1) {
-				sc.Model.notifyObserver(this, sc.PLAYABLE_CONTROL.QUEUE);
-			}
-			if (!this.delay) {
-				const member = this.switchTo;
-				const entity = sc.party.partyEntities[member];
-				const model = sc.party.models[member];
-				if (entity) {
-					
-					if (entity.jumping || 
-						!model.isAlive() ||
-						entity.respawn.timer !== 0) {
-						this.switchTo = null;
-						return;
-					} else {
-						if (window.DEBUG) {
-							debugger;	
-						}
+					if (window.DEBUG) {
+						debugger;	
 					}
 				}
 			}
 		},
 		reset: function() {
-			this.delay = false;
 			this.switchTo = null;
 		},
 		onTeleport: function() {
