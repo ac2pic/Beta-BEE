@@ -26,6 +26,8 @@ import "./js/game/feature/bee/player/player-model.js";
 
 import "./js/game/feature/bee/skills/skilltree.js";
 
+import "./js/game/feature/bee/gui/playable/swap.js";
+
 import "./js/game/feature/bee/playable/mood/event-steps.js";
 
 import "./js/game/feature/bee/playable/playable.js";
