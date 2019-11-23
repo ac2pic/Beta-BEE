@@ -1,5 +1,5 @@
 ig.module("game.feature.bee.gui.playable.swap").requires("game.feature.bee.playable.controls").defines(function() {
-	ig.PartySwapBaseText = ig.GuiElementBase.extend({
+	ig.PartySwapBase = ig.GuiElementBase.extend({
 		callbacks: {
 			start: null,
 			stop: null
@@ -89,14 +89,14 @@ ig.module("game.feature.bee.gui.playable.swap").requires("game.feature.bee.playa
 		}
 	});
 	
-	ig.PartySwapBlockTest = ig.PartySwapBaseText.extend({
+	ig.PartySwapBlock = ig.PartySwapBase.extend({
 		updateDrawables: function(renderer) {
 			renderer.addGfx(this.gfx, -25, -24, 0, 51, 48, 48);
 		}	
 	});
 	
-	
-	ig.PartySwapTest = ig.PartySwapBaseText.extend({
+
+	ig.PartySwap = ig.PartySwapBase.extend({
 		gfxAngle: 180,
 		duration: 0,
 		timer: 0.5,
@@ -122,7 +122,7 @@ ig.module("game.feature.bee.gui.playable.swap").requires("game.feature.bee.playa
 		}
 	});
 	
-	ig.SwapManagerTest = ig.GameAddon.extend({
+	ig.SwapManager = ig.GameAddon.extend({
 		queue: [],
 		current: null,
 		blocked: false,
@@ -154,9 +154,9 @@ ig.module("game.feature.bee.gui.playable.swap").requires("game.feature.bee.playa
 			if (model === sc.playableController) {
 				this.forceCancelCurrent();
 				if (event === sc.PLAYABLE_CONTROL.SWITCHED) {
-					this.queue.push(new ig.PartySwapTest);
+					this.queue.push(new ig.PartySwap);
 				} else if (event === sc.PLAYABLE_CONTROL.BLOCKED) {
-					this.queue.push(new ig.PartySwapBlockTest);
+					this.queue.push(new ig.PartySwapBlock);
 				}
 			}
 		},
@@ -169,6 +169,6 @@ ig.module("game.feature.bee.gui.playable.swap").requires("game.feature.bee.playa
 	});
 	
 	ig.addGameAddon(function() {
-		return ig.swapManager = new ig.SwapManagerTest;
+		return ig.swapManager = new ig.SwapManager;
 	});
 });
