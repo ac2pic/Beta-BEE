@@ -95,52 +95,6 @@ ig.module("game.feature.bee.gui.playable.swap").requires("game.feature.bee.playa
 		}	
 	});
 	
-	ig.PartySwapQueueTest = ig.PartySwapBaseText.extend({
-		gfxAngle: 0,
-		rotateTimer: 0,
-		timer: 1,
-		offsets:  [
-			[new ig.Image("media/gui/emilie-arrows.png"), -4, -9, 102, 7, 20, 22],
-			[new ig.Image("media/gui/emilie-arrows.png"), -4, -9, 127, 7, 20, 22] 
-		],
-		setOffsets: function(index, img, x, y, srcX, srcY, sizeX, sizeY) {
-			this.offsets[index] = [...arguments].slice(1);
-		},
-		reset: function() {
-			this.duration = 0;
-			this.disabled = true;
-			this.gfxAngle = 0;
-		},
-		start: function() {
-			this.gfxAngle = 0;
-			this.parent();
-		},
-		update: function() {
-			this.parent();
-			if (!this.disabled) {
-				this.rotateTimer = this.duration - 0.25;
-				const angle = ((this.rotateTimer * 2)/this.timer) * 180;
-				this.gfxAngle = Math.max(Math.min(angle, 180), 0);
-			}	
-		},
-		onFinish: function() {
-			this.gfxAngle = 180;
-			this.parent();
-		},
-		updateDrawables: function(renderer) {
-			renderer.addGfx(this.gfx, -25, -24, 0, 0, 48, 48);
-	
-			let [img, x, y, srcX, srcY, sizeX, sizeY]  = this.offsets[0]; 
-			renderer.addTransform().setRotate(Math.PI * (this.gfxAngle/180));
-			renderer.addGfx(img, x, y, srcX, srcY, sizeX, sizeY);
-			renderer.undoTransform();
-			
-			[img, x, y, srcX, srcY, sizeX, sizeY]  = this.offsets[1];
-			renderer.addTransform().setRotate(Math.PI * ((this.gfxAngle + 180)/180));
-			renderer.addGfx(img, x, y, srcX, srcY, sizeX, sizeY);
-			renderer.undoTransform();
-		}
-	});
 	
 	ig.PartySwapTest = ig.PartySwapBaseText.extend({
 		gfxAngle: 180,
@@ -203,8 +157,6 @@ ig.module("game.feature.bee.gui.playable.swap").requires("game.feature.bee.playa
 					this.queue.push(new ig.PartySwapTest);
 				} else if (event === sc.PLAYABLE_CONTROL.BLOCKED) {
 					this.queue.push(new ig.PartySwapBlockTest);
-				} else if (event === sc.PLAYABLE_CONTROL.QUEUE) {
-					this.queue.push(new ig.PartySwapQueueTest);
 				}
 			}
 		},
