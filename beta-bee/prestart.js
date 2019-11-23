@@ -1,3 +1,5 @@
+import "./js/game/feature/bee/base/entities/map-touch-trigger.js";
+
 import "./js/game/feature/bee/base/event-steps.js";
 
 import "./js/game/feature/bee/calendar/calendar.js";
@@ -41,3 +43,5 @@ import "./js/game/feature/bee/playable/playable.js";
 import "./js/game/feature/bee/playable/config.js";
 
 import "./js/game/feature/bee/playable/schedule/schedule.js";
+
+LOAD_LEVEL_ON_GAME_START = "override-test";
