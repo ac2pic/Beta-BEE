@@ -28,6 +28,7 @@ ig.module("game.feature.bee.base.entities.map-touch-trigger").requires("impact.f
 				if (playerEntity.coll.intersectsWith(coll.pos.x, coll.pos.y, coll.pos.z, coll.size.x, coll.size.y, coll.size.z, true, this.shape)) {
 					if (!this.isOn) {
 						ig.vars.set("map.override", this.mapName);
+						ig.vars.set("map.mapId", this.mapName.id);
 						this.isOn = true;
 					}
 				} else {
