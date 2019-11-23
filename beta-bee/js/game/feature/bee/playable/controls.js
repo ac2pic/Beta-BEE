@@ -1,4 +1,10 @@
 ig.module("game.feature.bee.playable.controls").requires("game.feature.model.options-model").defines(function()  {
+
+	sc.PLAYABLE_CONTROL = {
+		QUEUE: 0,
+		SWITCHED: 1,
+		BLOCKED: 2
+	};
 	function calculateNewPos(entity) {
 		const pos = ig.game.getEntityPosition(entity);
 		return Vec3.createC(pos.x, pos.y , pos.z);
@@ -49,8 +55,10 @@ ig.module("game.feature.bee.playable.controls").requires("game.feature.model.opt
 	}
 
 	sc.PlayableController = ig.GameAddon.extend({
+		observers: [],
 		switchTo: null,
 		delay: false,
+		delayCount: 0,
 		canSwitch: function() {
 			const playerEntity = ig.game.playerEntity;
 			if (!playerEntity)
@@ -88,10 +96,13 @@ ig.module("game.feature.bee.playable.controls").requires("game.feature.model.opt
 		},
 		onPreUpdate: function() {
 			if (this.switchTo && !this.delay) {
+
+				sc.Model.notifyObserver(this, sc.PLAYABLE_CONTROL.SWITCHED, [sc.model.player.name, this.switchTo]);
 				// when switching and respawning
 				// the effects may still show on 
 				// the new player
 				switchTo(this.switchTo);
+				
 				this.switchTo = null;
 			} else {
 				for (let i = 1; i <= 3; ++i) {
@@ -113,20 +124,28 @@ ig.module("game.feature.bee.playable.controls").requires("game.feature.model.opt
 				if (!this.canSwitch()) {
 					if (!this.delay) {
 						this.switchTo = null;
+						this.delayCount = 0;
+						sc.Model.notifyObserver(this, sc.PLAYABLE_CONTROL.BLOCKED);
 						return;
 					} else {
 						this.delay = true;
 					}
 				} else {
 					this.delay = false;
+					this.delayCount = 0;
 				}
 
 			} else {
-				this.delay = true;
+				this.delay = true;	
 			}
 
+			if (this.delay) {
+				this.delayCount++;
+			}
 			
-
+			if (this.shouldDelay === 1) {
+				sc.Model.notifyObserver(this, sc.PLAYABLE_CONTROL.QUEUE);
+			}
 			if (!this.delay) {
 				const member = this.switchTo;
 				const entity = sc.party.partyEntities[member];
