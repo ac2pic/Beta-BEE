@@ -322,10 +322,17 @@ ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playabl
 							this.skillPointsExtra[i] = instance.skillPointsExtra[i];					
 						}
 						break;
-					}
+					}	
 					case sc.PLAYER_MSG.CORE_CHANGED:
 						this.core = ig.copy(instance.core);
 						break;
+					case sc.PLAYER_MSG.SKILL_CHANGED: {
+						this.skills.length = instance.skills.length;
+						for (let i = 0; i < instance.skills.length; ++i) {
+							this.skills[i] = instance.skills[i];
+						}
+						break;
+					}
 					case sc.PLAYER_MSG.ITEM_FAVORITES_CHANGED:
 					// todo: simplify these code
 					case sc.PLAYER_MSG.ITEM_USED:
