@@ -90,7 +90,7 @@ ig.module("game.feature.bee.playable.controls").requires("game.feature.model.opt
 			const attachedEntities = playerEntity.entityAttached;
 			return attachedEntities.filter(e => {
 				if(e.getRemainingTime)  {
-					return e.getRemainingTime() > 0.5;
+					return e.getRemainingTime() > 0.2;
 				}
 				
 				return false;
