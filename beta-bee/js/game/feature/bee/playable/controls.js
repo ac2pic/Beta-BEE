@@ -138,12 +138,17 @@ ig.module("game.feature.bee.playable.controls").requires("game.feature.model.opt
 					!model.isAlive() ||
 					entity.respawn.timer !== 0) {
 					this.switchTo = null;
+					sc.Model.notifyObserver(this, sc.PLAYABLE_CONTROL.BLOCKED);
 					return;
 				} else {
 					if (window.DEBUG) {
 						debugger;	
 					}
 				}
+			} else {
+				// currently dead. Can't switch to them
+				this.switchTo = null;
+				sc.Model.notifyObserver(this, sc.PLAYABLE_CONTROL.BLOCKED);
 			}
 		},
 		reset: function() {
