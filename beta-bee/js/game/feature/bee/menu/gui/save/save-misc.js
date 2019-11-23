@@ -3,8 +3,8 @@ ig.module("game.feature.bee.menu.gui.save.save-misc").requires("game.feature.men
 		if (save) {
 			const mapPath = save.map.toPath("","");
 			const mapStorage = save.vars.storage.maps[mapPath];
-			if (mapStorage && mapStorage.overrideMap) {
-				return ig.LangLabel.getText(mapStorage.overrideMap);
+			if (mapStorage && mapStorage.override) {
+				return ig.LangLabel.getText(mapStorage.override);
 			}					
 		} 
 		return null;

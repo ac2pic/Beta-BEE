@@ -1,6 +1,6 @@
 ig.module("game.feature.bee.quick-menu.gui.quick-misc").requires("game.feature.quick-menu.gui.quick-misc").defines(function() {
 	function getOverrideMapName() {
-		const overrideMap = ig.vars.get("map.overrideMap");
+		const overrideMap = ig.vars.get("map.override");
 		if (overrideMap) {
 			return ig.LangLabel.getText(overrideMap);
 		}
