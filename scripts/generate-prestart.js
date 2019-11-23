@@ -66,13 +66,11 @@ for (const file of files) {
 let modulePairs = [...nameMap].sort((e, f) => e[1].length - f[1].length);
 let withDependecies = modulePairs.filter(e => e[1].length);
 
-let startIndex = modulePairs.length - withDependecies.length - 1;
+let startIndex = modulePairs.length - withDependecies.length;
 
 modulePairs.splice(startIndex, modulePairs.length - withDependecies.length);
 
 modulePairs = modulePairs.map(e => e[0]);
-
-let index = 50;
 
 // circular dependencies will cause this to infinite loop
 do {
