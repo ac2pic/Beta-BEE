@@ -1,7 +1,7 @@
 ig.module("game.feature.bee.menu.gui.save.save-misc").requires("game.feature.menu.gui.save.save-misc").defines(function() {
 	function getOverrideMapName(save) {
 		if (save) {
-			const mapPath = save.map.toPath("","");
+			const mapPath = save.map.toPath("","").toCamel();
 			const mapStorage = save.vars.storage.maps[mapPath];
 			if (mapStorage && mapStorage.override) {
 				return ig.LangLabel.getText(mapStorage.override);
