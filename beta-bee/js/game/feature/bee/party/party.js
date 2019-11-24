@@ -46,4 +46,7 @@ ig.module("game.feature.bee.party.party").requires("game.feature.party.party").d
 			
 		}
 	});
+
+	// add civilians
+	sc.PARTY_OPTIONS.push("Civilian.Mirabelle");
 });
