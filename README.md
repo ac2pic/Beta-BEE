@@ -1,5 +1,5 @@
 # Beta-BEE
-Emilie neutral arts
+Emilie neutral and heat arts!
 
 Requires:
 
