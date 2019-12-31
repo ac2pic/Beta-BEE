@@ -1,4 +1,4 @@
-ig.module("game.feature.bee.gui.playable.swap").requires("game.feature.bee.playable.controls").defines(function() {
+ig.module("game.feature.bee.gui.playable.swap").requires("game.feature.bee.playable.controls").defines(function () {
 	ig.PartySwapBase = ig.GuiElementBase.extend({
 		callbacks: {
 			start: null,
@@ -12,7 +12,7 @@ ig.module("game.feature.bee.gui.playable.swap").requires("game.feature.bee.playa
 		transitions: {
 			DEFAULT: {
 				state: {
-					offsetY:-40
+					offsetY: -40
 				},
 				time: 0,
 				timeFunction: KEY_SPLINES.EASE
@@ -32,29 +32,29 @@ ig.module("game.feature.bee.gui.playable.swap").requires("game.feature.bee.playa
 				timeFunction: KEY_SPLINES.EASE
 			}
 		},
-		init: function() {
+		init: function () {
 			this.parent();
 			this.hook.zIndex = 99;
-			this.setSize(20,20);
+			this.setSize(20, 20);
 			this.setAlign(ig.GUI_ALIGN.X_CENTER, ig.GUI_ALIGN.Y_TOP);
 		},
-		update: function() {
+		update: function () {
 			this.parent();
 			if (!this.disabled) {
 				this.duration = this.duration + ig.system.tick;
-	
-				if (this.duration >= this.timer)  {
+
+				if (this.duration >= this.timer) {
 					this.duration = 0;
 					this.disabled = true;
 					this.onFinish();
 				}
-			} 
-			
+			}
+
 		},
-		updateDrawables: function(renderer) {
+		updateDrawables: function (renderer) {
 			renderer.addGfx(this.gfx, -25, -24, 0, 0, 48, 48);
 		},
-		start: function(callback) {
+		start: function (callback) {
 			ig.gui.addGuiElement(this);
 			this.doStateTransition("VISIBLE", null, false, () => {
 				this.duration = 0;
@@ -64,14 +64,14 @@ ig.module("game.feature.bee.gui.playable.swap").requires("game.feature.bee.playa
 				}
 			});
 		},
-		stop: function(callback) {
+		stop: function (callback) {
 			this.doStateTransition("HIDDEN", null, false, callback);
 		},
-		cancel: function() {
+		cancel: function () {
 			this.reset();
 			this.onFinish();
 		},
-		onFinish: function() {
+		onFinish: function () {
 			if (!this.finished) {
 				this.finished = true;
 				this.stop(() => {
@@ -81,56 +81,56 @@ ig.module("game.feature.bee.gui.playable.swap").requires("game.feature.bee.playa
 					ig.gui.removeGuiElement(this);
 				});
 			}
-			
+
 		},
-		reset: function() {
+		reset: function () {
 			this.callbacks.stop = null;
-			this.callbacks.start = null; 
+			this.callbacks.start = null;
 		}
 	});
-	
+
 	ig.PartySwapBlock = ig.PartySwapBase.extend({
-		updateDrawables: function(renderer) {
+		updateDrawables: function (renderer) {
 			renderer.addGfx(this.gfx, -25, -24, 0, 51, 48, 48);
-		}	
+		}
 	});
-	
+
 
 	ig.PartySwap = ig.PartySwapBase.extend({
 		gfxAngle: 180,
 		duration: 0,
 		timer: 0.5,
-		offsets:  [
+		offsets: [
 			[new ig.Image("media/gui/emilie-arrows.png"), -4, -9, 102, 7, 20, 22],
-			[new ig.Image("media/gui/emilie-arrows.png"), -4, -9, 127, 7, 20, 22] 
+			[new ig.Image("media/gui/emilie-arrows.png"), -4, -9, 127, 7, 20, 22]
 		],
-		setOffsets: function(index, img, x, y, srcX, srcY, sizeX, sizeY) {
+		setOffsets: function (index, img, x, y, srcX, srcY, sizeX, sizeY) {
 			this.offsets[index] = [...arguments].slice(1);
 		},
-		updateDrawables: function(renderer) {
+		updateDrawables: function (renderer) {
 			renderer.addGfx(this.gfx, -25, -24, 0, 0, 48, 48);
-	
-			let [img, x, y, srcX, srcY, sizeX, sizeY]  = this.offsets[0]; 
-			renderer.addTransform().setRotate(Math.PI * (this.gfxAngle/180));
+
+			let [img, x, y, srcX, srcY, sizeX, sizeY] = this.offsets[0];
+			renderer.addTransform().setRotate(Math.PI * (this.gfxAngle / 180));
 			renderer.addGfx(img, x, y, srcX, srcY, sizeX, sizeY);
 			renderer.undoTransform();
-			
-			[img, x, y, srcX, srcY, sizeX, sizeY]  = this.offsets[1];
-			renderer.addTransform().setRotate(Math.PI * ((this.gfxAngle + 180)/180));
+
+			[img, x, y, srcX, srcY, sizeX, sizeY] = this.offsets[1];
+			renderer.addTransform().setRotate(Math.PI * ((this.gfxAngle + 180) / 180));
 			renderer.addGfx(img, x, y, srcX, srcY, sizeX, sizeY);
 			renderer.undoTransform();
 		}
 	});
-	
+
 	ig.SwapManager = ig.GameAddon.extend({
 		queue: [],
 		current: null,
 		blocked: false,
-		init: function() {
+		init: function () {
 			this.parent("SwapManager");
 			sc.Model.addObserver(sc.playableController, this);
 		},
-		onPreUpdate: function() {
+		onPreUpdate: function () {
 			if (!this.blocked) {
 				if (this.queue.length) {
 					this.blocked = true;
@@ -143,14 +143,14 @@ ig.module("game.feature.bee.gui.playable.swap").requires("game.feature.bee.playa
 				}
 			}
 		},
-		forceCancelCurrent: function() {
+		forceCancelCurrent: function () {
 			if (this.current) {
 				this.current.cancel();
 				this.blocked = false;
 				this.current = null;
 			}
 		},
-		modelChanged: function(model, event) {
+		modelChanged: function (model, event) {
 			if (model === sc.playableController) {
 				this.forceCancelCurrent();
 				if (event === sc.PLAYABLE_CONTROL.SWITCHED) {
@@ -160,15 +160,15 @@ ig.module("game.feature.bee.gui.playable.swap").requires("game.feature.bee.playa
 				}
 			}
 		},
-		onReset: function() {
+		onReset: function () {
 			this.queue.splice(0).forEach(element => {
 				element.cancel();
 			});
 			this.forceCancelCurrent();
 		}
 	});
-	
-	ig.addGameAddon(function() {
+
+	ig.addGameAddon(function () {
 		return ig.swapManager = new ig.SwapManager;
 	});
 });

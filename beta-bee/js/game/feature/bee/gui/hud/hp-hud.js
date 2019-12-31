@@ -1,6 +1,6 @@
-ig.module("game.feature.bee.gui.hud.hp-hud").requires("game.feature.gui.hud.hp-hud").defines(function() {
+ig.module("game.feature.bee.gui.hud.hp-hud").requires("game.feature.gui.hud.hp-hud").defines(function () {
 	sc.HpHudGui.inject({
-		modelChanged: function(instance, event, args) {
+		modelChanged: function (instance, event, args) {
 			if (!args) {
 				return this.parent(instance, event);
 			}
@@ -8,7 +8,7 @@ ig.module("game.feature.bee.gui.hud.hp-hud").requires("game.feature.gui.hud.hp-h
 				if (event === sc.COMBAT_PARAM_MSG.HP_CHANGED) {
 					// it's assumed it's forced
 					this.hpNumber.setNumber(instance.currentHp, true);
-					
+
 					// necessary code grabbed from main code
 					if (instance.getHpFactor() <= sc.HP_LOW_WARNING) {
 						this.hpNumber.setColor(sc.GUI_NUMBER_COLOR.RED);
@@ -18,7 +18,7 @@ ig.module("game.feature.bee.gui.hud.hp-hud").requires("game.feature.gui.hud.hp-h
 						this.hpNumber.setColor(sc.GUI_NUMBER_COLOR.WHITE);
 						if (sc.options.get("low-health-warning"))
 							ig.overlay.setCorner("RED", 0, 0.4)
-					} 
+					}
 					this.critical = false;
 					if (instance.currentHp <= 0)
 						this.critical = !instance.defeated;
@@ -27,7 +27,7 @@ ig.module("game.feature.bee.gui.hud.hp-hud").requires("game.feature.gui.hud.hp-h
 		}
 	});
 	sc.HpHudBarGui.inject({
-		modelChanged: function(instance, event, args) {
+		modelChanged: function (instance, event, args) {
 			if (!args) {
 				return this.parent(instance, event);
 			}
@@ -39,6 +39,6 @@ ig.module("game.feature.bee.gui.hud.hp-hud").requires("game.feature.gui.hud.hp-h
 					this.currentHp = instance.currentHp;
 				}
 			}
-		}	
+		}
 	});
 });

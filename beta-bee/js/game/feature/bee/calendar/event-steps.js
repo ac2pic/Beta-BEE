@@ -1,4 +1,4 @@
-ig.module("game.feature.bee.calendar.event-steps").requires("impact.feature.base.event-steps").defines(function() {
+ig.module("game.feature.bee.calendar.event-steps").requires("impact.feature.base.event-steps").defines(function () {
 	ig.EVENT_STEP.CHANGE_CALENDAR_DATE = ig.EventStepBase.extend({
 		day: 0,
 		period: "",
@@ -38,7 +38,7 @@ ig.module("game.feature.bee.calendar.event-steps").requires("impact.feature.base
 				}
 			}
 		}),
-		init: function(data) {
+		init: function (data) {
 			assertContent(data, "name", "date", "period");
 			this.name = data.name;
 			this.date = data.date;
@@ -47,7 +47,7 @@ ig.module("game.feature.bee.calendar.event-steps").requires("impact.feature.base
 			this.notify = data.notify || false;
 			this.deferNotify = data.deferNotify || false;
 		},
-		start: function() {
+		start: function () {
 			const name = ig.Event.getExpressionValue(this.name);
 			const calendar = sc.calendar.get(name);
 
@@ -56,11 +56,11 @@ ig.module("game.feature.bee.calendar.event-steps").requires("impact.feature.base
 			}
 			const date = ig.Event.getExpressionValue(this.date);
 			const period = ig.Event.getExpressionValue(this.period);
-			
+
 			if (this.deferNotify) {
 				this.notify = false;
 			}
-			
+
 			switch (this.changeType) {
 				case "iterate": {
 					calendar.change(date, period, this.notify);
@@ -70,7 +70,7 @@ ig.module("game.feature.bee.calendar.event-steps").requires("impact.feature.base
 				default: {
 					calendar.set(date, period, this.notify);
 					break;
-				}	
+				}
 			}
 			if (this.deferNotify) {
 				calendar.notify(sc.DAY_MSG.STARTED, sc.TIME_OF_DAY_MSG.STARTED);
@@ -103,14 +103,14 @@ ig.module("game.feature.bee.calendar.event-steps").requires("impact.feature.base
 				}
 			}
 		}),
-		init: function(data) {
+		init: function (data) {
 			assertContent(data, "name", "day", "period");
 			this.name = data.name;
 			this.day = data.day;
 			this.period = data.period;
 			this.notify = data.notify || false;
 		},
-		start: function() {
+		start: function () {
 			const name = ig.Event.getExpressionValue(this.name);
 			const calendar = sc.calendar.get(name);
 

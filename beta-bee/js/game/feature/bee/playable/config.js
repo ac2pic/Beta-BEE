@@ -1,17 +1,17 @@
-ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playable.playable").defines(function() {
+ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playable.playable").defines(function () {
 	let hudGui;
-	
+
 	function getPartyHudGui(model) {
 		if (!hudGui) {
-			hudGui = ig.gui.guiHooks.filter(e => e.gui instanceof sc.StatusHudGui).pop().gui;	
+			hudGui = ig.gui.guiHooks.filter(e => e.gui instanceof sc.StatusHudGui).pop().gui;
 		}
-		const partyGui = hudGui.partyGui;		
+		const partyGui = hudGui.partyGui;
 		return partyGui.memberGuis.filter(e => e.model === model)[0];
 	}
 
 	function getPlayerExpHud() {
 		if (!hudGui) {
-			hudGui = ig.gui.guiHooks.filter(e => e.gui instanceof sc.StatusHudGui).pop().gui;	
+			hudGui = ig.gui.guiHooks.filter(e => e.gui instanceof sc.StatusHudGui).pop().gui;
 		}
 		return hudGui.upperGui.hook.children.filter(e => e.gui instanceof sc.ExpHudGui).pop().gui;
 	}
@@ -43,33 +43,33 @@ ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playabl
 		partyModel: null,
 		playerModel: null,
 		schedule: null,
-		init: function(name) {
+		init: function (name) {
 			this.parent(name.toLowerCase());
 			this.name = name;
 			this.mood = new sc.PlayableMood;
 			this.energy = new sc.PlayableEnergy;
 		},
-		getJsonPath: function() {
+		getJsonPath: function () {
 			return ig.root + this.path.toPath("data/playable/", ".json");
 		},
-		onload: function(data) {
+		onload: function (data) {
 			this.mood.setConfig(data.mood);
 			this.schedule.set(data.schedule);
 		},
-		onerror: function(error) {
+		onerror: function (error) {
 			console.log(error);
 		},
-		setSchedule: function(schedule) {
+		setSchedule: function (schedule) {
 			this.schedule = schedule;
 			this.schedule.setConfig(this);
 		},
-		getMood: function() {
+		getMood: function () {
 			return this.mood;
 		},
-		getEnergy: function() {
+		getEnergy: function () {
 			return this.energy;
 		},
-		setPartyMemberModel: function(model) {
+		setPartyMemberModel: function (model) {
 			this.removePartyObserver();
 			this.partyModel = model;
 			if (model) {
@@ -77,7 +77,7 @@ ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playabl
 				this.addPartyObserver();
 			}
 		},
-		setPlayerModel: function(model) {
+		setPlayerModel: function (model) {
 			this.removePlayerObserver();
 			this.playerModel = model;
 			if (model) {
@@ -94,23 +94,23 @@ ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playabl
 		isParty() {
 			return this.partyModel instanceof sc.PartyMemberModel;
 		},
-		applyToModels: function() {
+		applyToModels: function () {
 			this.applyToPartyModel();
 			this.applyToPlayerModel();
 		},
-		applyToPartyModel: function() {
+		applyToPartyModel: function () {
 			if (this.isParty()) {
 				const model = this.partyModel;
-				
+
 				sc.skilltree.overrideAutoSkills = true;
 				sc.skilltree.autoSkillsOverride = this.skills.filter((e) => !!e);
-				
+
 				// update sp level 
 				model.setSpLevel(this.spLevel);
-				
+
 				// copy equipment
 				model.equip = ig.copy(this.equip);
-				
+
 				// need to do this now because changing
 				// element mode changes the hp
 				const element = this.currentElementMode;
@@ -122,23 +122,23 @@ ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playabl
 				for (const param in baseParams) {
 					model.params.baseParams[param] = baseParams[param];
 				}
-				
+
 				// save old hp value 
 				const hp = this.hp;
 
-				model.setElementMode(this.currentElementMode);	
-				
-				
-				
+				model.setElementMode(this.currentElementMode);
+
+
+
 				if (model.exp !== this.exp) {
 					console.log('PartyMember Exp:', model.exp, this.exp);
 				}
-				
+
 				// update level for new partyMember
 				// this updates the stats
 				const exp = this.exp;
-				model.setLevel(this.level, 0); 
-				model.addExperience(exp, 0,0,true, sc.LEVEL_CURVES.LINEAR);	
+				model.setLevel(this.level, 0);
+				model.addExperience(exp, 0, 0, true, sc.LEVEL_CURVES.LINEAR);
 
 				sc.skilltree.autoSkillsOverride = [];
 				sc.skilltree.overrideAutoSkills = false;
@@ -149,21 +149,21 @@ ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playabl
 				// instant change
 				sc.Model.notifyObserver(model.params, sc.COMBAT_PARAM_MSG.HP_CHANGED, true);
 
-				
+
 				const hudGui = getPartyHudGui(model);
-				
+
 				// this visually forces hp bar to stored hp
 				const hpBar = hudGui.hpExpSpGui.hpBar;
 				hpBar.currentHp = this.hp;
 				hpBar.maxHp = model.params.baseParams.hp;
 				hpBar.targetHp = this.hp;
-			} 
+			}
 		},
-		applyToPlayerModel: function() {
+		applyToPlayerModel: function () {
 			if (this.isPlayer()) {
 				// this handles setting everything up
 				const model = this.playerModel;
-				
+
 				if (model.exp !== this.exp) {
 					console.log('Player Exp:', model.exp, this.exp);
 				}
@@ -173,23 +173,23 @@ ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playabl
 
 				// need a deep copy
 				const currentParty = ig.copy(sc.party.currentParty);
-				
+
 				// When the player gets exp, the party gets exp
 				// this should disable it
 				sc.party.currentParty.length = 0;
-				
+
 				// disables exp hud display
 				getPlayerExpHud().ignore = true;
 
-				model.addExperience(exp, 0,0,true, sc.LEVEL_CURVES.LINEAR);
+				model.addExperience(exp, 0, 0, true, sc.LEVEL_CURVES.LINEAR);
 				model.clearLevelUp();
-				
+
 				// reenables it
 				getPlayerExpHud().ignore = false;
 
 				// restore currentParty
 				sc.party.currentParty.push(...currentParty);
-				
+
 				ig.lang.labels.sc.gui.options["hp-bars"].group[1] = `Party Only`;
 				model.params.currentHp = this.hp;
 				// force update it
@@ -229,7 +229,7 @@ ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playabl
 				this.exp = model.exp;
 				this.currentElementMode = model.currentElementMode;
 				const hpDiff = model.params.currentHp - model.params.getStat("hp");
-				
+
 				model.params.increaseHp(hpDiff, true);
 				this.core = ig.copy(model.core);
 				this.items = ig.copy(model.items);
@@ -238,10 +238,10 @@ ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playabl
 				this.skills = ig.copy(model.skills);
 				this.skillPoints = ig.copy(model.skillPoints);
 				this.skillPointsExtra = ig.copy(model.skillPointsExtra);
-				this.version = PLAYABLE_VERSION;		
-			} else if(this.isParty()) {
+				this.version = PLAYABLE_VERSION;
+			} else if (this.isParty()) {
 				const model = this.partyModel;
-				
+
 				this.level = model.level;
 				this.exp = model.exp;
 				this.equip = ig.copy(model.equip);
@@ -249,26 +249,26 @@ ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playabl
 				this.currentElementMode = model.currentElementMode;
 				this.hp = model.params.currentHp;
 				// needs to be expanded
-				this.skills = []; 
-				for(const skill of model.skills) {
+				this.skills = [];
+				for (const skill of model.skills) {
 					this.skills[skill.id] = skill;
 				}
 				this.version = PLAYABLE_VERSION;
 			}
 		},
-		addPlayerObserver: function() {
+		addPlayerObserver: function () {
 			if (this.isPlayer()) {
 				sc.Model.addObserver(this.playerModel, this);
 				sc.Model.addObserver(this.playerModel.params, this);
 			}
 		},
-		removePlayerObserver: function() {
+		removePlayerObserver: function () {
 			if (this.isPlayer()) {
 				sc.Model.removeObserver(this.playerModel, this);
 				sc.Model.removeObserver(this.playerModel.params, this);
-			}			
+			}
 		},
-		addPartyObserver: function()  {
+		addPartyObserver: function () {
 			if (this.isPlayer())
 				return;
 			if (this.isParty()) {
@@ -276,32 +276,32 @@ ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playabl
 				sc.Model.addObserver(this.partyModel.params, this);
 			}
 		},
-		removePartyObserver: function() {
+		removePartyObserver: function () {
 			if (this.isParty()) {
 				sc.Model.removeObserver(this.partyModel, this);
 				sc.Model.removeObserver(this.partyModel.params, this);
-			}			
+			}
 		},
-		modelChanged: function(instance, event) {
+		modelChanged: function (instance, event) {
 			if (instance === this.partyModel) {
-				switch(event) {
+				switch (event) {
 					case sc.PARTY_MEMBER_MSG.EXP_CHANGE:
 						this.exp = instance.exp;
 						break;
 					case sc.PARTY_MEMBER_MSG.LEVEL_CHANGE:
 						this.level = instance.level;
 						break;
-					// when party switches element mode
+						// when party switches element mode
 					case sc.PARTY_MEMBER_MSG.ELEMENT_MODE_CHANGE: {
 						this.currentElementMode = instance.currentElementMode;
 						this.hp = instance.params.currentHp;
-						break;	
+						break;
 					}
 					default:
 						break;
 				}
 			} else if (instance === this.playerModel) {
-				switch(event) {
+				switch (event) {
 					case sc.PLAYER_MSG.EXP_CHANGE:
 						this.exp = instance.exp;
 						break;
@@ -317,12 +317,12 @@ ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playabl
 						break;
 					}
 					case sc.PLAYER_MSG.CP_CHANGE: {
-						for(let i = 0; i < this.skillPoints.length; i++) {
+						for (let i = 0; i < this.skillPoints.length; i++) {
 							this.skillPoints[i] = instance.skillPoints[i];
-							this.skillPointsExtra[i] = instance.skillPointsExtra[i];					
+							this.skillPointsExtra[i] = instance.skillPointsExtra[i];
 						}
 						break;
-					}	
+					}
 					case sc.PLAYER_MSG.CORE_CHANGED:
 						this.core = ig.copy(instance.core);
 						break;
@@ -334,7 +334,7 @@ ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playabl
 						break;
 					}
 					case sc.PLAYER_MSG.ITEM_FAVORITES_CHANGED:
-					// todo: simplify these code
+						// todo: simplify these code
 					case sc.PLAYER_MSG.ITEM_USED:
 					case sc.PLAYER_MSG.ITEM_OBTAINED:
 					case sc.PLAYER_MSG.ITEM_REMOVED:
@@ -355,9 +355,9 @@ ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playabl
 					}
 					default:
 						break;
-					
+
 				}
-			} 
+			}
 			if (this.isPlayer()) {
 				if (instance === this.playerModel.params) {
 					if (event === sc.COMBAT_PARAM_MSG.HP_CHANGED) {
@@ -368,11 +368,11 @@ ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playabl
 				if (instance === this.partyModel.params) {
 					if (event === sc.COMBAT_PARAM_MSG.HP_CHANGED) {
 						this.hp = instance.currentHp;
-					}					
+					}
 				}
 			}
 		},
-		getSaveData: function() {
+		getSaveData: function () {
 			const data = {};
 			data.count = this.count;
 			data.itemFavs = this.itemFavs;
@@ -395,7 +395,7 @@ ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playabl
 			data.energy = this.energy.getSaveData();
 			return data;
 		},
-		setLoadData: function(data) {
+		setLoadData: function (data) {
 			this.version = data.version || this.version;
 			this.count = data.count || this.count;
 			this.itemFavs = data.itemFavs || this.itemFavs;
@@ -422,7 +422,7 @@ ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playabl
 			this.mood.setLoadData(data.mood);
 			this.energy.setLoadData(data.energy);
 		},
-		reset: function() {
+		reset: function () {
 			this.version = 0;
 			this.count = 0;
 			this.itemFavs = [];
@@ -442,17 +442,17 @@ ig.module("game.feature.bee.playable.config").requires("game.feature.bee.playabl
 			this.skillPointsExtra = Array(5).fill(0);
 			this.partyModel = null;
 			this.playerModel = null;
-			this.mood.reset();	
-			this.schedule.reset();	
+			this.mood.reset();
+			this.schedule.reset();
 			this.energy.reset();
 		},
-		onVarAccess: function(path, pathArr) {
+		onVarAccess: function (path, pathArr) {
 			if (pathArr[0] === "playable") {
 				switch (pathArr[1]) {
 					case "mood": {
 						return this.mood.get();
 					}
-					case "energy" : {
+					case "energy": {
 						return this.energy.get();
 					}
 					case "version":

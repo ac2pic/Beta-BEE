@@ -3,14 +3,16 @@ const fs = require('fs');
 const path = require('path');
 const babel = require('@babel/core');
 
-const modBasePath = path.join(process.cwd(), 'beta-bee/'); 
+const modBasePath = path.join(process.cwd(), 'beta-bee/');
 const jsPath = path.join(modBasePath, 'js/');
 
 // extract all files in the js directory
 
 function getAllFiles(dirPath, files = []) {
-	const dirFiles = fs.readdirSync(dirPath, {withFileTypes: true});
-	for(const file of dirFiles) {
+	const dirFiles = fs.readdirSync(dirPath, {
+		withFileTypes: true
+	});
+	for (const file of dirFiles) {
 		if (file.isDirectory()) {
 			getAllFiles(path.join(dirPath, `${file.name}/`), files);
 		} else if (file.isFile() && file.name.endsWith('.js')) {
@@ -39,25 +41,31 @@ function extractNameAndDependencies(filePath) {
 							}
 
 							const name = node.callee.property.name;
-							
+
 							if (name === "module") {
 								moduleName = node.arguments[0].value;
 							} else if (name === "requires") {
 								dependencies = node.arguments.map(e => e.value).filter(e => e.includes("game.feature.bee"));
 							}
-							
+
 						}
 					});
 				}
 			}
 		}]
 	});
-	return {name: moduleName, dependencies};
+	return {
+		name: moduleName,
+		dependencies
+	};
 }
 const nameMap = new Map();
 
 for (const file of files) {
-	const {name, dependencies} = extractNameAndDependencies(file);
+	const {
+		name,
+		dependencies
+	} = extractNameAndDependencies(file);
 	nameMap.set(name, dependencies || []);
 }
 
@@ -77,10 +85,10 @@ do {
 	withDependecies = withDependecies.map(e => [e[0], e[1].filter(e => !modulePairs.includes(e))]);
 	const newList = withDependecies.filter(e => e[1].length === 0).map(e => e[0]);
 	withDependecies = withDependecies.filter(e => e[1].length > 0);
-	
+
 	// newList must be non zero to
 	// prevent an infinite loop 
-	if (newList.length === 0 && withDependecies.length > 0)  {
+	if (newList.length === 0 && withDependecies.length > 0) {
 		console.log(withDependecies);
 		throw Error('Circular dependency detected.');
 	}
@@ -94,4 +102,3 @@ function convertToImport(moduleName) {
 }
 
 fs.writeFileSync(path.join(modBasePath, 'prestart.js'), modulePairs.map(convertToImport).join('\n\n'));
-

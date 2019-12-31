@@ -1,4 +1,4 @@
-ig.module("game.feature.bee.combat.new-buffs").requires("game.feature.combat.stat-change", "game.feature.combat.model.combat-params").defines(function() {
+ig.module("game.feature.bee.combat.new-buffs").requires("game.feature.combat.stat-change", "game.feature.combat.model.combat-params").defines(function () {
 
 	sc.STAT_CHANGE_SETTINGS["DEFENSE-MINUS-MINOR-1"] = {
 		change: sc.STAT_CHANGE_TYPE.STATS,
@@ -73,20 +73,20 @@ ig.module("game.feature.bee.combat.new-buffs").requires("game.feature.combat.sta
 	};
 
 	sc.ActionBuff = sc.StatChange.extend({
-	 	timer: 0,
-	 	time: 0,
+		timer: 0,
+		time: 0,
 		hasTimer: false,
 		active: true,
 		name: null,
 		hacked: false,
-		init: function(a, b, e, f) {
+		init: function (a, b, e, f) {
 			this.parent(a);
 			this.name = b;
 			this.hacked = e || false;
 			this.timer = this.time = f || 0;
 			this.hasTimer = (this.time || 0) === 0;
 		},
-		update: function() {
+		update: function () {
 			if (this.timer > 0) {
 				this.timer--;
 				if (this.timer == 0) {
@@ -95,24 +95,24 @@ ig.module("game.feature.bee.combat.new-buffs").requires("game.feature.combat.sta
 			}
 			return !this.active;
 		},
-		onActionEndDetach: function() {
+		onActionEndDetach: function () {
 			if (this.timer == 0) {
 				this.active = false;
 			}
 		},
-		onEntityKillDetach: function() {
+		onEntityKillDetach: function () {
 			this.active = false;
 		},
-		clear: function() {
+		clear: function () {
 			if (this.timer == 0) {
 				this.active = false
 			}
 		},
-		reset: function(a) {
+		reset: function (a) {
 			this.timer = this.time = a + this.timer
 		},
-		getTimeFactor: function() {
-		  	return this.active && this.time >= 0 ? (this.time === 0 ? 1 : this.timer / this.time) : 0
+		getTimeFactor: function () {
+			return this.active && this.time >= 0 ? (this.time === 0 ? 1 : this.timer / this.time) : 0
 		}
 	});
 });

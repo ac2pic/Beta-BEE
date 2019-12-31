@@ -1,10 +1,12 @@
-ig.module("impact.feature.base.action-steps.circle-attack").requires("impact.feature.base.action-steps").defines(function() {
+ig.module("impact.feature.base.action-steps.circle-attack").requires("impact.feature.base.action-steps").defines(function () {
 	ig.ACTION_STEP.CIRCLE_ATTACK = ig.ActionStepBase.extend({
-	    init: function(a) {
+		init: function (a) {
 			this.circleSettings = a;
-	    },
-	    run: function(a) {
-	    	var settings = {...this.circleSettings}
+		},
+		run: function (a) {
+			var settings = {
+				...this.circleSettings
+			}
 			Object.keys(settings).forEach(key => {
 				if (typeof settings[key] === 'object' && !!settings[key].varName) {
 					settings[key] = ig.Event.getExpressionValue(settings[key])
@@ -14,6 +16,6 @@ ig.module("impact.feature.base.action-steps.circle-attack").requires("impact.fea
 			sc.combat.addCombatForce(b);
 			b.duration > 0 && a.addActionAttached(b);
 			return true
-	    }
+		}
 	});
 });

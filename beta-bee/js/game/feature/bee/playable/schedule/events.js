@@ -1,6 +1,6 @@
-ig.module("game.feature.bee.playable.schedule.events").defines(function() {
+ig.module("game.feature.bee.playable.schedule.events").defines(function () {
 	function createScheduleEventGenerator(base, baseConfig = {}) {
-		return function(objectCode, config = {}) {
+		return function (objectCode, config = {}) {
 			const baseConfigCopy = ig.copy(baseConfig);
 			for (const baseConfigKey in baseConfigCopy) {
 				if (config[baseConfigKey] === undefined) {
@@ -15,7 +15,7 @@ ig.module("game.feature.bee.playable.schedule.events").defines(function() {
 			for (let configEntry in config) {
 				eventClass[configEntry] = config[configEntry];
 			}
-			
+
 			return eventClass;
 		}
 
@@ -30,34 +30,38 @@ ig.module("game.feature.bee.playable.schedule.events").defines(function() {
 		 * @param {Object} data - Schedule Event paramaters 
 		 * @param {sc.PlayableConfig} config
 		 */
-		init: function(data, config) {
+		init: function (data, config) {
 			this.data = data;
 			this.config = config;
 		},
-		run: function() {},
-		canExecute: function() { return true;}
+		run: function () {},
+		canExecute: function () {
+			return true;
+		}
 	});
 
 	const eventGenerator = createScheduleEventGenerator(sc.BaseScheduleEvent, {
 		branchable: false
 	});
-	
+
 	sc.SCHEDULE_EVENTS.LOG = eventGenerator({
-		run: function() {
+		run: function () {
 			const message = ig.TextParser.bakeVars(this.data.value);
 			console.log(message);
 		}
 	});
 
 	// Branching starts
-	
+
 	const branchEventStaticVars = {
 		branchable: true,
 		branches: []
 	};
 
 	sc.BaseBranchEvent = eventGenerator({
-		getBranch: function() { return null; }
+		getBranch: function () {
+			return null;
+		}
 	}, branchEventStaticVars);
 
 	const branchEventGenerator = createScheduleEventGenerator(sc.BaseBranchEvent, branchEventStaticVars);
@@ -65,13 +69,16 @@ ig.module("game.feature.bee.playable.schedule.events").defines(function() {
 	sc.SCHEDULE_EVENTS.IF = branchEventGenerator({
 		condition: null,
 		then: [],
-		else: [], 
-		init: function(data, config) {
+		else: [],
+		init: function (data, config) {
 			this.parent(data, config);
 			this.condition = new ig.VarCondition(data.condition);
 		},
-		getBranch: function() {
-			const {then: thenBranch, else: elseBranch} = this.data;
+		getBranch: function () {
+			const {
+				then: thenBranch,
+				else: elseBranch
+			} = this.data;
 			if (this.condition.evaluate()) {
 				return thenBranch;
 			}
