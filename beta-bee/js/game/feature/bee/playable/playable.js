@@ -1,8 +1,8 @@
-ig.module("game.feature.bee.playable.playable").requires("impact.feature.storage.storage", "game.feature.bee.calendar.calendar").defines(function() {
+ig.module("game.feature.bee.playable.playable").requires("impact.feature.storage.storage", "game.feature.bee.calendar.calendar").defines(function () {
 	sc.PlayableModel = ig.GameAddon.extend({
 		configs: {},
 		schedules: {},
-		init: function() {
+		init: function () {
 			this.parent("Playable");
 			ig.storage.register(this);
 			const calendar = sc.calendar.add('schedules');
@@ -24,7 +24,7 @@ ig.module("game.feature.bee.playable.playable").requires("impact.feature.storage
 
 			ig.vars.registerVarAccessor("playable", this, null);
 		},
-		onVarAccess: function(path, pathArr) {
+		onVarAccess: function (path, pathArr) {
 			if (pathArr[0] === "playable") {
 				const config = this.getConfig(pathArr[1]);
 				if (config) {
@@ -46,21 +46,21 @@ ig.module("game.feature.bee.playable.playable").requires("impact.feature.storage
 		getConfig(name) {
 			return this.configs[name];
 		},
-		modelChanged: function(instance, event, args) {
+		modelChanged: function (instance, event, args) {
 			if (instance === sc.party) {
-				switch(event) {
+				switch (event) {
 					case sc.PARTY_MSG.ADDED_MEMBER:
 					case sc.PARTY_MSG.REMOVED_MEMBER: {
 						const member = args[0];
 						const model = args[1];
-						if(this.hasConfig(member)) {
+						if (this.hasConfig(member)) {
 							const config = this.getConfig(member);
 							config.setPartyMemberModel(model);
 							if (config.isFirstTime()) {
 								config.updateFields();
 							}
 							config.applyToPartyModel();
-							
+
 						}
 						break;
 					}
@@ -68,12 +68,12 @@ ig.module("game.feature.bee.playable.playable").requires("impact.feature.storage
 						break;
 				}
 			} else if (instance === sc.model.player) {
-				switch(event) {
+				switch (event) {
 					case sc.PLAYER_MSG.PLAYER_REMOVED:
 					case sc.PLAYER_MSG.PLAYER_SET: {
 						const member = args[0];
-						const model = args[1];  
-						if(this.hasConfig(member)) {
+						const model = args[1];
+						if (this.hasConfig(member)) {
 							const config = this.getConfig(member);
 							config.setPlayerModel(model);
 							if (config.isFirstTime()) {
@@ -85,18 +85,18 @@ ig.module("game.feature.bee.playable.playable").requires("impact.feature.storage
 					}
 				}
 			}
-		 },
+		},
 		// has to be after sc.GameModel.onReset 
 		// Lea's config gets added there
 		resetOrder: Infinity,
-		onReset: function() {
+		onReset: function () {
 			for (const name in this.configs) {
 				const member = this.configs[name];
 				member.reset();
 			}
 		},
-		onCombatEvent: function(combatant, event) {
-			switch(event) {
+		onCombatEvent: function (combatant, event) {
+			switch (event) {
 				case sc.COMBAT_EVENT.DEFEATED: {
 					if (!combatant.enemyType)
 						return;
@@ -117,14 +117,14 @@ ig.module("game.feature.bee.playable.playable").requires("impact.feature.storage
 					break;
 			}
 		},
-		onStorageSave: function(data) {
+		onStorageSave: function (data) {
 			data.playableMembers = {};
 			for (const playableMemberName in this.configs) {
 				const config = this.getConfig(playableMemberName);
 				data.playableMembers[playableMemberName] = config.getSaveData();
 			}
 		},
-		onStoragePreLoad: function(data) {
+		onStoragePreLoad: function (data) {
 			if (data.playableMembers) {
 				for (const playableMemberName in data.playableMembers) {
 					const configData = data.playableMembers[playableMemberName] || {};
@@ -138,7 +138,7 @@ ig.module("game.feature.bee.playable.playable").requires("impact.feature.storage
 	});
 
 
-	ig.addGameAddon(function() {
+	ig.addGameAddon(function () {
 		return sc.playableModel = new sc.PlayableModel;
 	});
 });

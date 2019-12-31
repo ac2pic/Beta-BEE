@@ -1,4 +1,4 @@
-ig.module("impact.feature.base.action-steps.wait-until-guarded-fix").requires("impact.feature.base.action-steps").defines(function() {
+ig.module("impact.feature.base.action-steps.wait-until-guarded-fix").requires("impact.feature.base.action-steps").defines(function () {
   ig.ACTION_STEP.WAIT_UNTIL_GUARDED = ig.ActionStepBase.extend({
     _wm: new ig.Config({
       attributes: {
@@ -12,15 +12,15 @@ ig.module("impact.feature.base.action-steps.wait-until-guarded-fix").requires("i
         }
       }
     }),
-    init: function(a) {
+    init: function (a) {
       this.maxTime = a.maxTime;
       this.meleeOnly = a.meleeOnly || false,
-      this.mobile = a.mobile || false;
+        this.mobile = a.mobile || false;
     },
-    start: function(a) {
+    start: function (a) {
       a.stepTimer = a.stepTimer + this.maxTime
     },
-    run: function(a) {
+    run: function (a) {
       // stepTimer should not use combatant root
       var b = a;
       a = a.getCombatantRoot();

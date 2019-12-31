@@ -1,9 +1,8 @@
-
-ig.module("impact.feature.base.entities.moveable-prop").requires("impact.base.actor-entity").defines(function() {
+ig.module("impact.feature.base.entities.moveable-prop").requires("impact.base.actor-entity").defines(function () {
 	ig.ENTITY.MovableProp = ig.AnimatedEntity.extend({
 		propSheet: null,
 		onGround: false,
-		init: function(a,b,d,g) {
+		init: function (a, b, d, g) {
 			this.parent(a, b, d, g);
 			this.coll.type = ig.COLLTYPE.VIRTUAL;
 			this.coll.zGravityFactor = 1;
@@ -13,20 +12,20 @@ ig.module("impact.feature.base.entities.moveable-prop").requires("impact.base.ac
 			this.propSheet = new ig.PropSheet(g.propType.sheet);
 			this.propSheet.addLoadListener(this);
 		},
-		onLoadableComplete: function(loaded, propSheet) {
+		onLoadableComplete: function (loaded, propSheet) {
 			if (!loaded) {
 				throw new Error('Not loaded');
 			}
 			let prop = this.propSheet.getProp(this.propName);
-			
+
 			if (!prop) {
 				throw new Error(`Prop "${this.propName}" doesn't exist.`);
 			}
 			prop.size && Vec3.assign(this.coll.size, prop.size);
-			
+
 			//TODO: Make this dynamic
 			this.coll.shadow.size = 16;
-			
+
 			if (prop.anims) this.initAnimations(prop.anims);
 			else {
 				this.initAnimations({
@@ -49,13 +48,13 @@ ig.module("impact.feature.base.entities.moveable-prop").requires("impact.base.ac
 				this.setCurrentAnim("default");
 			}
 		},
-		onTouchGround: function() {
+		onTouchGround: function () {
 			this.onGround = true;
 		},
 		start: function (face, mag) {
 			Vec2.assign(this.coll.vel, face);
 			Vec2.length(this.coll.vel, mag);
-			this.coll.vel.z = mag;		
+			this.coll.vel.z = mag;
 			this.onGround = false;
 		}
 	});

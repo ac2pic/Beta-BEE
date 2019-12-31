@@ -1,11 +1,11 @@
-ig.module("impact.feature.base.action-steps.set-tracker-progress").requires("impact.feature.base.action-steps").defines(function() {
+ig.module("impact.feature.base.action-steps.set-tracker-progress").requires("impact.feature.base.action-steps").defines(function () {
 	ig.ACTION_STEP.SET_TRACKER_PROGRESS = ig.ActionStepBase.extend({
-		init: function(a) {
+		init: function (a) {
 			this.name = a.name || '';
 			this.value = a.value || 0;
 			this.delta = a.delta || false;
 		},
-		start: function(a) {
+		start: function (a) {
 			var b = a.getCombatantRoot().trackers[this.name];
 			if (b && b.current !== undefined || b.current !== null) {
 				if (this.delta) {

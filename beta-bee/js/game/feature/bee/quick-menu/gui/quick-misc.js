@@ -1,4 +1,4 @@
-ig.module("game.feature.bee.quick-menu.gui.quick-misc").requires("game.feature.quick-menu.gui.quick-misc").defines(function() {
+ig.module("game.feature.bee.quick-menu.gui.quick-misc").requires("game.feature.quick-menu.gui.quick-misc").defines(function () {
 	function getOverrideMapName() {
 		const overrideMap = ig.vars.get("map.override");
 		if (overrideMap) {
@@ -9,7 +9,7 @@ ig.module("game.feature.bee.quick-menu.gui.quick-misc").requires("game.feature.q
 	}
 
 	sc.QuickLocationBox.inject({
-		updateLocationName: function() {
+		updateLocationName: function () {
 			this.parent();
 			const overrideMapName = getOverrideMapName();
 			if (overrideMapName) {

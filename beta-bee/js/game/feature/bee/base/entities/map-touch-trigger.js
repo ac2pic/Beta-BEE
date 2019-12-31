@@ -1,4 +1,4 @@
-ig.module("game.feature.bee.base.entities.map-touch-trigger").requires("impact.feature.base.entities.touch-trigger").defines(function() {
+ig.module("game.feature.bee.base.entities.map-touch-trigger").requires("impact.feature.base.entities.touch-trigger").defines(function () {
 	ig.ENTITY.MapTouchTrigger = ig.Entity.extend({
 		name: "",
 		face: Vec2.create(),
@@ -13,14 +13,14 @@ ig.module("game.feature.bee.base.entities.map-touch-trigger").requires("impact.f
 				}
 			}
 		}),
-		init: function(x, y, z, settings) {
+		init: function (x, y, z, settings) {
 			this.parent(x, y, z, settings);
 			this.coll.type = ig.COLLTYPE.NONE;
 			this.isOn = false;
 			this.shape = ig.COLLSHAPE.RECTANGLE;
 			this.mapName = settings.mapName || null;
 		},
-		update: function() {
+		update: function () {
 			const coll = this.coll;
 			const playerEntity = ig.game.playerEntity;
 

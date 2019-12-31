@@ -1,6 +1,6 @@
-ig.module("impact.feature.base.event-steps.play-sound").requires("impact.feature.base.event-steps").defines(function() {
+ig.module("impact.feature.base.event-steps.play-sound").requires("impact.feature.base.event-steps").defines(function () {
   ig.EFFECT_ENTRY.PLAY_SOUND.inject({
-    init: function(a, b) {
+    init: function (a, b) {
       if (b.sound) this.sound = new ig.Sound(b.sound, b.volume || 1, b.variance || 0, b.group);
       this.global = b.global || false;
       this.loop = b.loop || false;

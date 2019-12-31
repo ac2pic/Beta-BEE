@@ -1,21 +1,21 @@
-ig.module("game.feature.bee.playable.energy").defines(function() {
+ig.module("game.feature.bee.playable.energy").defines(function () {
 	sc.PlayableEnergy = ig.Class.extend({
 		energy: 0,
-		set: function(energy) {
+		set: function (energy) {
 			if (isFinite(energy)) {
 				this.energy = energy;
 			}
 		},
-		get: function() {
+		get: function () {
 			return this.energy;
 		},
-		reset: function() {
+		reset: function () {
 			this.energy = 0;
 		},
-		getSaveData: function() {
+		getSaveData: function () {
 			return this.energy;
 		},
-		setLoadData: function(energy) {
+		setLoadData: function (energy) {
 			if (isFinite(energy)) {
 				this.energy = energy;
 			} else {

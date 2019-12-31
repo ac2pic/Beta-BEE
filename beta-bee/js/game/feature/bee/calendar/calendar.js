@@ -1,39 +1,41 @@
-ig.module("game.feature.bee.calendar.calendar").requires("impact.base.game").defines(function() {
+ig.module("game.feature.bee.calendar.calendar").requires("impact.base.game").defines(function () {
 
 	sc.BaseCalendarComponent = ig.Class.extend({
 		forceUpdate: false,
 		observers: [],
 		interval: [],
-		setForceUpdate: function(value) {
+		setForceUpdate: function (value) {
 			this.forceUpdate = !!value;
 		},
-		notify: function(value, args = []) {
+		notify: function (value, args = []) {
 			sc.Model.notifyObserver(this, value, args);
 		},
-		addObserver: function(instance) {
+		addObserver: function (instance) {
 			sc.Model.addObserver(this, instance);
 		},
-		removeObserver: function(instance) {
+		removeObserver: function (instance) {
 			sc.Model.removeObserver(this, instance);
 		},
-		next: function() { return true; },
-		set: function() {},
-		change: function() {},
-		get: function() { },
-		gotoLast: function() {
+		next: function () {
+			return true;
+		},
+		set: function () {},
+		change: function () {},
+		get: function () {},
+		gotoLast: function () {
 			if (this.interval.length) {
 				this.change(this.interval.length - 1);
 			}
 		},
-		getSaveData: function() {},
-		setLoadData: function() {},
-		setInterval: function(interval = []) { 
+		getSaveData: function () {},
+		setLoadData: function () {},
+		setInterval: function (interval = []) {
 			this.interval = interval;
 		},
-		calc: function(value) {
+		calc: function (value) {
 			if (this.isInRange(value)) {
 				if (this.interval.length) {
-					return this.interval[value%this.interval.length];
+					return this.interval[value % this.interval.length];
 				}
 			}
 			return null;
@@ -59,13 +61,13 @@ ig.module("game.feature.bee.calendar.calendar").requires("impact.base.game").def
 
 	sc.TimeOfDayState = sc.BaseCalendarComponent.extend({
 		period: 0,
-		onVarAccess: function(path, pathArr) {
+		onVarAccess: function (path, pathArr) {
 			if (pathArr[1] === "period") {
 				return this.calc(pathArr[0]);
 			}
 			return null;
 		},
-		set: function(period, notifyChange = true) {
+		set: function (period, notifyChange = true) {
 			if (!this.isInRange(period)) {
 				throw Error(`${period} is not in the specified timeInterval.`);
 			}
@@ -76,22 +78,22 @@ ig.module("game.feature.bee.calendar.calendar").requires("impact.base.game").def
 				this.notify(sc.TIME_OF_DAY_MSG.STARTED);
 			}
 		},
-		change: function(period) {
+		change: function (period) {
 			const timeOfDay = this.interval;
 			if (!this.isInRange(period)) {
 				throw Error(`${period} is not in the specified timeInterval.`);
 			}
-			
+
 			if (period < this.period) {
 				throw Error(`Time of Day must at or later than ${this.calc(this.period)}.`);
 			}
 			let maxPeriod = Math.min(period + 1, timeOfDay.length);
-			for(let oldPeriod = this.period + 1; oldPeriod < maxPeriod; ++oldPeriod) {
+			for (let oldPeriod = this.period + 1; oldPeriod < maxPeriod; ++oldPeriod) {
 				this.remove(true);
 				this.set(oldPeriod);
 			}
 		},
-		next: function() {
+		next: function () {
 			let nextPeriod = this.period + 1;
 			if (this.isInRange(nextPeriod)) {
 				this.change(nextPeriod);
@@ -99,26 +101,26 @@ ig.module("game.feature.bee.calendar.calendar").requires("impact.base.game").def
 			}
 			return false;
 		},
-		remove: function(notifyChange) {
+		remove: function (notifyChange) {
 			if (notifyChange) {
 				this.notify(sc.TIME_OF_DAY_MSG.ENDED);
 				this.period = -1;
 			}
 		},
-		get: function(format = true) {
+		get: function (format = true) {
 			if (format) {
 				return this.calc(this.period);
-			} 
+			}
 			return this.period;
-			
+
 		},
-		reset: function() {
+		reset: function () {
 			this.period = 0;
 		},
-		getSaveData: function() {
+		getSaveData: function () {
 			return this.period;
 		},
-		setLoadData: function(period) {
+		setLoadData: function (period) {
 			if (isNaN(period)) {
 				this.set(0, false);
 			} else {
@@ -137,7 +139,7 @@ ig.module("game.feature.bee.calendar.calendar").requires("impact.base.game").def
 	sc.DayState = sc.BaseCalendarComponent.extend({
 		day: 0,
 		timeOfDay: null,
-		init: function() {
+		init: function () {
 			this.timeOfDay = new sc.TimeOfDayState;
 		},
 		isInRange: function (value) {
@@ -145,14 +147,14 @@ ig.module("game.feature.bee.calendar.calendar").requires("impact.base.game").def
 				return false;
 			return value >= this.day;
 		},
-		calc: function(value) {
+		calc: function (value) {
 			value = Number(value);
 			if (this.isInRange(value)) {
 				return value;
 			}
 			return null;
 		},
-		onVarAccess: function(path, pathArr) {
+		onVarAccess: function (path, pathArr) {
 			if (pathArr[1] === "date") {
 				return this.calc(pathArr[0]);
 			} else if (pathArr[1] === "period") {
@@ -166,34 +168,34 @@ ig.module("game.feature.bee.calendar.calendar").requires("impact.base.game").def
 			}
 			return null;
 		},
-		addObserver: function(instance) {
+		addObserver: function (instance) {
 			this.parent(instance);
 			this.timeOfDay.addObserver(instance);
 		},
-		removeObserver: function(instance) {
+		removeObserver: function (instance) {
 			this.parent(instance);
 			this.timeOfDay.removeObserver(instance);
 		},
-		set: function(newDay, newPeriod, notifyChange = true) {
+		set: function (newDay, newPeriod, notifyChange = true) {
 			if (!this.forceUpdate) {
 				if (!this.isInRange(newDay)) {
 					throw Error(`Day must be at least ${this.day} but is ${newDay}.`);
-				}	
+				}
 			}
 
 			if (notifyChange) {
 				this.notify(sc.DAY_MSG.ENDED);
 			}
-			
+
 			this.day = newDay;
 			if (notifyChange) {
 				this.notify(sc.DAY_MSG.STARTED);
 			}
 			this.timeOfDay.set(newPeriod, notifyChange);
 		},
-		change: function(newDay, newPeriod, notifyChange = true) {
+		change: function (newDay, newPeriod, notifyChange = true) {
 			this.setForceUpdate(true);
-			for(let nextDay = this.day + 1; nextDay <= newDay; ++nextDay) {
+			for (let nextDay = this.day + 1; nextDay <= newDay; ++nextDay) {
 				this.timeOfDay.gotoLast();
 				this.timeOfDay.remove(true);
 				this.set(nextDay, 0);
@@ -201,7 +203,7 @@ ig.module("game.feature.bee.calendar.calendar").requires("impact.base.game").def
 			this.timeOfDay.change(newPeriod);
 			this.setForceUpdate(false);
 		},
-		get: function(format = true) {
+		get: function (format = true) {
 			const data = {};
 			if (format) {
 				data.day = this.calc(this.day);
@@ -211,24 +213,24 @@ ig.module("game.feature.bee.calendar.calendar").requires("impact.base.game").def
 			data.period = this.timeOfDay.get(format);
 			return data;
 		},
-		next: function() {
+		next: function () {
 			let nextDay = this.day + 1;
 			this.change(nextDay, 0);
 			return true;
 		},
-		nextPeriod: function() {
+		nextPeriod: function () {
 			return this.timeOfDay.next();
 		},
-		getPeriod: function() {
+		getPeriod: function () {
 			return this.timeOfDay;
 		},
-		getSaveData: function() {
+		getSaveData: function () {
 			const data = {};
 			data.day = this.day;
 			data.period = this.timeOfDay.getSaveData();
 			return data;
 		},
-		setLoadData: function(data) {
+		setLoadData: function (data) {
 			const day = data.day;
 			if (!isFinite(day)) {
 				this.day = 0;
@@ -237,7 +239,7 @@ ig.module("game.feature.bee.calendar.calendar").requires("impact.base.game").def
 			}
 			this.timeOfDay.setLoadData(data.period);
 		},
-		reset: function() {
+		reset: function () {
 			this.day = 0;
 			this.timeOfDay.reset();
 		}
@@ -246,17 +248,17 @@ ig.module("game.feature.bee.calendar.calendar").requires("impact.base.game").def
 	sc.CalendarState = ig.Class.extend({
 		date: null,
 		formatFunction: null,
-		setDate: function(date) {
+		setDate: function (date) {
 			this.date = date;
 		},
-		onVarAccess: function(request, pathArr) {
+		onVarAccess: function (request, pathArr) {
 			if (pathArr.length > 1) {
-				if(pathArr[0] === "calendar") {
+				if (pathArr[0] === "calendar") {
 					// calendar.1.date
 					// calendar.1.period
 					// calendar.period
 					// calendar.period.raw 
-					
+
 					if (pathArr.length <= 3) {
 						const newArr = pathArr.slice(1);
 						return this.date.onVarAccess(newArr.join("."), newArr);
@@ -265,19 +267,19 @@ ig.module("game.feature.bee.calendar.calendar").requires("impact.base.game").def
 			}
 			return null;
 		},
-		addObserver: function(instance) {
+		addObserver: function (instance) {
 			this.date.addObserver(instance);
 		},
-		removeObserver: function(instance) {
+		removeObserver: function (instance) {
 			this.date.removeObserver(instance);
 		},
-		getDate: function() {
+		getDate: function () {
 			return this.date;
 		},
-		getPeriod: function() {
+		getPeriod: function () {
 			return this.date.getPeriod();
 		},
-		notify: function(dateEvent, periodEvent) {
+		notify: function (dateEvent, periodEvent) {
 			if (isFinite(dateEvent)) {
 				this.date.notify(dateEvent);
 			}
@@ -287,40 +289,40 @@ ig.module("game.feature.bee.calendar.calendar").requires("impact.base.game").def
 				period.notify(periodEvent);
 			}
 		},
-		set: function(newDate, newPeriod, notifyChange) {
+		set: function (newDate, newPeriod, notifyChange) {
 			this.date.set(newDate, newPeriod, notifyChange);
 		},
-		change: function(newDate, newPeriod) {
+		change: function (newDate, newPeriod) {
 			this.date.change(newDate, newPeriod);
 		},
-		get: function(format = true) {
+		get: function (format = true) {
 			return this.date.get(format);
 		},
-		nextDate: function() {
+		nextDate: function () {
 			return this.date.next();
 		},
-		nextPeriod: function() {
-			return this.date.nextPeriod();	
+		nextPeriod: function () {
+			return this.date.nextPeriod();
 		},
-		getSaveData: function() {
+		getSaveData: function () {
 			return this.date.getSaveData();
 		},
-		setLoadData: function(data) {
+		setLoadData: function (data) {
 			this.date.setLoadData(data);
 		},
-		reset: function() {
+		reset: function () {
 			this.date.reset();
 		}
 	});
 
 	sc.Calendar = ig.GameAddon.extend({
 		calendarStates: {},
-		init: function() {
+		init: function () {
 			this.parent("Calendar");
 			ig.storage.register(this);
 			ig.vars.registerVarAccessor("calendar", this, null);
 		},
-		onVarAccess: function(request, pathArr) {
+		onVarAccess: function (request, pathArr) {
 			if (pathArr[0] === "calendar") {
 				const calendar = this.get(pathArr[1]);
 				if (calendar) {
@@ -330,26 +332,26 @@ ig.module("game.feature.bee.calendar.calendar").requires("impact.base.game").def
 			}
 			return null;
 		},
-		add: function(name, date) {
+		add: function (name, date) {
 			const instance = new sc.CalendarState;
 			this.calendarStates[name] = instance;
 			return instance;
 		},
-		remove: function(name) {
+		remove: function (name) {
 			delete this.calendarStates[name];
 			this.calendarStates[name] = undefined;
 			return true;
 		},
-		get: function(name) {
+		get: function (name) {
 			return this.calendarStates[name] || null;
 		},
-		onStorageSave: function(data) {
+		onStorageSave: function (data) {
 			data.calendar = {};
 			for (const calendarName in this.calendarStates) {
 				data.calendar[calendarName] = this.calendarStates[calendarName].getSaveData();
 			}
 		},
-		onStoragePreLoad: function(data) {
+		onStoragePreLoad: function (data) {
 			for (const calendarName in data.calendar) {
 				const calendar = this.get(calendarName);
 				if (calendar) {
@@ -357,16 +359,16 @@ ig.module("game.feature.bee.calendar.calendar").requires("impact.base.game").def
 				}
 			}
 		},
-		onReset: function() {
+		onReset: function () {
 			for (const calendarName in this.calendarStates) {
 				const calendar = this.get(calendarName);
 				calendar.reset();
 			}
 		}
-		
+
 	});
 
-	ig.addGameAddon(function() {
+	ig.addGameAddon(function () {
 		return sc.calendar = new sc.Calendar;
 	});
 });

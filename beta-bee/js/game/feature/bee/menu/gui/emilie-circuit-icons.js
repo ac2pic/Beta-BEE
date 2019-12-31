@@ -1,13 +1,12 @@
-
 ig.module("game.feature.bee.menu.gui.emilie-circuit-icons").requires("game.feature.menu.gui.status.status-view-combat-arts",
-	"game.feature.menu.gui.circuit.circuit-effect-display", "game.main").defines(function() {
+	"game.feature.menu.gui.circuit.circuit-effect-display", "game.main").defines(function () {
 
 	const EmilieCircuitIcons = ig.Class.extend({
-		init: function() {
+		init: function () {
 			this.model = sc.model.player;
 			sc.Model.addObserver(this.model, this);
 		},
-		modelChanged: function(object, event) {
+		modelChanged: function (object, event) {
 			if (object === this.model) {
 				if (event === sc.PLAYER_MSG.CONFIG_CHANGED) {
 					if (this.model.name === 'Emilie') {
@@ -33,11 +32,11 @@ ig.module("game.feature.bee.menu.gui.emilie-circuit-icons").requires("game.featu
 					}
 				}
 			}
-			
+
 		}
 	});
 
-	ig.addGameAddon(function() {
+	ig.addGameAddon(function () {
 		return new EmilieCircuitIcons();
 	});
 
