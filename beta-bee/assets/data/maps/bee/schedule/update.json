@@ -1,0 +1,58 @@
+{
+    "name": "bee/schedule/update",
+    "levels": [{
+        "height": 0
+    }],
+    "mapWidth": 10,
+    "mapHeight": 10,
+    "masterLevel": 0,
+    "attributes": {
+        "saveMode": "DISABLED",
+        "bgm": "",
+        "cameraInBounds": false,
+        "map-sounds": "",
+        "mapStyle": "",
+        "weather": "",
+        "npcRunners": "",
+        "area": "update-area"
+    },
+    "screen": {
+        "x": 0,
+        "y": 0
+    },
+    "entities": [{
+        "type": "EventTrigger",
+        "x": 111,
+        "y": 89,
+        "level": 0,
+        "settings": {
+            "startCondition": "true",
+            "endCondition": "false",
+            "event": [{
+                "type": "CHANGE_CALENDAR_DATE",
+                "name": "schedules",
+                "date": {
+                    "varName": "map.date"
+                },
+                "period": {
+                    "varName": "map.period"
+                },
+                "changeType" : "set",
+                "notify": true
+            }, {
+                "type": "SAVE"
+            }, {
+                "type": "TELEPORT_VAR",
+                "map": {
+                    "varName": "map.teleport.map"
+                },
+                "marker" : {
+                    "varName": "map.teleport.marker"
+                }
+            }],
+            "triggerType": "ALWAYS",
+            "eventType": "CUTSCENE"
+        }
+    }],
+    "layer": []
+}

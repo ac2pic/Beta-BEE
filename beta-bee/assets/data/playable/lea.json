@@ -1,0 +1,33 @@
+{
+	"mood": {
+		"ANGRY": 1
+	},
+	"schedule": [{
+		"MIDNIGHT": {
+			"STARTED": [{
+				"type": "IF",
+				"condition": "true",
+				"then": [{
+					"type": "LOG",
+					"value": "\\v[playable.Lea.name] was created \\v[playable.Lea.count] time(s)!"
+				}],
+				"else": [{
+					"type": "LOG",
+					"value": "I was false."
+				}]
+			}],
+			"ENDED": [{
+				"type": "IF",
+				"condition": "false",
+				"then": [{
+					"type": "LOG",
+					"value": "I was true."
+				}],
+				"else": [{
+					"type": "LOG",
+					"value": "\\v[playable.Lea.name] was definitely created \\v[playable.Lea.count] time(s)!"
+				}]
+			}]
+		}
+	}]
+}
