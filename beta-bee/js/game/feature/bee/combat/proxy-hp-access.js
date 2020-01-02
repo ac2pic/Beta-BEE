@@ -1,4 +1,4 @@
-ig.module("game.feature.bee.combat.proxy-hp-access").requires("game.feature.combat.entities.combat-proxy").defines(function () {
+ig.module("game.feature.bee.combat.proxy-hp-access").requires("game.feature.combat.entities.combat-proxy").defines(function() {
     var b = Vec3.create(),
         a = {
             ACTION_END_DESTROYED: 1,
@@ -29,7 +29,7 @@ ig.module("game.feature.bee.combat.proxy-hp-access").requires("game.feature.comb
         wasHit: false,
         isThreat: true,
         destroyType: 0,
-        init: function (a, b, d, g) {
+        init: function(a, b, d, g) {
             this.parent(a, b, d, g);
             a = g.data;
             a.size && this.coll.setSize(a.size.x, a.size.y, a.size.z);
@@ -79,13 +79,13 @@ ig.module("game.feature.bee.combat.proxy-hp-access").requires("game.feature.comb
             this.maxHp = this.hp = a.hp;
             this.effects.onKill = a.killEffect
         },
-        getCombatantRoot: function () {
+        getCombatantRoot: function() {
             return this.combatant
         },
-        getSourceEntity: function () {
+        getSourceEntity: function() {
             return this.sourceEntity
         },
-        connectExternal: function (a) {
+        connectExternal: function(a) {
             if (this.externalEntity) {
                 this.externalEntity.removeEntityAttached(this);
                 this.externalEntity = null
@@ -97,7 +97,7 @@ ig.module("game.feature.bee.combat.proxy-hp-access").requires("game.feature.comb
                     this.externalEntity.addEntityAttached(this)
                 }
         },
-        update: function () {
+        update: function() {
             this.breakType == sc.PROXY_BREAK_TYPE.COMBATANT && this.combatant
                 .isDefeated() && this
                 .destroy();
@@ -117,19 +117,19 @@ ig.module("game.feature.bee.combat.proxy-hp-access").requires("game.feature.comb
             }
             this.parent()
         },
-        onActionEndDetach: function () {
+        onActionEndDetach: function() {
             this.destroy()
         },
-        onEntityKillDetach: function () {
+        onEntityKillDetach: function() {
             this.destroy()
         },
-        onCollabEndDetach: function () {
+        onCollabEndDetach: function() {
             this.destroy()
         },
-        postActionUpdate: function () {
+        postActionUpdate: function() {
             this.currentAction || this.destroy()
         },
-        detach: function () {
+        detach: function() {
             if (this.externalEntity) {
                 this.externalEntity.removeEntityAttached(this);
                 this.externalEntity = null
@@ -142,10 +142,10 @@ ig.module("game.feature.bee.combat.proxy-hp-access").requires("game.feature.comb
                 .combatant
                 .collaboration && this.combatant.collaboration.removeCollabAttached(this)
         },
-        onEffectEvent: function (a) {
+        onEffectEvent: function(a) {
             a.isDone() && this.kill()
         },
-        destroy: function (b) {
+        destroy: function(b) {
             if (!this.destroyType) {
                 this.destroyType = b || a.ACTION_END_DESTROYED;
                 this.detach();
@@ -163,7 +163,7 @@ ig.module("game.feature.bee.combat.proxy-hp-access").requires("game.feature.comb
                 } else this.kill()
             }
         },
-        ballHit: function (a) {
+        ballHit: function(a) {
             if (this.hp) {
                 if (a.party == this.combatant.party) return false;
                 var b = a.getHitCenter(this);
@@ -181,15 +181,15 @@ ig.module("game.feature.bee.combat.proxy-hp-access").requires("game.feature.comb
             }
             return false
         },
-        setMaxHp: function (a) {
+        setMaxHp: function(a) {
             this.hp = this.maxHp > 0 && a > 0 ? this.hp * (a / this.maxHp) : a;
             this.maxHp = a
         },
-        reduceHp: function (b) {
+        reduceHp: function(b) {
             this.hp = this.hp - b;
             this.hp <= 0 && this.destroy(a.HIT_DESTROYED)
         },
-        onVarAccess: function (b, d) {
+        onVarAccess: function(b, d) {
             return d[1] == "collab" ? !this.collaboration ? null : this.collaboration
                 .onVarAccess(b, d) :
                 d[1] == "ownerAttrib" ? ig.vars.resolveObjectAccess(this.combatant
@@ -216,22 +216,22 @@ ig.module("game.feature.bee.combat.proxy-hp-access").requires("game.feature.comb
         accelSpeed: 1,
         bounciness: 0
     });
-    sc.CombatProxyEntity.createActorConfig = function (a) {
+    sc.CombatProxyEntity.createActorConfig = function(a) {
         var b = new ig.ActorConfig;
         b.loadFromData(a, d);
         return b
     };
     sc.CombatProxyTools = {
-        clearEntityProxy: function (a,
+        clearEntityProxy: function(a,
             b, d, g) {
             g = this.clearAttachedProxy(a.entityAttached, b, d, g);
             this.clearAttachedProxy(a.actionAttached, b, d, g)
         },
-        hasProxy: function (a, b) {
+        hasProxy: function(a, b) {
             return this.hasAttachedProxy(a.entityAttached, b) || this.hasAttachedProxy(a.actionAttached,
                 b)
         },
-        clearAttachedProxy: function (a, b, d, g) {
+        clearAttachedProxy: function(a, b, d, g) {
             for (var h = a.length; h--;) {
                 var i = a[h];
                 if (i instanceof sc.CombatProxyEntity && (!d || i.stickToSource)) b && i.group != b || (
@@ -240,7 +240,7 @@ ig.module("game.feature.bee.combat.proxy-hp-access").requires("game.feature.comb
             }
             return g || 0
         },
-        hasAttachedProxy: function (a, b) {
+        hasAttachedProxy: function(a, b) {
             for (var d = a.length; d--;) {
                 var g = a[d];
                 if (g instanceof sc.CombatProxyEntity &&
