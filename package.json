@@ -3,7 +3,7 @@
   "main": "",
   "scripts": {
     "gen:prestart": "node scripts/generate-prestart.js",
-    "format": "js-beautify -js -r -f ./beta-bee/**/*.js" 
+    "format": "js-beautify -js -q -r -f ./beta-bee/**/*.js" 
   },
   "repository": {
     "type": "git",
