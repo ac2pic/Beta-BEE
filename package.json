@@ -2,7 +2,8 @@
   "name": "beta-bee",
   "main": "",
   "scripts": {
-    "gen:prestart": "node scripts/generate-prestart.js"
+    "gen:prestart": "node scripts/generate-prestart.js",
+    "format": "js-beautify -js -r -f ./beta-bee/**/*.js" 
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "homepage": "https://github.com/CCDirectLink/Beta-BEE#readme",
   "devDependencies": {
     "@babel/core": "^7.7.2"
+  },
+  "dependencies": {
+    "js-beautify": "^1.10.2"
   }
 }
