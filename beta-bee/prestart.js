@@ -76,4 +76,4 @@ import "./js/impact/feature/base/event-steps/remove-balls.js";
 
 import "./js/impact/feature/base/event-steps/play-sound-injection.js";
 
-LOAD_LEVEL_ON_GAME_START = "override-test";
+LOAD_LEVEL_ON_GAME_START = "rhombus-sqr.dng-bottom";
