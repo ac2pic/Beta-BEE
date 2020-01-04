@@ -1,1 +1,43 @@
-{"mood":{"ANGRY":1},"schedule":[{"day":500,"comment":"SHOULD BE 3RD ELEMENT"},{"comment":"SHOULD BE LAST (day = 501)"},{"day":6,"comment":"SHOULD BE 2ND ELEMENT","MIDNIGHT":{"STARTED":[{"type":"IF","condition":"true","then":[{"type":"LOG","value":"\\v[playable.Emilie.name] was created \\v[playable.Emilie.count] time(s)!"}],"else":[{"type":"LOG","value":"I was false."}]}],"ENDED":[{"type":"IF","condition":"false","then":[{"type":"LOG","value":"I was true."}],"else":[{"type":"LOG","value":"\\v[playable.Emilie.name] was definitely created \\v[playable.Emilie.count] time(s)!"}]}]}},{"day":2,"comment":"SHOULD BE FIRST"}]}
+{
+    "mood": {
+        "ANGRY": 1
+    },
+    "schedule": [{
+        "day": 500,
+        "comment": "SHOULD BE 3RD ELEMENT"
+    }, {
+        "comment": "SHOULD BE LAST (day = 501)"
+    }, {
+        "day": 6,
+        "comment": "SHOULD BE 2ND ELEMENT",
+        "MIDNIGHT": {
+            "STARTED": [{
+                "type": "IF",
+                "condition": "true",
+                "then": [{
+                    "type": "LOG",
+                    "value": "\\v[playable.Emilie.name] was created \\v[playable.Emilie.count] time(s)!"
+                }],
+                "else": [{
+                    "type": "LOG",
+                    "value": "I was false."
+                }]
+            }],
+            "ENDED": [{
+                "type": "IF",
+                "condition": "false",
+                "then": [{
+                    "type": "LOG",
+                    "value": "I was true."
+                }],
+                "else": [{
+                    "type": "LOG",
+                    "value": "\\v[playable.Emilie.name] was definitely created \\v[playable.Emilie.count] time(s)!"
+                }]
+            }]
+        }
+    }, {
+        "day": 2,
+        "comment": "SHOULD BE FIRST"
+    }]
+}

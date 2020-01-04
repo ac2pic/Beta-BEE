@@ -1,1 +1,384 @@
-{"name":"rhombus-sqr/dng-bottom","levels":[{"height":0}],"mapWidth":30,"mapHeight":20,"masterLevel":0,"attributes":{"saveMode":"ENABLED","bgm":"rhombusSquare","cameraInBounds":false,"map-sounds":"","mapStyle":"rhombus-interior","weather":"NONE","npcRunners":"LIVELY","area":"rhombus-sqr"},"screen":{"x":0,"y":0},"entities":[{"type":"NPC","x":335,"y":169,"level":0,"settings":{"npcStates":[{"reactType":"","face":"SOUTH","action":[],"hidden":false,"condition":"","config":"normal","event":[]}],"characterName":"advisors.female-small-black","name":"preTutGuide1"}},{"type":"TeleportField","x":243,"y":116,"level":0,"settings":{"size":{"x":16,"y":16,"z":0},"gfxType":"AR","map":"rhombus-sqr.dng-bottom","teleportLabel":{},"longTelCond":"false","dir":"NORTH","central":{"global":true,"name":"test"},"pseudoExit":false,"name":"start2"}},{"type":"TeleportCentral","x":212,"y":87,"level":0,"settings":{"size":{"x":80,"y":80,"z":0},"npcRunnerExitProb":1,"name":"test","effects":true,"npcRunnerEnterProb":0,"condition":"true","landmark":""}},{"type":"TeleportGround","x":212,"y":310,"level":0,"settings":{"size":{"x":80,"y":10,"z":0},"npcRunnerProb":0.2,"name":"start","dir":"SOUTH","transitionType":"REGULAR","centerWalkThrough":true,"marker":"false","map":"rhombus-sqr.dng-bottom","spawnDistance":16,"blockEventCondition":"true"}},{"type":"NPC","x":39,"y":197,"level":0,"settings":{"npcStates":[{"reactType":"","face":"EAST","action":[],"hidden":false,"condition":"","config":"ground","event":[{"person":{"person":"cross-worlds.table-chan","expression":"DEFAULT"},"type":"ADD_MSG_PERSON","name":"Rina","side":"LEFT"},{"person":{"person":"main.civilian.mirabelle","expression":"DEFAULT"},"type":"ADD_MSG_PERSON","side":"RIGHT"},{"person":{"person":"cross-worlds.table-chan","expression":"DEFAULT"},"message":{"en_US":"I'm sitting on a table. You just can't see it."},"type":"SHOW_MSG"},{"person":{"person":"main.civilian.mirabelle","expression":"NERVOUS"},"message":{"en_US":"Ok..."},"type":"SHOW_MSG"}]}],"name":"mini-table-chan","characterName":"cross-worlds.table-chan"}},{"type":"Marker","x":200,"y":213,"level":0,"settings":{"size":{"x":16,"y":16,"z":0},"name":"start3","dir":"NORTH"}},{"type":"EventTrigger","x":526,"y":252,"level":0,"settings":{"event":[{"type":"SWITCH_PLAYER_CONFIG","name":"Civilian.Mirabelle"},{"type":"CHANGE_VAR_BOOL","changeType":"set","varName":"tmp.mirabelle","value":true}],"triggerType":"ALWAYS","endCondition":"tmp.mirabelle"}},{"type":"NPC","x":363,"y":201,"level":0,"settings":{"npcStates":[{"reactType":"FIXED_FACE","face":"NORTH","action":[],"hidden":false,"condition":"","config":"normal","event":[],"pageName":""}],"characterName":"cross-worlds.sphero-male-blue","name":"noob1"}},{"type":"NPC","x":204,"y":185,"level":0,"settings":{"npcStates":[{"reactType":"","face":"SOUTH","action":[],"hidden":false,"condition":"","config":"normal","event":[{"type":"TELEPORT","map":"rhombus-sqr.dng-bottom","marker":"start3"}]}],"characterName":"cross-worlds.teleport-tomboy"}},{"type":"NPC","x":305,"y":200,"level":0,"settings":{"npcStates":[{"reactType":"FIXED_FACE","face":"NORTH","action":[],"hidden":false,"condition":"","config":"normal","event":[],"pageName":""}],"characterName":"cross-worlds.triblader-male-blue","name":"noob2"}},{"type":"NPC","x":335,"y":207,"level":0,"settings":{"npcStates":[{"reactType":"FIXED_FACE","face":"NORTH","action":[],"hidden":false,"condition":"","config":"normal","event":[],"pageName":""}],"characterName":"cross-worlds.pentafist-female-rasta","name":"noob2"}},{"type":"NPC","x":319,"y":230,"level":0,"settings":{"npcStates":[{"reactType":"FIXED_FACE","face":"NORTH","action":[],"hidden":false,"condition":"","config":"normal","event":[],"pageName":""}],"characterName":"cross-worlds.hexacast-female-blue","name":"noob2"}},{"type":"XenoDialog","x":505,"y":169,"level":0,"settings":{"size":{"x":16,"y":16,"z":0},"name":"preTutDialog1","dialog":[{"entity":{"global":true,"name":"preTutGuide1"},"text":{"en_US":"Welcome to CrossWorlds!"}},{"entity":{"global":true,"name":"preTutGuide1"},"text":{"en_US":"Right now, you are in Rhombus Square."}},{"entity":{"global":true,"name":"preTutGuide1"},"text":{"en_US":"This is a place for new players to get acquainted with the basic mechanics, before moving on to the main setting."}},{"entity":{"global":true,"name":"preTutGuide1"},"text":{"en_US":"You are about to enter the first tutorial room."}},{"entity":{"global":true,"name":"preTutGuide1"},"text":{"en_US":"There, you will learn general and movement-related skills such as aiming, dashing, and jumping."}},{"entity":{"global":true,"name":"preTutGuide1"},"text":{"en_US":"Feel free to talk to any of the other seekers you meet!"}}]}}],"layer":[{"type":"Background","name":"Background","level":0,"width":30,"height":20,"visible":1,"tilesetName":"media/map/rhombus-interior.png","repeat":false,"distance":1,"tilesize":16,"moveSpeed":{"x":0,"y":0},"data":[[7,39,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,41,9],[39,71,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,73,41],[71,103,104,104,104,104,104,104,104,104,104,104,104,104,104,104,104,104,104,104,104,104,104,104,104,104,104,104,105,73],[103,135,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,137,105],[135,167,168,168,168,168,168,168,168,168,168,168,168,168,168,168,168,168,168,168,168,168,168,168,168,168,168,168,169,137],[167,199,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,201,169],[199,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,201],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]]}]}
+{
+    "name": "rhombus-sqr/dng-bottom",
+    "levels": [{
+        "height": 0
+    }],
+    "mapWidth": 30,
+    "mapHeight": 20,
+    "masterLevel": 0,
+    "attributes": {
+        "saveMode": "ENABLED",
+        "bgm": "rhombusSquare",
+        "cameraInBounds": false,
+        "map-sounds": "",
+        "mapStyle": "rhombus-interior",
+        "weather": "NONE",
+        "npcRunners": "LIVELY",
+        "area": "rhombus-sqr"
+    },
+    "screen": {
+        "x": 0,
+        "y": 0
+    },
+    "entities": [{
+        "type": "NPC",
+        "x": 335,
+        "y": 169,
+        "level": 0,
+        "settings": {
+            "npcStates": [{
+                "reactType": "",
+                "face": "SOUTH",
+                "action": [],
+                "hidden": false,
+                "condition": "",
+                "config": "normal",
+                "event": []
+            }],
+            "characterName": "advisors.female-small-black",
+            "name": "preTutGuide1"
+        }
+    }, {
+        "type": "TeleportField",
+        "x": 243,
+        "y": 116,
+        "level": 0,
+        "settings": {
+            "size": {
+                "x": 16,
+                "y": 16,
+                "z": 0
+            },
+            "gfxType": "AR",
+            "map": "rhombus-sqr.dng-bottom",
+            "teleportLabel": {},
+            "longTelCond": "false",
+            "dir": "NORTH",
+            "central": {
+                "global": true,
+                "name": "test"
+            },
+            "pseudoExit": false,
+            "name": "start2"
+        }
+    }, {
+        "type": "TeleportCentral",
+        "x": 212,
+        "y": 87,
+        "level": 0,
+        "settings": {
+            "size": {
+                "x": 80,
+                "y": 80,
+                "z": 0
+            },
+            "npcRunnerExitProb": 1,
+            "name": "test",
+            "effects": true,
+            "npcRunnerEnterProb": 0,
+            "condition": "true",
+            "landmark": ""
+        }
+    }, {
+        "type": "TeleportGround",
+        "x": 212,
+        "y": 310,
+        "level": 0,
+        "settings": {
+            "size": {
+                "x": 80,
+                "y": 10,
+                "z": 0
+            },
+            "npcRunnerProb": 0.2,
+            "name": "start",
+            "dir": "SOUTH",
+            "transitionType": "REGULAR",
+            "centerWalkThrough": true,
+            "marker": "false",
+            "map": "rhombus-sqr.dng-bottom",
+            "spawnDistance": 16,
+            "blockEventCondition": "true"
+        }
+    }, {
+        "type": "NPC",
+        "x": 39,
+        "y": 197,
+        "level": 0,
+        "settings": {
+            "npcStates": [{
+                "reactType": "",
+                "face": "EAST",
+                "action": [],
+                "hidden": false,
+                "condition": "",
+                "config": "ground",
+                "event": [{
+                    "person": {
+                        "person": "cross-worlds.table-chan",
+                        "expression": "DEFAULT"
+                    },
+                    "type": "ADD_MSG_PERSON",
+                    "name": "Rina",
+                    "side": "LEFT"
+                }, {
+                    "person": {
+                        "person": "main.civilian.mirabelle",
+                        "expression": "DEFAULT"
+                    },
+                    "type": "ADD_MSG_PERSON",
+                    "side": "RIGHT"
+                }, {
+                    "person": {
+                        "person": "cross-worlds.table-chan",
+                        "expression": "DEFAULT"
+                    },
+                    "message": {
+                        "en_US": "I'm sitting on a table. You just can't see it."
+                    },
+                    "type": "SHOW_MSG"
+                }, {
+                    "person": {
+                        "person": "main.civilian.mirabelle",
+                        "expression": "NERVOUS"
+                    },
+                    "message": {
+                        "en_US": "Ok..."
+                    },
+                    "type": "SHOW_MSG"
+                }]
+            }],
+            "name": "mini-table-chan",
+            "characterName": "cross-worlds.table-chan"
+        }
+    }, {
+        "type": "Marker",
+        "x": 200,
+        "y": 213,
+        "level": 0,
+        "settings": {
+            "size": {
+                "x": 16,
+                "y": 16,
+                "z": 0
+            },
+            "name": "start3",
+            "dir": "NORTH"
+        }
+    }, {
+        "type": "EventTrigger",
+        "x": 526,
+        "y": 252,
+        "level": 0,
+        "settings": {
+            "event": [{
+                "type": "SWITCH_PLAYER_CONFIG",
+                "name": "Civilian.Mirabelle"
+            }, {
+                "type": "CHANGE_VAR_BOOL",
+                "changeType": "set",
+                "varName": "tmp.mirabelle",
+                "value": true
+            }],
+            "triggerType": "ALWAYS",
+            "endCondition": "tmp.mirabelle"
+        }
+    }, {
+        "type": "NPC",
+        "x": 363,
+        "y": 201,
+        "level": 0,
+        "settings": {
+            "npcStates": [{
+                "reactType": "FIXED_FACE",
+                "face": "NORTH",
+                "action": [],
+                "hidden": false,
+                "condition": "",
+                "config": "normal",
+                "event": [],
+                "pageName": ""
+            }],
+            "characterName": "cross-worlds.sphero-male-blue",
+            "name": "noob1"
+        }
+    }, {
+        "type": "NPC",
+        "x": 204,
+        "y": 185,
+        "level": 0,
+        "settings": {
+            "npcStates": [{
+                "reactType": "",
+                "face": "SOUTH",
+                "action": [],
+                "hidden": false,
+                "condition": "",
+                "config": "normal",
+                "event": [{
+                    "type": "TELEPORT",
+                    "map": "rhombus-sqr.dng-bottom",
+                    "marker": "start3"
+                }]
+            }],
+            "characterName": "cross-worlds.teleport-tomboy"
+        }
+    }, {
+        "type": "NPC",
+        "x": 305,
+        "y": 200,
+        "level": 0,
+        "settings": {
+            "npcStates": [{
+                "reactType": "FIXED_FACE",
+                "face": "NORTH",
+                "action": [],
+                "hidden": false,
+                "condition": "",
+                "config": "normal",
+                "event": [],
+                "pageName": ""
+            }],
+            "characterName": "cross-worlds.triblader-male-blue",
+            "name": "noob2"
+        }
+    }, {
+        "type": "NPC",
+        "x": 335,
+        "y": 207,
+        "level": 0,
+        "settings": {
+            "npcStates": [{
+                "reactType": "FIXED_FACE",
+                "face": "NORTH",
+                "action": [],
+                "hidden": false,
+                "condition": "",
+                "config": "normal",
+                "event": [],
+                "pageName": ""
+            }],
+            "characterName": "cross-worlds.pentafist-female-rasta",
+            "name": "noob2"
+        }
+    }, {
+        "type": "NPC",
+        "x": 319,
+        "y": 230,
+        "level": 0,
+        "settings": {
+            "npcStates": [{
+                "reactType": "FIXED_FACE",
+                "face": "NORTH",
+                "action": [],
+                "hidden": false,
+                "condition": "",
+                "config": "normal",
+                "event": [],
+                "pageName": ""
+            }],
+            "characterName": "cross-worlds.hexacast-female-blue",
+            "name": "noob2"
+        }
+    }, {
+        "type": "XenoDialog",
+        "x": 505,
+        "y": 169,
+        "level": 0,
+        "settings": {
+            "size": {
+                "x": 16,
+                "y": 16,
+                "z": 0
+            },
+            "name": "preTutDialog1",
+            "dialog": [{
+                "entity": {
+                    "global": true,
+                    "name": "preTutGuide1"
+                },
+                "text": {
+                    "en_US": "Welcome to CrossWorlds!"
+                }
+            }, {
+                "entity": {
+                    "global": true,
+                    "name": "preTutGuide1"
+                },
+                "text": {
+                    "en_US": "Right now, you are in Rhombus Square."
+                }
+            }, {
+                "entity": {
+                    "global": true,
+                    "name": "preTutGuide1"
+                },
+                "text": {
+                    "en_US": "This is a place for new players to get acquainted with the basic mechanics, before moving on to the main setting."
+                }
+            }, {
+                "entity": {
+                    "global": true,
+                    "name": "preTutGuide1"
+                },
+                "text": {
+                    "en_US": "You are about to enter the first tutorial room."
+                }
+            }, {
+                "entity": {
+                    "global": true,
+                    "name": "preTutGuide1"
+                },
+                "text": {
+                    "en_US": "There, you will learn general and movement-related skills such as aiming, dashing, and jumping."
+                }
+            }, {
+                "entity": {
+                    "global": true,
+                    "name": "preTutGuide1"
+                },
+                "text": {
+                    "en_US": "Feel free to talk to any of the other seekers you meet!"
+                }
+            }]
+        }
+    }],
+    "layer": [{
+        "type": "Background",
+        "name": "Background",
+        "level": 0,
+        "width": 30,
+        "height": 20,
+        "visible": 1,
+        "tilesetName": "media/map/rhombus-interior.png",
+        "repeat": false,
+        "distance": 1,
+        "tilesize": 16,
+        "moveSpeed": {
+            "x": 0,
+            "y": 0
+        },
+        "data": [
+            [7, 39, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 41, 9],
+            [39, 71, 72, 72, 72, 72, 72, 72, 72, 72, 72, 72, 72, 72, 72, 72, 72, 72, 72, 72, 72, 72, 72, 72, 72, 72, 72, 72, 73, 41],
+            [71, 103, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 104, 105, 73],
+            [103, 135, 136, 136, 136, 136, 136, 136, 136, 136, 136, 136, 136, 136, 136, 136, 136, 136, 136, 136, 136, 136, 136, 136, 136, 136, 136, 136, 137, 105],
+            [135, 167, 168, 168, 168, 168, 168, 168, 168, 168, 168, 168, 168, 168, 168, 168, 168, 168, 168, 168, 168, 168, 168, 168, 168, 168, 168, 168, 169, 137],
+            [167, 199, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 201, 169],
+            [199, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 201],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+        ]
+    }]
+}
