@@ -6,7 +6,7 @@
     "format": "npm run minify-json && npm run json-beautify && npm run js-beautify",
     "minify-json": "minify-json ./beta-bee/",
     "js-beautify": "js-beautify -js -q -r -f ./beta-bee/**/*.js",
-    "json-beautify": "js-beautify -js -r -f ./beta-bee/assets/**/*.json"
+    "json-beautify": "js-beautify -js -r -f ./beta-bee/**/*.json"
   },
   "repository": {
     "type": "git",
