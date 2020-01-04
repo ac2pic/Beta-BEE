@@ -3,9 +3,10 @@
   "main": "",
   "scripts": {
     "gen:prestart": "node scripts/generate-prestart.js",
-    "format": "npm run minify-json && npm run js-beautify",
+    "format": "npm run minify-json && npm run json-beautify && npm run js-beautify",
     "minify-json": "minify-json ./beta-bee/",
-    "js-beautify": "js-beautify -js -q -r -f ./beta-bee/**/*.js"
+    "js-beautify": "js-beautify -js -q -r -f ./beta-bee/**/*.js",
+    "json-beautify": "js-beautify -js -r -f ./beta-bee/assets/**/*.json"
   },
   "repository": {
     "type": "git",
