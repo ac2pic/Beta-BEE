@@ -8,7 +8,7 @@
     "ccmodDependencies": {
         "extendable-severed-heads": "1.0.0",
         "hardcoded-config-injector": "0.1.0",
-        "menu-ui-replacer": "1.x.x",
+        "menu-ui-replacer": "1.x.x", 
 		"unified-steps": "0.x.x"
     }
 }
