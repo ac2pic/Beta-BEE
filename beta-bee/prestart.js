@@ -6,8 +6,6 @@ import "./js/game/feature/bee/gui/hud/exp-hud.js";
 
 import "./js/game/feature/bee/gui/hud/hp-hud.js";
 
-import "./js/game/feature/bee/menu/gui/emilie-circuit-icons.js";
-
 import "./js/game/feature/bee/party/party.js";
 
 import "./js/game/feature/bee/playable/controls.js";
