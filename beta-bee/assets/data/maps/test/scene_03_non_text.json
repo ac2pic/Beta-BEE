@@ -1,10 +1,8 @@
 {
     "name": "empty",
-    "levels": [
-        {
-            "height": 0
-        }
-    ],
+    "levels": [{
+        "height": 0
+    }],
     "mapWidth": 30,
     "mapHeight": 30,
     "masterLevel": 0,
@@ -20,1291 +18,321 @@
         "x": 0,
         "y": 0
     },
-    "entities": [
-        {
-            "type": "EventTrigger",
-            "x": 444,
-            "y": 242,
-            "level": 0,
-            "settings": {
-                "name": "talk",
-                "eventType": "CUTSCENE",
-                "event": [
-                    {
-                        "entity": {
-                            "name": "aiko"
-                        },
-                        "duration": -1,
-                        "align": "BOTTOM",
-                        "group": "",
-                        "wait": false,
-                        "waitSkip": 0,
-                        "type": "SHOW_EFFECT",
-                        "effect": {
-                            "sheet": "scene.dream",
-                            "name": "black"
-                        },
-                        "offset": {
-                            "x": 0,
-                            "y": 0,
-                            "z": 0
-                        }
+    "entities": [{
+        "type": "EventTrigger",
+        "x": 444,
+        "y": 242,
+        "level": 0,
+        "settings": {
+            "name": "talk",
+            "eventType": "CUTSCENE",
+            "event": [{
+                "entity": {
+                    "name": "aiko"
+                },
+                "duration": -1,
+                "align": "BOTTOM",
+                "group": "",
+                "wait": false,
+                "waitSkip": 0,
+                "type": "SHOW_EFFECT",
+                "effect": {
+                    "sheet": "scene.dream",
+                    "name": "black"
+                },
+                "offset": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }, {
+                "entity": {
+                    "name": "malik"
+                },
+                "duration": -1,
+                "align": "BOTTOM",
+                "group": "",
+                "wait": false,
+                "waitSkip": 0,
+                "type": "SHOW_EFFECT",
+                "effect": {
+                    "sheet": "scene.dream",
+                    "name": "black"
+                },
+                "offset": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }, {
+                "entity": {
+                    "name": "nath"
+                },
+                "duration": -1,
+                "align": "BOTTOM",
+                "group": "",
+                "wait": false,
+                "waitSkip": 0,
+                "type": "SHOW_EFFECT",
+                "effect": {
+                    "sheet": "scene.dream",
+                    "name": "black"
+                },
+                "offset": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }, {
+                "type": "SET_ENTITY_POS",
+                "entity": {
+                    "name": "aiko"
+                },
+                "position": {
+                    "x": 240,
+                    "y": 280,
+                    "z": 0
+                }
+            }, {
+                "type": "SET_ENTITY_POS",
+                "entity": {
+                    "name": "nath"
+                },
+                "position": {
+                    "x": 280,
+                    "y": 280,
+                    "z": 0
+                }
+            }, {
+                "type": "SET_ENTITY_POS",
+                "entity": {
+                    "name": "emilie"
+                },
+                "position": {
+                    "x": 260,
+                    "y": 300,
+                    "z": 0
+                }
+            }, {
+                "type": "SET_ENTITY_POS",
+                "entity": {
+                    "name": "malik"
+                },
+                "position": {
+                    "x": 260,
+                    "y": 260,
+                    "z": 0
+                }
+            }, {
+                "type": "DO_ACTION",
+                "entity": {
+                    "name": "aiko"
+                },
+                "action": [{
+                    "type": "NAVIGATE_TO_POINT",
+                    "target": {
+                        "x": 50,
+                        "y": 260,
+                        "z": 0
                     },
-                    {
-                        "entity": {
-                            "name": "malik"
-                        },
-                        "duration": -1,
-                        "align": "BOTTOM",
-                        "group": "",
-                        "wait": false,
-                        "waitSkip": 0,
-                        "type": "SHOW_EFFECT",
-                        "effect": {
-                            "sheet": "scene.dream",
-                            "name": "black"
-                        },
-                        "offset": {
-                            "x": 0,
-                            "y": 0,
-                            "z": 0
-                        }
+                    "precise": false
+                }]
+            }, {
+                "type": "DO_ACTION",
+                "entity": {
+                    "name": "malik"
+                },
+                "action": [{
+                    "type": "NAVIGATE_TO_POINT",
+                    "target": {
+                        "x": 70,
+                        "y": 260,
+                        "z": 0
                     },
-                    {
-                        "entity": {
-                            "name": "nath"
-                        },
-                        "duration": -1,
-                        "align": "BOTTOM",
-                        "group": "",
-                        "wait": false,
-                        "waitSkip": 0,
-                        "type": "SHOW_EFFECT",
-                        "effect": {
-                            "sheet": "scene.dream",
-                            "name": "black"
-                        },
-                        "offset": {
-                            "x": 0,
-                            "y": 0,
-                            "z": 0
-                        }
+                    "precise": false
+                }]
+            }, {
+                "type": "DO_ACTION",
+                "entity": {
+                    "name": "emilie"
+                },
+                "action": [{
+                    "type": "NAVIGATE_TO_POINT",
+                    "target": {
+                        "x": 90,
+                        "y": 260,
+                        "z": 0
                     },
-                    {
-                        "type": "SET_ENTITY_POS",
-                        "entity": {
-                            "name": "aiko"
-                        },
-                        "position": {
-                            "x": 240,
-                            "y": 280,
-                            "z": 0
-                        }
+                    "precise": false
+                }]
+            }, {
+                "type": "DO_ACTION",
+                "entity": {
+                    "name": "nath"
+                },
+                "action": [{
+                    "type": "NAVIGATE_TO_POINT",
+                    "target": {
+                        "x": 110,
+                        "y": 260,
+                        "z": 0
                     },
-                    {
-                        "type": "SET_ENTITY_POS",
-                        "entity": {
-                            "name": "nath"
-                        },
-                        "position": {
-                            "x": 280,
-                            "y": 280,
-                            "z": 0
-                        }
-                    },
-                    {
-                        "type": "SET_ENTITY_POS",
-                        "entity": {
-                            "name": "emilie"
-                        },
-                        "position": {
-                            "x": 260,
-                            "y": 300,
-                            "z": 0
-                        }
-                    },
-                    {
-                        "type": "SET_ENTITY_POS",
-                        "entity": {
-                            "name": "malik"
-                        },
-                        "position": {
-                            "x": 260,
-                            "y": 260,
-                            "z": 0
-                        }
-                    },
-                    {
-                        "type": "DO_ACTION",
-                        "entity": {
-                            "name": "aiko"
-                        },
-                        "action": [
-                            {
-                                "type": "NAVIGATE_TO_POINT",
-                                "target": {
-                                    "x": 50,
-                                    "y": 260,
-                                    "z": 0
-                                },
-                                "precise": false
-                            }
-                        ]
-                    },
-                    {
-                        "type": "DO_ACTION",
-                        "entity": {
-                            "name": "malik"
-                        },
-                        "action": [
-                            {
-                                "type": "NAVIGATE_TO_POINT",
-                                "target": {
-                                    "x": 70,
-                                    "y": 260,
-                                    "z": 0
-                                },
-                                "precise": false
-                            }
-                        ]
-                    },
-                    {
-                        "type": "DO_ACTION",
-                        "entity": {
-                            "name": "emilie"
-                        },
-                        "action": [
-                            {
-                                "type": "NAVIGATE_TO_POINT",
-                                "target": {
-                                    "x": 90,
-                                    "y": 260,
-                                    "z": 0
-                                },
-                                "precise": false
-                            }
-                        ]
-                    },
-                    {
-                        "type": "DO_ACTION",
-                        "entity": {
-                            "name": "nath"
-                        },
-                        "action": [
-                            {
-                                "type": "NAVIGATE_TO_POINT",
-                                "target": {
-                                    "x": 110,
-                                    "y": 260,
-                                    "z": 0
-                                },
-                                "precise": false
-                            }
-                        ]
-                    },
-                    {
-                        "alpha": 1,
-                        "time": 2,
-                        "lighter": true,
-                        "type": "SET_OVERLAY",
-                        "color": "white"
-                    },
-                    {
-                        "type": "WAIT",
-                        "time": 3
-                    },
-                    {
-                        "alpha": 0,
-                        "time": 0,
-                        "lighter": true,
-                        "type": "SET_OVERLAY",
-                        "color": "white"
-                    }
-                ],
-                "startCondition": "true",
-                "endCondition": "false",
-                "triggerType": "ONCE"
-            }
-        },
-        {
-            "type": "NPC",
-            "x": 260,
-            "y": 200,
-            "level": 0,
-            "settings": {
-                "name": "malik",
-                "characterName": "class.malik",
-                "mapId": 16,
-                "npcStates": [
-                    {
-                        "reactType": "FIXED_POS",
-                        "face": "SOUTH",
-                        "action": [],
-                        "hidden": false,
-                        "condition": "",
-                        "config": "normal",
-                        "event": []
-                    }
-                ]
-            }
-        },
-        {
-            "type": "NPC",
-            "x": 290,
-            "y": 200,
-            "level": 0,
-            "settings": {
-                "name": "nath",
-                "characterName": "class.nathalie",
-                "mapId": 16,
-                "npcStates": [
-                    {
-                        "reactType": "FIXED_POS",
-                        "face": "WEST",
-                        "action": [],
-                        "hidden": false,
-                        "condition": "",
-                        "config": "normal",
-                        "event": []
-                    }
-                ]
-            }
-        },
-        {
-            "type": "NPC",
-            "x": 200,
-            "y": 200,
-            "level": 0,
-            "settings": {
-                "name": "aiko",
-                "characterName": "class.aiko",
-                "mapId": 16,
-                "npcStates": [
-                    {
-                        "reactType": "FIXED_POS",
-                        "face": "EAST",
-                        "action": [],
-                        "hidden": false,
-                        "condition": "",
-                        "config": "normal",
-                        "event": []
-                    }
-                ]
-            }
-        },
-        {
-            "type": "NPC",
-            "x": 160,
-            "y": 200,
-            "level": 0,
-            "settings": {
-                "name": "emilie",
-                "characterName": "main.civilian.emilie",
-                "mapId": 16,
-                "npcStates": [
-                    {
-                        "reactType": "FIXED_POS",
-                        "face": "NORTH",
-                        "action": [],
-                        "hidden": false,
-                        "condition": "",
-                        "config": "normal",
-                        "event": []
-                    }
-                ]
-            }
-        },
-        {
-            "type": "Marker",
-            "x": 200,
-            "y": 300,
-            "level": 0,
-            "settings": {
-                "name": "start",
-                "mapId": 5,
-                "dir": "SOUTH"
-            }
+                    "precise": false
+                }]
+            }, {
+                "alpha": 1,
+                "time": 2,
+                "lighter": true,
+                "type": "SET_OVERLAY",
+                "color": "white"
+            }, {
+                "type": "WAIT",
+                "time": 3
+            }, {
+                "alpha": 0,
+                "time": 0,
+                "lighter": true,
+                "type": "SET_OVERLAY",
+                "color": "white"
+            }],
+            "startCondition": "true",
+            "endCondition": "false",
+            "triggerType": "ONCE"
         }
-    ],
-    "layer": [
-        {
-            "id": 0,
-            "type": "Background",
-            "name": "ground",
-            "level": 0,
-            "width": 30,
-            "height": 30,
-            "visible": 1,
-            "tilesetName": "media/map/cargo-ship-inner.png",
-            "repeat": false,
-            "distance": 1,
-            "tilesize": 16,
-            "moveSpeed": {
-                "x": 0,
-                "y": 0
-            },
-            "data": [
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    8,
-                    9,
-                    9,
-                    9,
-                    9,
-                    9,
-                    9,
-                    9,
-                    9,
-                    9,
-                    9,
-                    9,
-                    9,
-                    9,
-                    9,
-                    9,
-                    10,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    8,
-                    40,
-                    41,
-                    14,
-                    41,
-                    41,
-                    41,
-                    41,
-                    41,
-                    41,
-                    41,
-                    41,
-                    41,
-                    41,
-                    41,
-                    14,
-                    41,
-                    42,
-                    10,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    39,
-                    40,
-                    72,
-                    73,
-                    46,
-                    73,
-                    73,
-                    73,
-                    73,
-                    73,
-                    73,
-                    73,
-                    73,
-                    73,
-                    73,
-                    73,
-                    46,
-                    73,
-                    74,
-                    42,
-                    43,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    71,
-                    72,
-                    104,
-                    105,
-                    78,
-                    105,
-                    105,
-                    105,
-                    105,
-                    105,
-                    105,
-                    105,
-                    105,
-                    105,
-                    105,
-                    105,
-                    78,
-                    105,
-                    106,
-                    74,
-                    75,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    71,
-                    104,
-                    136,
-                    137,
-                    110,
-                    137,
-                    137,
-                    137,
-                    137,
-                    137,
-                    137,
-                    137,
-                    137,
-                    137,
-                    137,
-                    137,
-                    110,
-                    137,
-                    138,
-                    106,
-                    75,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    71,
-                    136,
-                    168,
-                    169,
-                    142,
-                    169,
-                    169,
-                    169,
-                    169,
-                    169,
-                    169,
-                    169,
-                    169,
-                    169,
-                    169,
-                    169,
-                    142,
-                    169,
-                    170,
-                    138,
-                    75,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    71,
-                    168,
-                    200,
-                    201,
-                    174,
-                    201,
-                    201,
-                    201,
-                    201,
-                    201,
-                    201,
-                    201,
-                    201,
-                    201,
-                    201,
-                    201,
-                    174,
-                    201,
-                    202,
-                    170,
-                    75,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    71,
-                    200,
-                    232,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    234,
-                    202,
-                    75,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    71,
-                    232,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    234,
-                    75,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    263,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    267,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    264,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    266,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    296,
-                    264,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    266,
-                    298,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    296,
-                    297,
-                    297,
-                    297,
-                    297,
-                    297,
-                    297,
-                    297,
-                    225,
-                    226,
-                    297,
-                    297,
-                    297,
-                    297,
-                    297,
-                    297,
-                    298,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ]
-            ]
+    }, {
+        "type": "NPC",
+        "x": 260,
+        "y": 200,
+        "level": 0,
+        "settings": {
+            "name": "malik",
+            "characterName": "class.malik",
+            "mapId": 16,
+            "npcStates": [{
+                "reactType": "FIXED_POS",
+                "face": "SOUTH",
+                "action": [],
+                "hidden": false,
+                "condition": "",
+                "config": "normal",
+                "event": []
+            }]
         }
-    ]
+    }, {
+        "type": "NPC",
+        "x": 290,
+        "y": 200,
+        "level": 0,
+        "settings": {
+            "name": "nath",
+            "characterName": "class.nathalie",
+            "mapId": 16,
+            "npcStates": [{
+                "reactType": "FIXED_POS",
+                "face": "WEST",
+                "action": [],
+                "hidden": false,
+                "condition": "",
+                "config": "normal",
+                "event": []
+            }]
+        }
+    }, {
+        "type": "NPC",
+        "x": 200,
+        "y": 200,
+        "level": 0,
+        "settings": {
+            "name": "aiko",
+            "characterName": "class.aiko",
+            "mapId": 16,
+            "npcStates": [{
+                "reactType": "FIXED_POS",
+                "face": "EAST",
+                "action": [],
+                "hidden": false,
+                "condition": "",
+                "config": "normal",
+                "event": []
+            }]
+        }
+    }, {
+        "type": "NPC",
+        "x": 160,
+        "y": 200,
+        "level": 0,
+        "settings": {
+            "name": "emilie",
+            "characterName": "main.civilian.emilie",
+            "mapId": 16,
+            "npcStates": [{
+                "reactType": "FIXED_POS",
+                "face": "NORTH",
+                "action": [],
+                "hidden": false,
+                "condition": "",
+                "config": "normal",
+                "event": []
+            }]
+        }
+    }, {
+        "type": "Marker",
+        "x": 200,
+        "y": 300,
+        "level": 0,
+        "settings": {
+            "name": "start",
+            "mapId": 5,
+            "dir": "SOUTH"
+        }
+    }],
+    "layer": [{
+        "id": 0,
+        "type": "Background",
+        "name": "ground",
+        "level": 0,
+        "width": 30,
+        "height": 30,
+        "visible": 1,
+        "tilesetName": "media/map/cargo-ship-inner.png",
+        "repeat": false,
+        "distance": 1,
+        "tilesize": 16,
+        "moveSpeed": {
+            "x": 0,
+            "y": 0
+        },
+        "data": [
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 8, 40, 41, 14, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 14, 41, 42, 10, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 39, 40, 72, 73, 46, 73, 73, 73, 73, 73, 73, 73, 73, 73, 73, 73, 46, 73, 74, 42, 43, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 71, 72, 104, 105, 78, 105, 105, 105, 105, 105, 105, 105, 105, 105, 105, 105, 78, 105, 106, 74, 75, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 71, 104, 136, 137, 110, 137, 137, 137, 137, 137, 137, 137, 137, 137, 137, 137, 110, 137, 138, 106, 75, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 71, 136, 168, 169, 142, 169, 169, 169, 169, 169, 169, 169, 169, 169, 169, 169, 142, 169, 170, 138, 75, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 71, 168, 200, 201, 174, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 174, 201, 202, 170, 75, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 71, 200, 232, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 234, 202, 75, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 71, 232, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 234, 75, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 263, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 267, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 264, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 266, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 296, 264, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 266, 298, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 296, 297, 297, 297, 297, 297, 297, 297, 225, 226, 297, 297, 297, 297, 297, 297, 298, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        ]
+    }]
 }

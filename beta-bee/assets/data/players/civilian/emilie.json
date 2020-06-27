@@ -34,11 +34,7 @@
         "normDistance": 0,
         "meleeDistance": 0,
         "minDistance": 0,
-        "foodSprites": [
-            "",
-            "",
-            ""
-        ]
+        "foodSprites": ["", "", ""]
     },
     "autoequip": null,
     "DOCTYPE": "PLAYER",
