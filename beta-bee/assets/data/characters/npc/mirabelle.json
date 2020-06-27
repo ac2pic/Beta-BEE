@@ -52,21 +52,25 @@
         "height": 179,
         "centerX": 64,
         "centerY": 76,
-        "src": "npc/mira.png",
-        "parts": [{
-            "normDefault": {
-                "destX": 0,
-                "destY": 0,
-                "width": 134,
-                "height": 179,
-                "srcX": 0,
-                "srcY": 0
+        "src": "mirabelle.png",
+        "parts": [
+            {
+                "normDefault": {
+                    "destX": 0,
+                    "destY": 0,
+                    "width": 134,
+                    "height": 179,
+                    "srcX": 0,
+                    "srcY": 0
+                }
             }
-        }],
+        ],
         "expressions": {
             "DEFAULT": {
                 "faces": [
-                    ["normDefault"]
+                    [
+                        "normDefault"
+                    ]
                 ]
             }
         }
