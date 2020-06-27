@@ -32,181 +32,92 @@
         "y": -4,
         "z": 0
     },
-    "SUB": [
-        {
-            "sheet": "walk",
-            "SUB": [
-                {
-                    "name": "idle",
-                    "frames": [
-                        1
-                    ],
-                    "time": 1,
-                    "repeat": false
-                },
-                {
-                    "name": "preIdle",
-                    "time": 0.1,
-                    "repeat": false,
-                    "frames": [
-                        1
-                    ]
-                },
-                {
-                    "name": "walk",
-                    "time": 0.133,
-                    "repeat": true,
-                    "frames": [
-                        0,
-                        1,
-                        2,
-                        1
-                    ]
-                },
-                {
-                    "name": "run",
-                    "time": 0.133,
-                    "repeat": true,
-                    "frames": [
-                        0,
-                        1,
-                        2,
-                        1
-                    ]
-                },
-                {
-                    "name": "jump",
-                    "time": 0.0833,
-                    "repeat": true,
-                    "frames": [
-                        0
-                    ]
-                },
-                {
-                    "name": "fall",
-                    "time": 0.0833,
-                    "repeat": true,
-                    "frames": [
-                        2
-                    ]
-                }
-            ],
-            "dirs": "8",
-            "flipX": [
-                0,
-                0,
-                0,
-                0,
-                0,
-                1,
-                1,
-                1
-            ],
-            "tileOffsets": [
-                0,
-                3,
-                6,
-                9,
-                12,
-                9,
-                6,
-                3
-            ]
+    "SUB": [{
+        "sheet": "walk",
+        "SUB": [{
+            "name": "idle",
+            "frames": [1],
+            "time": 1,
+            "repeat": false
+        }, {
+            "name": "preIdle",
+            "time": 0.1,
+            "repeat": false,
+            "frames": [1]
+        }, {
+            "name": "walk",
+            "time": 0.133,
+            "repeat": true,
+            "frames": [0, 1, 2, 1]
+        }, {
+            "name": "run",
+            "time": 0.133,
+            "repeat": true,
+            "frames": [0, 1, 2, 1]
+        }, {
+            "name": "jump",
+            "time": 0.0833,
+            "repeat": true,
+            "frames": [0]
+        }, {
+            "name": "fall",
+            "time": 0.0833,
+            "repeat": true,
+            "frames": [2]
+        }],
+        "dirs": "8",
+        "flipX": [0, 0, 0, 0, 0, 1, 1, 1],
+        "tileOffsets": [0, 3, 6, 9, 12, 9, 6, 3]
+    }, {
+        "sheet": "wakeup",
+        "SUB": [{
+            "name": "sleeping",
+            "frames": [0],
+            "time": 0.2,
+            "repeat": false
+        }, {
+            "name": "wakeup",
+            "time": 0.15,
+            "repeat": false,
+            "frames": [0, 1, 2, 3, 4, 5]
+        }, {
+            "name": "waked",
+            "time": 0.2,
+            "repeat": false,
+            "frames": [5]
+        }, {
+            "name": "nightmare",
+            "time": 0.2,
+            "repeat": false,
+            "frames": [7]
+        }],
+        "dirs": "2",
+        "offset": {
+            "x": 0,
+            "y": -2,
+            "z": 0
         },
-        {
-            "sheet": "wakeup",
-            "SUB": [
-                {
-                    "name": "sleeping",
-                    "frames": [
-                        0
-                    ],
-                    "time": 0.2,
-                    "repeat": false
-                },
-                {
-                    "name": "wakeup",
-                    "time": 0.15,
-                    "repeat": false,
-                    "frames": [
-                        0,
-                        1,
-                        2,
-                        3,
-                        4,
-                        5
-                    ]
-                },
-                {
-                    "name": "waked",
-                    "time": 0.2,
-                    "repeat": false,
-                    "frames": [
-                        5
-                    ]
-                },
-                {
-                    "name": "nightmare",
-                    "time": 0.2,
-                    "repeat": false,
-                    "frames": [
-                        7
-                    ]
-                }
-            ],
-            "dirs": "2",
-            "offset": {
-                "x": 0,
-                "y": -2,
-                "z": 0
-            },
-            "flipX": [
-                0,
-                0
-            ],
-            "tileOffsets": [
-                0,
-                0
-            ]
-        },
-        {
-            "sheet": "poses",
-            "dirs": 1,
-            "tileOffsets": [
-                0
-            ],
-            "SUB": [
-                {
-                    "name": "headsetNoBlink",
-                    "time": 1,
-                    "frames": [
-                        4
-                    ],
-                    "repeat": true
-                },
-                {
-                    "name": "putOnHeadSet",
-                    "time": 0.333,
-                    "frames": [
-                        0,
-                        1,
-                        2,
-                        3,
-                        4
-                    ],
-                    "repeat": false
-                },
-                {
-                    "name": "headsetBlink",
-                    "repeat": true,
-                    "time": 0.333,
-                    "frames": [
-                        5,
-                        6,
-                        7
-                    ]
-                }
-            ]
-        }
-    ]
+        "flipX": [0, 0],
+        "tileOffsets": [0, 0]
+    }, {
+        "sheet": "poses",
+        "dirs": 1,
+        "tileOffsets": [0],
+        "SUB": [{
+            "name": "headsetNoBlink",
+            "time": 1,
+            "frames": [4],
+            "repeat": true
+        }, {
+            "name": "putOnHeadSet",
+            "time": 0.333,
+            "frames": [0, 1, 2, 3, 4],
+            "repeat": false
+        }, {
+            "name": "headsetBlink",
+            "repeat": true,
+            "time": 0.333,
+            "frames": [5, 6, 7]
+        }]
+    }]
 }

@@ -5,28 +5,28 @@
         "color": "black"
     }, {
         "name": "bg-ring",
-        "gfx": "media\/parallax\/login\/bg-ring.png",
+        "gfx": "media/parallax/login/bg-ring.png",
         "align": {
             "x": "CENTER",
             "y": "CENTER"
         }
     }, {
         "name": "bg-ring2",
-        "gfx": "media\/parallax\/login\/bg-ring.png",
+        "gfx": "media/parallax/login/bg-ring.png",
         "align": {
             "x": "CENTER",
             "y": "CENTER"
         }
     }, {
         "name": "bg-lines",
-        "gfx": "media\/parallax\/login\/bg-lines.png",
+        "gfx": "media/parallax/login/bg-lines.png",
         "align": {
             "x": "CENTER",
             "y": "TOP"
         }
     }, {
         "name": "bg-gradient",
-        "gfx": "media\/parallax\/login\/bg-gradient.png",
+        "gfx": "media/parallax/login/bg-gradient.png",
         "align": {
             "x": "CENTER",
             "y": "TOP"
@@ -34,14 +34,14 @@
         "renderMode": "lighter"
     }, {
         "name": "login-lines",
-        "gfx": "media\/parallax\/login\/login-lines.png",
+        "gfx": "media/parallax/login/login-lines.png",
         "align": {
             "x": "CENTER",
             "y": "TOP"
         }
     }, {
         "name": "login-fields",
-        "gfx": "media\/parallax\/login\/login-fields.png",
+        "gfx": "media/parallax/login/login-fields.png",
         "align": {
             "x": "CENTER",
             "y": "CENTER"
@@ -51,7 +51,7 @@
         }
     }, {
         "name": "login-input",
-        "gfx": "media\/parallax\/login\/emilie-login-input.png",
+        "gfx": "media/parallax/login/emilie-login-input.png",
         "align": {
             "x": "CENTER",
             "y": "CENTER"
@@ -61,7 +61,7 @@
         }
     }, {
         "name": "logo-final",
-        "gfx": "media\/parallax\/login\/logo-final.png",
+        "gfx": "media/parallax/login/logo-final.png",
         "align": {
             "x": "CENTER",
             "y": "CENTER"
@@ -71,42 +71,42 @@
         "color": "#99bfd7"
     }, {
         "name": "logo-part1",
-        "gfx": "media\/parallax\/login\/logo-part1.png",
+        "gfx": "media/parallax/login/logo-part1.png",
         "align": {
             "x": "CENTER",
             "y": "CENTER"
         }
     }, {
         "name": "logo-part2",
-        "gfx": "media\/parallax\/login\/logo-part2.png",
+        "gfx": "media/parallax/login/logo-part2.png",
         "align": {
             "x": "CENTER",
             "y": "CENTER"
         }
     }, {
         "name": "logo-part3",
-        "gfx": "media\/parallax\/login\/logo-part3.png",
+        "gfx": "media/parallax/login/logo-part3.png",
         "align": {
             "x": "CENTER",
             "y": "CENTER"
         }
     }, {
         "name": "logo-part4",
-        "gfx": "media\/parallax\/login\/logo-part4.png",
+        "gfx": "media/parallax/login/logo-part4.png",
         "align": {
             "x": "CENTER",
             "y": "CENTER"
         }
     }, {
         "name": "logo-part5",
-        "gfx": "media\/parallax\/login\/logo-part5.png",
+        "gfx": "media/parallax/login/logo-part5.png",
         "align": {
             "x": "CENTER",
             "y": "CENTER"
         }
     }, {
         "name": "logo-text",
-        "gfx": "media\/parallax\/login\/logo-text.png",
+        "gfx": "media/parallax/login/logo-text.png",
         "align": {
             "x": "CENTER",
             "y": "CENTER"
@@ -120,7 +120,7 @@
         "renderMode": "lighter"
     }, {
         "name": "bg-scanlines",
-        "gfx": "media\/parallax\/login\/bg-scanlines.png",
+        "gfx": "media/parallax/login/bg-scanlines.png",
         "align": {
             "x": "CENTER",
             "y": "TOP"
@@ -128,21 +128,21 @@
         "renderMode": "lighter"
     }, {
         "name": "front-gear",
-        "gfx": "media\/parallax\/login\/front-gear.png",
+        "gfx": "media/parallax/login/front-gear.png",
         "align": {
             "x": "CENTER",
             "y": "TOP"
         }
     }, {
         "name": "front-displays",
-        "gfx": "media\/parallax\/login\/front-displays.png",
+        "gfx": "media/parallax/login/front-displays.png",
         "align": {
             "x": "CENTER",
             "y": "TOP"
         }
     }, {
         "name": "front-ambient",
-        "gfx": "media\/parallax\/login\/front-ambient.png",
+        "gfx": "media/parallax/login/front-ambient.png",
         "align": {
             "x": "CENTER",
             "y": "TOP"
@@ -153,41 +153,41 @@
         "renderMode": "lighter"
     }, {
         "name": "snd-logo",
-        "sound": "media\/sound\/menu\/login-logo.ogg",
+        "sound": "media/sound/menu/login-logo.ogg",
         "volume": 1,
         "variance": 0,
         "speed": 1
     }, {
         "name": "snd-appear",
-        "sound": "media\/sound\/menu\/login-appear.ogg",
+        "sound": "media/sound/menu/login-appear.ogg",
         "volume": 1,
         "variance": 0.2,
         "speed": 1
     }, {
         "name": "snd-helmet",
-        "sound": "media\/sound\/menu\/helmet.ogg",
+        "sound": "media/sound/menu/helmet.ogg",
         "volume": 1,
         "variance": 0,
         "speed": 1
     }, {
         "name": "snd-alarm",
-        "sound": "media\/sound\/scenes\/soft-alarm.ogg",
+        "sound": "media/sound/scenes/soft-alarm.ogg",
         "volume": 0.8,
         "variance": 0,
         "speed": 0.8
     }, {
         "name": "snd-start",
-        "sound": "media\/sound\/scenes\/bomb-start.ogg",
+        "sound": "media/sound/scenes/bomb-start.ogg",
         "volume": 0.6,
         "variance": 0
     }, {
         "name": "snd-confirm",
-        "sound": "media\/sound\/misc\/computer-beep-success.ogg",
+        "sound": "media/sound/misc/computer-beep-success.ogg",
         "volume": 0.9,
         "variance": 0
     }, {
         "name": "snd-rise",
-        "sound": "media\/sound\/scenes\/swoosh-rise-long.ogg",
+        "sound": "media/sound/scenes/swoosh-rise-long.ogg",
         "volume": 1,
         "variance": 0
     }],

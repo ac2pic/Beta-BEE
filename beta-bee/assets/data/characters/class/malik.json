@@ -1,74 +1,74 @@
 {
-	"name" : {
-		"en_US" : "Malik",
-		"de_DE" : "Malik",
-		"zh_CN" : "Malik",
-		"ja_JP" : "Malik",
-		"ko_KR" : "Malik",
-		"langUid" : 1
-	},
-	"realname" : {
-		"en_US" : "Malik Bahri",
-		"de_DE" : "Malik Bahri",
-		"zh_CN" : "Malik Bahri",
-		"ja_JP" : "Malik Bahri",
-		"ko_KR" : "Malik Bahri",
-		"langUid" : 2
-	},
-	"size": {
-		"x": 16,
-		"y": 16,
-		"z": 24
-	},
-	"animSheet" : "class.malik",
-	"walkAnimSet": {
-		"normal": {
-		  "idle": "idle",
-		  "move": "walk",
-		  "run": "run",
-		  "jump": "jump",
-		  "fall": "fall"
-		},
-		"sit": {
-		  "idle": "sit"
-		}
-	},
-	"walkAnims" : "normal",
-	"shadow" : 16,
-	"configs": {
-		"normal": {
-		  "relativeVel": 0.5
-		},
-		"running": {
-		  "relativeVel": 1
-		},
-		"sit": {
-		  "walkAnims": "sit",
-		  "relativeVel": 0.5
-		}
-	},
-	"face" : {
-		"width" : 156,
-		"height" : 179,
-		"centerX" : 74,
-		"centerY" : 69,
-		"src" : "class/malik.png",
-		"parts" : [{
-			"normDefault" : {
-				"destX" : 0,
-				"destY" : 0,
-				"width" : 156,
-				"height" : 179,
-				"srcX" : 0,
-				"srcY" : 0
-			}
-		}],
-		"expressions" : {
-			"DEFAULT" : {
-				"faces" : [
-					["normDefault"]
-				]
-			}
-		}
-	}
+    "name": {
+        "en_US": "Malik",
+        "de_DE": "Malik",
+        "zh_CN": "Malik",
+        "ja_JP": "Malik",
+        "ko_KR": "Malik",
+        "langUid": 1
+    },
+    "realname": {
+        "en_US": "Malik Bahri",
+        "de_DE": "Malik Bahri",
+        "zh_CN": "Malik Bahri",
+        "ja_JP": "Malik Bahri",
+        "ko_KR": "Malik Bahri",
+        "langUid": 2
+    },
+    "size": {
+        "x": 16,
+        "y": 16,
+        "z": 24
+    },
+    "animSheet": "class.malik",
+    "walkAnimSet": {
+        "normal": {
+            "idle": "idle",
+            "move": "walk",
+            "run": "run",
+            "jump": "jump",
+            "fall": "fall"
+        },
+        "sit": {
+            "idle": "sit"
+        }
+    },
+    "walkAnims": "normal",
+    "shadow": 16,
+    "configs": {
+        "normal": {
+            "relativeVel": 0.5
+        },
+        "running": {
+            "relativeVel": 1
+        },
+        "sit": {
+            "walkAnims": "sit",
+            "relativeVel": 0.5
+        }
+    },
+    "face": {
+        "width": 156,
+        "height": 179,
+        "centerX": 74,
+        "centerY": 69,
+        "src": "class/malik.png",
+        "parts": [{
+            "normDefault": {
+                "destX": 0,
+                "destY": 0,
+                "width": 156,
+                "height": 179,
+                "srcX": 0,
+                "srcY": 0
+            }
+        }],
+        "expressions": {
+            "DEFAULT": {
+                "faces": [
+                    ["normDefault"]
+                ]
+            }
+        }
+    }
 }

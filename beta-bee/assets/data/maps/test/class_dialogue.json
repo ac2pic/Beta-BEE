@@ -28,34 +28,34 @@
             "characterName": "npc.lydia",
             "mapId": 16,
             "npcStates": [{
-				"reactType": "FIXED_POS",
-				"face": "SOUTH",
-				"action": [],
-				"hidden": false,
-				"condition": "",
-				"config": "normal",
-				"event": [{
-					"type" : "ADD_MSG_PERSON",
-					"person" : {
-						"person" : "npc.lydia",
-						"expression" : "DEFAULT"
-					},
-					"side" : "RIGHT",
-					"order" : 0,
-					"clearSide": false
-				},{
-					"type" : "SHOW_MSG",
-					"person" : {
-						"person" : "npc.lydia",
-						"expression" : "DEFAULT"
-					},
-					"message" : {
-						"en_US" : "Don't toucha mai sphagetti."
-					}
-				}]
-			}]
+                "reactType": "FIXED_POS",
+                "face": "SOUTH",
+                "action": [],
+                "hidden": false,
+                "condition": "",
+                "config": "normal",
+                "event": [{
+                    "type": "ADD_MSG_PERSON",
+                    "person": {
+                        "person": "npc.lydia",
+                        "expression": "DEFAULT"
+                    },
+                    "side": "RIGHT",
+                    "order": 0,
+                    "clearSide": false
+                }, {
+                    "type": "SHOW_MSG",
+                    "person": {
+                        "person": "npc.lydia",
+                        "expression": "DEFAULT"
+                    },
+                    "message": {
+                        "en_US": "Don't toucha mai sphagetti."
+                    }
+                }]
+            }]
         }
-    },{
+    }, {
         "type": "NPC",
         "x": 260,
         "y": 200,
@@ -65,25 +65,25 @@
             "characterName": "class.malik",
             "mapId": 16,
             "npcStates": [{
-				"reactType": "FIXED_POS",
-				"face": "SOUTH",
-				"action": [],
-				"hidden": false,
-				"condition": "",
-				"config": "normal",
-				"event": [{
-					"type" : "ADD_MSG_PERSON",
-					"person" : {
-						"person" : "class.malik",
-						"expression" : "DEFAULT"
-					},
-					"side" : "RIGHT",
-					"order" : 0,
-					"clearSide": false
-				}]
-			}]
+                "reactType": "FIXED_POS",
+                "face": "SOUTH",
+                "action": [],
+                "hidden": false,
+                "condition": "",
+                "config": "normal",
+                "event": [{
+                    "type": "ADD_MSG_PERSON",
+                    "person": {
+                        "person": "class.malik",
+                        "expression": "DEFAULT"
+                    },
+                    "side": "RIGHT",
+                    "order": 0,
+                    "clearSide": false
+                }]
+            }]
         }
-    },{
+    }, {
         "type": "NPC",
         "x": 290,
         "y": 200,
@@ -93,16 +93,16 @@
             "characterName": "class.nathalie",
             "mapId": 16,
             "npcStates": [{
-				"reactType": "FIXED_POS",
-				"face": "SOUTH",
-				"action": [],
-				"hidden": false,
-				"condition": "",
-				"config": "normal",
-				"event": []
-			}]
+                "reactType": "FIXED_POS",
+                "face": "SOUTH",
+                "action": [],
+                "hidden": false,
+                "condition": "",
+                "config": "normal",
+                "event": []
+            }]
         }
-    },{
+    }, {
         "type": "NPC",
         "x": 200,
         "y": 200,
@@ -112,142 +112,142 @@
             "characterName": "class.aiko",
             "mapId": 16,
             "npcStates": [{
-					"reactType": "FIXED_POS",
-					"face": "SOUTH",
-					"action": [],
-					"hidden": false,
-					"condition": "",
-					"config": "normal",
-					"event": [{
-						"type" : "ADD_MSG_PERSON",
-						"person" : {
-							"person" : "npc.lydia",
-							"expression" : "DEFAULT"
-						},
-						"side" : "LEFT",
-						"order" : 0,
-						"clearSide": false
-					}, {
-						"type" : "SHOW_MSG",
-						"person" : {
-							"person" : "npc.lydia",
-							"expression" : "DEFAULT"
-						},
-						"message" : {
-							"en_US" : "Hi."
-						}
-					},{
-						"type" : "ADD_MSG_PERSON",
-						"person" : {
-							"person" : "npc.male",
-							"expression" : "DEFAULT"
-						},
-						"side" : "LEFT",
-						"order" : 0,
-						"clearSide": false
-					}, {
-						"type" : "SHOW_MSG",
-						"person" : {
-							"person" : "npc.male",
-							"expression" : "DEFAULT"
-						},
-						"message" : {
-							"en_US" : "Hi."
-						}
-					},{
-						"type" : "ADD_MSG_PERSON",
-						"person" : {
-							"person" : "npc.female",
-							"expression" : "DEFAULT"
-						},
-						"side" : "LEFT",
-						"order" : 0,
-						"clearSide": false
-					}, {
-						"type" : "SHOW_MSG",
-						"person" : {
-							"person" : "npc.female",
-							"expression" : "DEFAULT"
-						},
-						"message" : {
-							"en_US" : "Hi."
-						}
-					},{
-						"type" : "ADD_MSG_PERSON",
-						"person" : {
-							"person" : "npc.mirabelle",
-							"expression" : "DEFAULT"
-						},
-						"side" : "LEFT",
-						"order" : 0,
-						"clearSide": false
-					}, {
-						"type" : "SHOW_MSG",
-						"person" : {
-							"person" : "npc.mirabelle",
-							"expression" : "DEFAULT"
-						},
-						"message" : {
-							"en_US" : "Hi!"
-						}
-					},{
-					"type" : "ADD_MSG_PERSON",
-					"person" : {
-						"person" : "class.aiko",
-						"expression" : "DEFAULT"
-					},
-					"side" : "RIGHT",
-					"order" : 0,
-					"clearSide": false
-				}, {
-					"type" : "SHOW_MSG",
-					"person" : {
-						"person" : "class.aiko",
-						"expression" : "DEFAULT"
-					},
-					"message" : {
-						"en_US" : "Hi!"
-					}
-				},{
-					"type" : "ADD_MSG_PERSON",
-					"person" : {
-						"person" : "class.malik",
-						"expression" : "DEFAULT"
-					},
-					"side" : "RIGHT",
-					"order" : 0,
-					"clearSide": false
-				}, {
-					"type" : "SHOW_MSG",
-					"person" : {
-						"person" : "class.malik",
-						"expression" : "DEFAULT"
-					},
-					"message" : {
-						"en_US" : "Yo."
-					}
-				}, {
-					"type" : "ADD_MSG_PERSON",
-					"person" : {
-						"person" : "class.nathalie",
-						"expression" : "DEFAULT"
-					},
-					"side" : "RIGHT",
-					"order" : 0,
-					"clearSide": false
-				}, {
-					"type" : "SHOW_MSG",
-					"person" : {
-						"person" : "class.nathalie",
-						"expression" : "DEFAULT"
-					},
-					"message" : {
-						"en_US" : "Hey!"
-					}
-				}]
+                "reactType": "FIXED_POS",
+                "face": "SOUTH",
+                "action": [],
+                "hidden": false,
+                "condition": "",
+                "config": "normal",
+                "event": [{
+                    "type": "ADD_MSG_PERSON",
+                    "person": {
+                        "person": "npc.lydia",
+                        "expression": "DEFAULT"
+                    },
+                    "side": "LEFT",
+                    "order": 0,
+                    "clearSide": false
+                }, {
+                    "type": "SHOW_MSG",
+                    "person": {
+                        "person": "npc.lydia",
+                        "expression": "DEFAULT"
+                    },
+                    "message": {
+                        "en_US": "Hi."
+                    }
+                }, {
+                    "type": "ADD_MSG_PERSON",
+                    "person": {
+                        "person": "npc.male",
+                        "expression": "DEFAULT"
+                    },
+                    "side": "LEFT",
+                    "order": 0,
+                    "clearSide": false
+                }, {
+                    "type": "SHOW_MSG",
+                    "person": {
+                        "person": "npc.male",
+                        "expression": "DEFAULT"
+                    },
+                    "message": {
+                        "en_US": "Hi."
+                    }
+                }, {
+                    "type": "ADD_MSG_PERSON",
+                    "person": {
+                        "person": "npc.female",
+                        "expression": "DEFAULT"
+                    },
+                    "side": "LEFT",
+                    "order": 0,
+                    "clearSide": false
+                }, {
+                    "type": "SHOW_MSG",
+                    "person": {
+                        "person": "npc.female",
+                        "expression": "DEFAULT"
+                    },
+                    "message": {
+                        "en_US": "Hi."
+                    }
+                }, {
+                    "type": "ADD_MSG_PERSON",
+                    "person": {
+                        "person": "npc.mirabelle",
+                        "expression": "DEFAULT"
+                    },
+                    "side": "LEFT",
+                    "order": 0,
+                    "clearSide": false
+                }, {
+                    "type": "SHOW_MSG",
+                    "person": {
+                        "person": "npc.mirabelle",
+                        "expression": "DEFAULT"
+                    },
+                    "message": {
+                        "en_US": "Hi!"
+                    }
+                }, {
+                    "type": "ADD_MSG_PERSON",
+                    "person": {
+                        "person": "class.aiko",
+                        "expression": "DEFAULT"
+                    },
+                    "side": "RIGHT",
+                    "order": 0,
+                    "clearSide": false
+                }, {
+                    "type": "SHOW_MSG",
+                    "person": {
+                        "person": "class.aiko",
+                        "expression": "DEFAULT"
+                    },
+                    "message": {
+                        "en_US": "Hi!"
+                    }
+                }, {
+                    "type": "ADD_MSG_PERSON",
+                    "person": {
+                        "person": "class.malik",
+                        "expression": "DEFAULT"
+                    },
+                    "side": "RIGHT",
+                    "order": 0,
+                    "clearSide": false
+                }, {
+                    "type": "SHOW_MSG",
+                    "person": {
+                        "person": "class.malik",
+                        "expression": "DEFAULT"
+                    },
+                    "message": {
+                        "en_US": "Yo."
+                    }
+                }, {
+                    "type": "ADD_MSG_PERSON",
+                    "person": {
+                        "person": "class.nathalie",
+                        "expression": "DEFAULT"
+                    },
+                    "side": "RIGHT",
+                    "order": 0,
+                    "clearSide": false
+                }, {
+                    "type": "SHOW_MSG",
+                    "person": {
+                        "person": "class.nathalie",
+                        "expression": "DEFAULT"
+                    },
+                    "message": {
+                        "en_US": "Hey!"
+                    }
+                }]
             }]
         }
-    },{
+    }, {
         "type": "EventTrigger",
         "x": 444,
         "y": 242,
@@ -255,21 +255,21 @@
         "settings": {
             "name": "talk",
             "eventType": "CUTSCENE",
-			"event" : [],
+            "event": [],
             "startCondition": "false",
             "endCondition": "false",
             "triggerType": "ONCE"
         }
-    },{
-      "type": "Marker",
-      "x": 200,
-      "y": 250,
-      "level": 0,
-      "settings": {
-        "name": "start",
-        "mapId": 5,
-        "dir": "SOUTH"
-      }
+    }, {
+        "type": "Marker",
+        "x": 200,
+        "y": 250,
+        "level": 0,
+        "settings": {
+            "name": "start",
+            "mapId": 5,
+            "dir": "SOUTH"
+        }
     }],
     "layer": [{
         "id": 0,

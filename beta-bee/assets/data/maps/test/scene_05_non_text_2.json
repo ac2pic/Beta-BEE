@@ -103,7 +103,7 @@
                     "face": "SOUTH",
                     "rotate": true,
                     "rotateSpeed": 1
-                },{
+                }, {
                     "type": "MOVE_TO_POINT",
                     "target": {
                         "x": 464,
@@ -121,7 +121,7 @@
                 "action": [{
                     "type": "SET_RELATIVE_SPEED",
                     "value": 0.5
-                },{
+                }, {
                     "type": "MOVE_TO_POINT",
                     "target": {
                         "x": 464,
@@ -138,7 +138,7 @@
                 "action": [{
                     "type": "SET_RELATIVE_SPEED",
                     "value": 0.5
-                },{
+                }, {
                     "type": "MOVE_TO_POINT",
                     "target": {
                         "x": 464,
@@ -154,9 +154,9 @@
                     "name": "hlin"
                 }
             }, {
-				"type" : "WAIT",
-				"time" : 2
-			}],
+                "type": "WAIT",
+                "time": 2
+            }],
             "eventType": "CUTSCENE",
             "name": "emilieBack"
         }

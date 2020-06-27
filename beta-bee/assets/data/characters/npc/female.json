@@ -1,42 +1,42 @@
 {
-	"name" : {
-		"en_US" : "Generic Female",
-		"de_DE" : "Generic Female",
-		"zh_CN" : "Generic Female",
-		"ja_JP" : "Generic Female",
-		"ko_KR" : "Generic Female",
-		"langUid" : 1
-	},
-	"realname" : {
-		"en_US" : "Generic Female",
-		"de_DE" : "Generic Female",
-		"zh_CN" : "Generic Female",
-		"ja_JP" : "Generic Female",
-		"ko_KR" : "Generic Female",
-		"langUid" : 2
-	},
-	"face" : {
-		"width" : 134,
-		"height" : 179,
-		"centerX" : 64,
-		"centerY" : 84,
-		"src" : "npc/female.png",
-		"parts" : [{
-			"normDefault" : {
-				"destX" : 0,
-				"destY" : 0,
-				"width" : 134,
-				"height" : 179,
-				"srcX" : 0,
-				"srcY" : 0
-			}
-		}],
-		"expressions" : {
-			"DEFAULT" : {
-				"faces" : [
-					["normDefault"]
-				]
-			}
-		}
-	}
+    "name": {
+        "en_US": "Generic Female",
+        "de_DE": "Generic Female",
+        "zh_CN": "Generic Female",
+        "ja_JP": "Generic Female",
+        "ko_KR": "Generic Female",
+        "langUid": 1
+    },
+    "realname": {
+        "en_US": "Generic Female",
+        "de_DE": "Generic Female",
+        "zh_CN": "Generic Female",
+        "ja_JP": "Generic Female",
+        "ko_KR": "Generic Female",
+        "langUid": 2
+    },
+    "face": {
+        "width": 134,
+        "height": 179,
+        "centerX": 64,
+        "centerY": 84,
+        "src": "npc/female.png",
+        "parts": [{
+            "normDefault": {
+                "destX": 0,
+                "destY": 0,
+                "width": 134,
+                "height": 179,
+                "srcX": 0,
+                "srcY": 0
+            }
+        }],
+        "expressions": {
+            "DEFAULT": {
+                "faces": [
+                    ["normDefault"]
+                ]
+            }
+        }
+    }
 }

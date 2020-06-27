@@ -26,7 +26,7 @@
         "settings": {
             "name": "talk",
             "eventType": "CUTSCENE",
-			"event" : [{
+            "event": [{
                 "side": "LEFT",
                 "order": 0,
                 "clearSide": false,
@@ -36,15 +36,15 @@
                     "expression": "DEFAULT"
                 }
             }, {
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "npc.male",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "You have been pre authorized to enter this location. We will begin shortly. Please make your way in."
-				}
-			},{
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "npc.male",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "You have been pre authorized to enter this location. We will begin shortly. Please make your way in."
+                }
+            }, {
                 "side": "RIGHT",
                 "order": 0,
                 "clearSide": false,
@@ -53,30 +53,30 @@
                     "person": "main.emilie",
                     "expression": "EMBARRASSED"
                 }
-            },{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "main.emilie",
-					"expression" : "EMBARRASSED"
-				},
-				"message" : {
-					"en_US" : "O... Okay."
-				}
-			}],
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "EMBARRASSED"
+                },
+                "message": {
+                    "en_US": "O... Okay."
+                }
+            }],
             "startCondition": "false",
             "endCondition": "false",
             "triggerType": "ONCE"
         }
-    },{
-      "type": "Marker",
-      "x": 200,
-      "y": 250,
-      "level": 0,
-      "settings": {
-        "name": "start",
-        "mapId": 5,
-        "dir": "SOUTH"
-      }
+    }, {
+        "type": "Marker",
+        "x": 200,
+        "y": 250,
+        "level": 0,
+        "settings": {
+            "name": "start",
+            "mapId": 5,
+            "dir": "SOUTH"
+        }
     }],
     "layer": [{
         "id": 0,

@@ -1,169 +1,169 @@
 {
-	"mirabelleNotif" : {
-		"frequency": "ALWAYS",
-		"repeat": "ONCE",
-		"eventType": "CUTSCENE",
-		"overrideSideMessage": false,
-		"condition": "true",
-		"event" : [{
-			"type" : "START_PRIVATE_MSG"
-		},{
-			"side": "LEFT",
-			"order": 0,
-			"clearSide": false,
-			"type": "ADD_MSG_PERSON",
-			"person": {
-				"person": "npc.mirabelle",
-				"expression": "DEFAULT"
-			}
-		},{
-			"side": "RIGHT",
-			"order": 0,
-			"clearSide": false,
-			"type": "ADD_MSG_PERSON",
-			"person": {
-				"person": "main.emilie",
-				"expression": "DEFAULT"
-			}
-		},{
-			"message": {
-				"en_US": "Is this Emilinator?"
-			},
-			"autoContinue": false,
-			"type": "SHOW_MSG",
-			"person": {
-				"person": "npc.mirabelle",
-				"expression": "DEFAULT"
-			}
-		},{
-			"message": {
-				"en_US": "Quoi? Who are you?"
-			},
-			"autoContinue": false,
-			"type": "SHOW_MSG",
-			"person": {
-				"person": "main.emilie",
-				"expression": "DEFAULT"
-			}
-		},{
-			"message": {
-				"en_US": "Oh I’m Mirabelle! I’ve just been asked by one of your friends to transmit you a message!"
-			},
-			"autoContinue": false,
-			"type": "SHOW_MSG",
-			"person": {
-				"person": "npc.mirabelle",
-				"expression": "DEFAULT"
-			}
-		},{
-			"message": {
-				"en_US": "He gave me some credits and told me to send it at exactly this hour! Said it was a running gag or something…"
-			},
-			"autoContinue": false,
-			"type": "SHOW_MSG",
-			"person": {
-				"person": "npc.mirabelle",
-				"expression": "DEFAULT"
-			}
-		},{
-			"message": {
-				"en_US": "Anyways, he said to meet him in the mobster part of Basin Keep, near that door that you know."
-			},
-			"autoContinue": false,
-			"type": "SHOW_MSG",
-			"person": {
-				"person": "npc.mirabelle",
-				"expression": "DEFAULT"
-			}
-		},{
-			"message": {
-				"en_US": "I’ll be honest, I don’t really know what the inside joke is, but there it is… you got it?"
-			},
-			"autoContinue": false,
-			"type": "SHOW_MSG",
-			"person": {
-				"person": "npc.mirabelle",
-				"expression": "DEFAULT"
-			}
-		},{
-			"type" : "ADD_MONEY",
-			"amount" : 500
-		},{
-			"type" : "WAIT",
-			"time" : 1
-		},{
-			"message": {
-				"en_US": "..."
-			},
-			"autoContinue": false,
-			"type": "SHOW_MSG",
-			"person": {
-				"person": "main.emilie",
-				"expression": "UNCERTAIN"
-			}
-		},{
-			"message": {
-				"en_US": "Oh yes... I got it... it is just he is so cryptic and weird like that all the time!"
-			},
-			"autoContinue": false,
-			"type": "SHOW_MSG",
-			"person": {
-				"person": "main.emilie",
-				"expression": "EMBARRASSED"
-			}
-		},{
-			"message": {
-				"en_US": "Thanks for the message!"
-			},
-			"autoContinue": false,
-			"type": "SHOW_MSG",
-			"person": {
-				"person": "main.emilie",
-				"expression": "EMBARRASSED"
-			}
-		},{
-			"message": {
-				"en_US": "Alright, have a good one!"
-			},
-			"autoContinue": false,
-			"type": "SHOW_MSG",
-			"person": {
-				"person": "npc.mirabelle",
-				"expression": "DEFAULT"
-			}
-		},{
-			"type" : "END_PRIVATE_MSG"
-		},{
-			"side": "RIGHT",
-			"order": 0,
-			"clearSide": false,
-			"type": "ADD_MSG_PERSON",
-			"person": {
-				"person": "main.emilie",
-				"expression": "DEFAULT"
-			}
-		},{
-			"message": {
-				"en_US": "It can not be more obvious than that... it is that shady message sender... Better go and see what this is about now..."
-			},
-			"autoContinue": false,
-			"type": "SHOW_MSG",
-			"person": {
-				"person": "main.emilie",
-				"expression": "CURIOUS"
-			}
-		},{
-			"type" : "CHANGE_VAR_NUMBER",
-			"changeType" : "set",
-			"varName" : "plot.emilie.line",
-			"value" : 600
-		},{
-			"type" : "REMOVE_TIMER",
-			"name" : "miraTimer"
-		}],
-		"type": {
-			"type": "TIME_UP",
-			"name": "miraTimer"
-		}
-	}
+    "mirabelleNotif": {
+        "frequency": "ALWAYS",
+        "repeat": "ONCE",
+        "eventType": "CUTSCENE",
+        "overrideSideMessage": false,
+        "condition": "true",
+        "event": [{
+            "type": "START_PRIVATE_MSG"
+        }, {
+            "side": "LEFT",
+            "order": 0,
+            "clearSide": false,
+            "type": "ADD_MSG_PERSON",
+            "person": {
+                "person": "npc.mirabelle",
+                "expression": "DEFAULT"
+            }
+        }, {
+            "side": "RIGHT",
+            "order": 0,
+            "clearSide": false,
+            "type": "ADD_MSG_PERSON",
+            "person": {
+                "person": "main.emilie",
+                "expression": "DEFAULT"
+            }
+        }, {
+            "message": {
+                "en_US": "Is this Emilinator?"
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+                "person": "npc.mirabelle",
+                "expression": "DEFAULT"
+            }
+        }, {
+            "message": {
+                "en_US": "Quoi? Who are you?"
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+                "person": "main.emilie",
+                "expression": "DEFAULT"
+            }
+        }, {
+            "message": {
+                "en_US": "Oh I’m Mirabelle! I’ve just been asked by one of your friends to transmit you a message!"
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+                "person": "npc.mirabelle",
+                "expression": "DEFAULT"
+            }
+        }, {
+            "message": {
+                "en_US": "He gave me some credits and told me to send it at exactly this hour! Said it was a running gag or something…"
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+                "person": "npc.mirabelle",
+                "expression": "DEFAULT"
+            }
+        }, {
+            "message": {
+                "en_US": "Anyways, he said to meet him in the mobster part of Basin Keep, near that door that you know."
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+                "person": "npc.mirabelle",
+                "expression": "DEFAULT"
+            }
+        }, {
+            "message": {
+                "en_US": "I’ll be honest, I don’t really know what the inside joke is, but there it is… you got it?"
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+                "person": "npc.mirabelle",
+                "expression": "DEFAULT"
+            }
+        }, {
+            "type": "ADD_MONEY",
+            "amount": 500
+        }, {
+            "type": "WAIT",
+            "time": 1
+        }, {
+            "message": {
+                "en_US": "..."
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+                "person": "main.emilie",
+                "expression": "UNCERTAIN"
+            }
+        }, {
+            "message": {
+                "en_US": "Oh yes... I got it... it is just he is so cryptic and weird like that all the time!"
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+                "person": "main.emilie",
+                "expression": "EMBARRASSED"
+            }
+        }, {
+            "message": {
+                "en_US": "Thanks for the message!"
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+                "person": "main.emilie",
+                "expression": "EMBARRASSED"
+            }
+        }, {
+            "message": {
+                "en_US": "Alright, have a good one!"
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+                "person": "npc.mirabelle",
+                "expression": "DEFAULT"
+            }
+        }, {
+            "type": "END_PRIVATE_MSG"
+        }, {
+            "side": "RIGHT",
+            "order": 0,
+            "clearSide": false,
+            "type": "ADD_MSG_PERSON",
+            "person": {
+                "person": "main.emilie",
+                "expression": "DEFAULT"
+            }
+        }, {
+            "message": {
+                "en_US": "It can not be more obvious than that... it is that shady message sender... Better go and see what this is about now..."
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+                "person": "main.emilie",
+                "expression": "CURIOUS"
+            }
+        }, {
+            "type": "CHANGE_VAR_NUMBER",
+            "changeType": "set",
+            "varName": "plot.emilie.line",
+            "value": 600
+        }, {
+            "type": "REMOVE_TIMER",
+            "name": "miraTimer"
+        }],
+        "type": {
+            "type": "TIME_UP",
+            "name": "miraTimer"
+        }
+    }
 }

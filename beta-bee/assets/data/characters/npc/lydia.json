@@ -1,74 +1,74 @@
 {
-	"name" : {
-		"en_US" : "Objective_See",
-		"de_DE" : "Objective_See",
-		"zh_CN" : "Objective_See",
-		"ja_JP" : "Objective_See",
-		"ko_KR" : "Objective_See",
-		"langUid" : 1
-	},
-	"realname" : {
-		"en_US" : "Lydia Ziegler",
-		"de_DE" : "Lydia Ziegler",
-		"zh_CN" : "Lydia Ziegler",
-		"ja_JP" : "Lydia Ziegler",
-		"ko_KR" : "Lydia Ziegler",
-		"langUid" : 2
-	},
-	"size": {
-		"x": 16,
-		"y": 16,
-		"z": 24
-	},
-	"animSheet" : "npc.lydia",
-	"walkAnimSet": {
-		"normal": {
-		  "idle": "idle",
-		  "move": "walk",
-		  "run": "run",
-		  "jump": "jump",
-		  "fall": "fall"
-		},
-		"sit": {
-		  "idle": "sit"
-		}
-	},
-	"walkAnims" : "normal",
-	"shadow" : 16,
-	"configs": {
-		"normal": {
-		  "relativeVel": 0.5
-		},
-		"running": {
-		  "relativeVel": 1
-		},
-		"sit": {
-		  "walkAnims": "sit",
-		  "relativeVel": 0.5
-		}
-	},
-	"face" : {
-		"width" : 134,
-		"height" : 179,
-		"centerX" : 64,
-		"centerY" : 76,
-		"src" : "lore/lydia.png",
-		"parts" : [{
-			"normDefault" : {
-				"destX" : 0,
-				"destY" : 0,
-				"width" : 134,
-				"height" : 179,
-				"srcX" : 0,
-				"srcY" : 0
-			}
-		}],
-		"expressions" : {
-			"DEFAULT" : {
-				"faces" : [
-					["normDefault"]
-				]
-			}
-		}
-	}
+    "name": {
+        "en_US": "Objective_See",
+        "de_DE": "Objective_See",
+        "zh_CN": "Objective_See",
+        "ja_JP": "Objective_See",
+        "ko_KR": "Objective_See",
+        "langUid": 1
+    },
+    "realname": {
+        "en_US": "Lydia Ziegler",
+        "de_DE": "Lydia Ziegler",
+        "zh_CN": "Lydia Ziegler",
+        "ja_JP": "Lydia Ziegler",
+        "ko_KR": "Lydia Ziegler",
+        "langUid": 2
+    },
+    "size": {
+        "x": 16,
+        "y": 16,
+        "z": 24
+    },
+    "animSheet": "npc.lydia",
+    "walkAnimSet": {
+        "normal": {
+            "idle": "idle",
+            "move": "walk",
+            "run": "run",
+            "jump": "jump",
+            "fall": "fall"
+        },
+        "sit": {
+            "idle": "sit"
+        }
+    },
+    "walkAnims": "normal",
+    "shadow": 16,
+    "configs": {
+        "normal": {
+            "relativeVel": 0.5
+        },
+        "running": {
+            "relativeVel": 1
+        },
+        "sit": {
+            "walkAnims": "sit",
+            "relativeVel": 0.5
+        }
+    },
+    "face": {
+        "width": 134,
+        "height": 179,
+        "centerX": 64,
+        "centerY": 76,
+        "src": "lore/lydia.png",
+        "parts": [{
+            "normDefault": {
+                "destX": 0,
+                "destY": 0,
+                "width": 134,
+                "height": 179,
+                "srcX": 0,
+                "srcY": 0
+            }
+        }],
+        "expressions": {
+            "DEFAULT": {
+                "faces": [
+                    ["normDefault"]
+                ]
+            }
+        }
+    }
 }

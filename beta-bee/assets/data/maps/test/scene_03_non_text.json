@@ -64,7 +64,7 @@
                     "y": 0,
                     "z": 0
                 }
-            },{
+            }, {
                 "entity": {
                     "name": "nath"
                 },
@@ -93,7 +93,7 @@
                     "y": 280,
                     "z": 0
                 }
-            },{
+            }, {
                 "type": "SET_ENTITY_POS",
                 "entity": {
                     "name": "nath"

@@ -26,7 +26,7 @@
         "settings": {
             "name": "talk",
             "eventType": "CUTSCENE",
-			"event" : [{
+            "event": [{
                 "side": "RIGHT",
                 "order": 0,
                 "clearSide": false,
@@ -35,18 +35,18 @@
                     "person": "main.emilie",
                     "expression": "EMBARRASSED"
                 }
-            },{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "main.emilie",
-					"expression" : "EMBARRASSED"
-				},
-				"message" : {
-					"en_US" : "Maybe he is the one who sent me the message...?"
-				}
-			}, {
-				"type" : "CLEAR_MSG"
-			}, {
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "EMBARRASSED"
+                },
+                "message": {
+                    "en_US": "Maybe he is the one who sent me the message...?"
+                }
+            }, {
+                "type": "CLEAR_MSG"
+            }, {
                 "side": "RIGHT",
                 "order": 0,
                 "clearSide": false,
@@ -55,118 +55,118 @@
                     "person": "lore.bossn",
                     "expression": "DEFAULT"
                 }
-            },{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Hello everyone. You must be wondering why you have been brought here. Let me enlighten you…"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Simply put, You have been pre-approved to take part in a grand and revolutionary project!"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "We will work at developing a new generation of A.I, however, unlike your typical home maintenance A.I…"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Those are derived from living humans and rendered in computer form."
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "They’re called Evotars."
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "I’ll be the first to admit I’m not fond of the name, but they’re A.I. in game avatar form basically..."
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "I can read in all your faces… you wonder what it has to do with you…"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Well, simply put, people you are very close to have already been cloned in our system if you will."
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Interestingly, those beings still behave like typical humans, not only that, they still think they’re human!"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "As such, a bit of torture here, convincing there, threats on their family and such other methods are excellent at reminding us of how much dirt they have on so many important influential people…"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Well placed people... like all of you here present…"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : ""
-				}
-			}, {
-				"type" : "CLEAR_MSG",
-				"side" : "RIGHT"
-			},{
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Hello everyone. You must be wondering why you have been brought here. Let me enlighten you…"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Simply put, You have been pre-approved to take part in a grand and revolutionary project!"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "We will work at developing a new generation of A.I, however, unlike your typical home maintenance A.I…"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Those are derived from living humans and rendered in computer form."
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "They’re called Evotars."
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "I’ll be the first to admit I’m not fond of the name, but they’re A.I. in game avatar form basically..."
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "I can read in all your faces… you wonder what it has to do with you…"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Well, simply put, people you are very close to have already been cloned in our system if you will."
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Interestingly, those beings still behave like typical humans, not only that, they still think they’re human!"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "As such, a bit of torture here, convincing there, threats on their family and such other methods are excellent at reminding us of how much dirt they have on so many important influential people…"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Well placed people... like all of you here present…"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": ""
+                }
+            }, {
+                "type": "CLEAR_MSG",
+                "side": "RIGHT"
+            }, {
                 "side": "LEFT",
                 "order": 0,
                 "clearSide": false,
@@ -175,19 +175,19 @@
                     "person": "npc.male",
                     "expression": "DEFAULT"
                 }
-            },{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "npc.male",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "This is a joke… you can’t have anything like that… this is preposterous!"
-				}
-			},{
-				"type" : "CLEAR_MSG",
-				"side" : "LEFT"
-			},{
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "npc.male",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "This is a joke… you can’t have anything like that… this is preposterous!"
+                }
+            }, {
+                "type": "CLEAR_MSG",
+                "side": "LEFT"
+            }, {
                 "side": "RIGHT",
                 "order": 0,
                 "clearSide": false,
@@ -196,36 +196,36 @@
                     "person": "lore.bossn",
                     "expression": "DEFAULT"
                 }
-            },{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Sir, I would ask for you to keep your questions for the end of the presentation."
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Speaking of presentation, let’s turn your attention to the screens here… "
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "This way you will know how first hand good our information is… and how serious we are!"
-				}
-			},{
-				"type" : "CLEAR_MSG"
-			},{
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Sir, I would ask for you to keep your questions for the end of the presentation."
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Speaking of presentation, let’s turn your attention to the screens here… "
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "This way you will know how first hand good our information is… and how serious we are!"
+                }
+            }, {
+                "type": "CLEAR_MSG"
+            }, {
                 "side": "LEFT",
                 "order": 0,
                 "clearSide": false,
@@ -234,18 +234,18 @@
                     "person": "npc.male",
                     "expression": "DEFAULT"
                 }
-            },{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "npc.male",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Is this…?"
-				}
-			},{
-				"type" : "CLEAR_MSG"
-			},{
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "npc.male",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Is this…?"
+                }
+            }, {
+                "type": "CLEAR_MSG"
+            }, {
                 "side": "RIGHT",
                 "order": 0,
                 "clearSide": false,
@@ -254,45 +254,45 @@
                     "person": "lore.bossn",
                     "expression": "DEFAULT"
                 }
-            },{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Our people catching you with your mistress? Why yes!"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "That and every other hidden secrets you people might have…"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : ""
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "We got all that from those Evotars… they were quite chatty and very precise. Should teach you to confess your dark secrets to people…"
-				}
-			},{
-				"type" : "CLEAR_MSG"
-			},{
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Our people catching you with your mistress? Why yes!"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "That and every other hidden secrets you people might have…"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": ""
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "We got all that from those Evotars… they were quite chatty and very precise. Should teach you to confess your dark secrets to people…"
+                }
+            }, {
+                "type": "CLEAR_MSG"
+            }, {
                 "side": "LEFT",
                 "order": 0,
                 "clearSide": false,
@@ -301,16 +301,16 @@
                     "person": "npc.male",
                     "expression": "DEFAULT"
                 }
-            },{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "npc.male",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "I can’t move… what is this? You can’t threaten me… I won’t… let you!"
-				}
-			},{
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "npc.male",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "I can’t move… what is this? You can’t threaten me… I won’t… let you!"
+                }
+            }, {
                 "side": "RIGHT",
                 "order": 0,
                 "clearSide": false,
@@ -319,100 +319,100 @@
                     "person": "lore.bossn",
                     "expression": "DEFAULT"
                 }
-            },{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "I can appreciate enthusiasm, the mark of a real go getter!"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "But… you should know that this generous employment opportunity is a one time offer and will never happen again."
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "The payment for this job is this: your secrets don’t get out so long as you cooperate."
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Also, we’re not draconian, we have means to make such cooperation be easier, such as backend access to the playground… this way you can focus on your task without much distraction."
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "If that’s not good enough, we also have plenty of agents out there to keep you focused…"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Close to your homes."
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "If you want to test our resources, simply walk away and refuse our generous offer of employment!"
-				}
-			},{
-				"type" : "WAIT",
-				"time" : 1
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Great! Then we’re off to a good start! Of course we’ve picked you because you have connexions to who would be the highest bidders for our “data mining” operation."
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "We expect you to play your part out of the game, but our product is managed in this world, so you will have to take care of it here as well…"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "On the positive side, you will have excellent insurance, perks and medical plan!"
-				}
-			},{
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "I can appreciate enthusiasm, the mark of a real go getter!"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "But… you should know that this generous employment opportunity is a one time offer and will never happen again."
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "The payment for this job is this: your secrets don’t get out so long as you cooperate."
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Also, we’re not draconian, we have means to make such cooperation be easier, such as backend access to the playground… this way you can focus on your task without much distraction."
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "If that’s not good enough, we also have plenty of agents out there to keep you focused…"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Close to your homes."
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "If you want to test our resources, simply walk away and refuse our generous offer of employment!"
+                }
+            }, {
+                "type": "WAIT",
+                "time": 1
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Great! Then we’re off to a good start! Of course we’ve picked you because you have connexions to who would be the highest bidders for our “data mining” operation."
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "We expect you to play your part out of the game, but our product is managed in this world, so you will have to take care of it here as well…"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "On the positive side, you will have excellent insurance, perks and medical plan!"
+                }
+            }, {
                 "side": "LEFT",
                 "order": 0,
                 "clearSide": false,
@@ -421,150 +421,150 @@
                     "person": "main.emilie",
                     "expression": "SAD"
                 }
-            },{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "main.emilie",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Do you have…"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Ah yes… the “special” one!"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "I’ll admit, you do not have the same worth as all the people in this room, in fact, I’m not sure you’re of value for me…"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "But you came up so much during our investigation… you were at all the key places of this project, with its key people…"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "I was hoping to find out why a student is so connected to the Evotars!"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "main.emilie",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "I don’t know what…"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Of course! Of course!"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "You were friends with one of them, correct? That one has so much locked in her that we can’t access due to a purposely broken speech module."
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "main.emilie",
-					"expression" : "SHOCKED"
-				},
-				"message" : {
-					"en_US" : "Lea is here?"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "In a way… but the only way you will get to see her is to extract information out of her."
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "main.emilie",
-					"expression" : "SHOCKED"
-				},
-				"message" : {
-					"en_US" : "You want me to torture my friend?!"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "lore.bossn",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Don’t make me laugh! We’re talking about a device here!"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "main.emilie",
-					"expression" : "SAD"
-				},
-				"message" : {
-					"en_US" : "..."
-				}
-			},{
-				"type" : "WAIT",
-				"time" : 2
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "main.emilie",
-					"expression" : "PAIN"
-				},
-				"message" : {
-					"en_US" : "I can’t take part of this... this is crazy..."
-				}
-			}],
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Do you have…"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Ah yes… the “special” one!"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "I’ll admit, you do not have the same worth as all the people in this room, in fact, I’m not sure you’re of value for me…"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "But you came up so much during our investigation… you were at all the key places of this project, with its key people…"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "I was hoping to find out why a student is so connected to the Evotars!"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "I don’t know what…"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Of course! Of course!"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "You were friends with one of them, correct? That one has so much locked in her that we can’t access due to a purposely broken speech module."
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "SHOCKED"
+                },
+                "message": {
+                    "en_US": "Lea is here?"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "In a way… but the only way you will get to see her is to extract information out of her."
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "SHOCKED"
+                },
+                "message": {
+                    "en_US": "You want me to torture my friend?!"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.bossn",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Don’t make me laugh! We’re talking about a device here!"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "SAD"
+                },
+                "message": {
+                    "en_US": "..."
+                }
+            }, {
+                "type": "WAIT",
+                "time": 2
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "PAIN"
+                },
+                "message": {
+                    "en_US": "I can’t take part of this... this is crazy..."
+                }
+            }],
             "startCondition": "false",
             "endCondition": "false",
             "triggerType": "ONCE"
         }
-    },{
-      "type": "Marker",
-      "x": 200,
-      "y": 250,
-      "level": 0,
-      "settings": {
-        "name": "start",
-        "mapId": 5,
-        "dir": "SOUTH"
-      }
+    }, {
+        "type": "Marker",
+        "x": 200,
+        "y": 250,
+        "level": 0,
+        "settings": {
+            "name": "start",
+            "mapId": 5,
+            "dir": "SOUTH"
+        }
     }],
     "layer": [{
         "id": 0,

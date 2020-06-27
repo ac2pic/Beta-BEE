@@ -28,27 +28,27 @@
                     "person": "main.guild-leader",
                     "expression": "DEFAULT"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "Oh Émilie, one last thing, they reworked pentafists since the last time you played, because of a new content patch."
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "main.guild-leader",
                     "expression": "DEFAULT"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "You should check the changes before you venture out, I also think there’s a quest in Rookie Harbor to level back faster."
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "main.guild-leader",
                     "expression": "TOWARDS"
                 }
-            },{
+            }, {
                 "side": "RIGHT",
                 "order": 0,
                 "clearSide": false,
@@ -57,24 +57,24 @@
                     "person": "main.emilie",
                     "expression": "SMILE"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "Thanks for the heads up, I will make sure to check it out!"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "main.emilie",
                     "expression": "SMILE"
                 }
-            },{
-				"type" : "SET_OVERLAY",
-				"color" : "black",
-				"alpha" : 1,
-				"time" : 1
-			},{
-				"type" : "CLEAR_MSG"
-			},{
+            }, {
+                "type": "SET_OVERLAY",
+                "color": "black",
+                "alpha": 1,
+                "time": 1
+            }, {
+                "type": "CLEAR_MSG"
+            }, {
                 "text": {
                     "en_US": "\\s[0]PRETEND ROOM CHANGE HAPPENS HERE"
                 },
@@ -85,71 +85,71 @@
                 },
                 "type": "SHOW_DREAM_MSG"
             }, {
-				"type" : "SET_OVERLAY",
-				"color" : "black",
-				"alpha" : 0,
-				"time" : 1
-			},{
-				"type" : "SHOW_CENTER_MSG",
-				"text" : {
-					"en_US" : "To introduce you to the class, we’ve made this tutorial quest just so you can experiment with the new Pentafist Skills. We would rather not start you back from scratch but rather let you keep rocking with the expected amount of power you’re already familiar to. As such, you will visit 5 locations and beat minibosses, acquire one element at a time to re-familiarize yourself, see the different combat arts in action and polish your build to start the game!"
-				},
-				"titleText" : {
-					"en_US" : "Tutorial"
-				}
-			},{
-				"type" : "SHOW_CENTER_MSG",
-				"text" : {
-					"en_US" : "If you’d rather just get the CP and start the adventure, just use [item or npc to be determined]"
-				},
-				"titleText" : {
-					"en_US" : "Tutorial"
-				}
-			},{
-				"type" : "LABEL",
-				"name" : "debug"
-			},{
-					"type" : "CHANGE_VAR_NUMBER",
-					"changeType" : "set",
-					"varName" : "plot.emilie.line",
-					"value" : 250
-			},{
-				"type" : "SHOW_MODAL_CHOICE",
-				"text" : {
-					"en_US" : "Continue with tutorial?"
-				},
-				"options" : [{
-					"label" : {
-						"en_US" : "Yes"
-					}
-				},{
-					"label" : {
-						"en_US" : "No"
-					}
-				}],
-				"0" : [{
-					"type" : "SET_TASK",
-					"task" : {
-						"en_US" : "Find the the monk in rookie harbor."
-					},
-					"keepDisplayed" : false
-				}],
-				"1" : [{
-					"type" : "SET_TASK",
-					"task" : {
-						"en_US" : "Hm..."
-					},
-					"keepDisplayed" : false
-				}]
-			},{
-				"type" : "ADD_TIMER",
-				"name" : "miraTimer",
-				"mode" : "COUNTER",
-				"duration" : 1,
-				"temp" : false,
-				"gui" : false,
-				"millis" : false
-			}],
+                "type": "SET_OVERLAY",
+                "color": "black",
+                "alpha": 0,
+                "time": 1
+            }, {
+                "type": "SHOW_CENTER_MSG",
+                "text": {
+                    "en_US": "To introduce you to the class, we’ve made this tutorial quest just so you can experiment with the new Pentafist Skills. We would rather not start you back from scratch but rather let you keep rocking with the expected amount of power you’re already familiar to. As such, you will visit 5 locations and beat minibosses, acquire one element at a time to re-familiarize yourself, see the different combat arts in action and polish your build to start the game!"
+                },
+                "titleText": {
+                    "en_US": "Tutorial"
+                }
+            }, {
+                "type": "SHOW_CENTER_MSG",
+                "text": {
+                    "en_US": "If you’d rather just get the CP and start the adventure, just use [item or npc to be determined]"
+                },
+                "titleText": {
+                    "en_US": "Tutorial"
+                }
+            }, {
+                "type": "LABEL",
+                "name": "debug"
+            }, {
+                "type": "CHANGE_VAR_NUMBER",
+                "changeType": "set",
+                "varName": "plot.emilie.line",
+                "value": 250
+            }, {
+                "0": [{
+                    "type": "SET_TASK",
+                    "task": {
+                        "en_US": "Find the the monk in rookie harbor."
+                    },
+                    "keepDisplayed": false
+                }],
+                "1": [{
+                    "type": "SET_TASK",
+                    "task": {
+                        "en_US": "Hm..."
+                    },
+                    "keepDisplayed": false
+                }],
+                "type": "SHOW_MODAL_CHOICE",
+                "text": {
+                    "en_US": "Continue with tutorial?"
+                },
+                "options": [{
+                    "label": {
+                        "en_US": "Yes"
+                    }
+                }, {
+                    "label": {
+                        "en_US": "No"
+                    }
+                }]
+            }, {
+                "type": "ADD_TIMER",
+                "name": "miraTimer",
+                "mode": "COUNTER",
+                "duration": 1,
+                "temp": false,
+                "gui": false,
+                "millis": false
+            }],
             "eventType": "CUTSCENE",
             "name": "emilieBack"
         }

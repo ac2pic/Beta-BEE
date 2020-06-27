@@ -1,41 +1,40 @@
 {
-	"DOCTYPE": "AREAS_MAP",
-	"name": {
-		"en_US": "home",
-		"de_DE": "home",
-		"ja_JP": "home",
-		"ko_KR": "home",
-		"zh_CN": "home",
-		"langUid": 1
-	},
-	"width": 5,
-	"height": 5,
-	"floors": [{
-		"level": 0,
-		"tiles": [
-			[0,0,0,0,0],
-			[0,0,0,0,0],
-			[0,0,0,0,0],
-			[0,0,0,0,0],
-			[0,0,0,0,0]
-		],
-		"icons": [],
-		"maps": [{
-			"path": "real.home.room_emilie_night",
-			"name": {
+    "DOCTYPE": "AREAS_MAP",
+    "name": {
+        "en_US": "home",
+        "de_DE": "home",
+        "ja_JP": "home",
+        "ko_KR": "home",
+        "zh_CN": "home",
+        "langUid": 1
+    },
+    "width": 5,
+    "height": 5,
+    "floors": [{
+        "level": 0,
+        "tiles": [
+            [0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0]
+        ],
+        "icons": [],
+        "maps": [{
+            "path": "real.home.room_emilie_night",
+            "name": {
                 "en_US": "Emilie's Room",
                 "de_DE": "Emilie's Room",
                 "ja_JP": "Emilie's Room",
                 "ko_KR": "Emilie's Room",
-				"zh_CN": "Emilie's Room",
-				"langUid": 3
-			},
-			"offset": {
-				"x": 0,
-				"y": 0
-			},
-			"dungeon": ""
-		}]
-	}]
-
+                "zh_CN": "Emilie's Room",
+                "langUid": 3
+            },
+            "offset": {
+                "x": 0,
+                "y": 0
+            },
+            "dungeon": ""
+        }]
+    }]
 }

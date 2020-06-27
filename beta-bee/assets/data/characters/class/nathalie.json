@@ -1,74 +1,74 @@
 {
-	"name" : {
-		"en_US" : "Nathalie",
-		"de_DE" : "Nathalie",
-		"zh_CN" : "Nathalie",
-		"ja_JP" : "Nathalie",
-		"ko_KR" : "Nathalie",
-		"langUid" : 1
-	},
-	"realname" : {
-		"en_US" : "Nathalie DeRouville",
-		"de_DE" : "Nathalie DeRouville",
-		"zh_CN" : "Nathalie DeRouville",
-		"ja_JP" : "Nathalie DeRouville",
-		"ko_KR" : "Nathalie DeRouville",
-		"langUid" : 2
-	},
-	"size": {
-		"x": 16,
-		"y": 16,
-		"z": 24
-	},
-	"animSheet" : "class.nathalie",
-	"walkAnimSet": {
-		"normal": {
-		  "idle": "idle",
-		  "move": "walk",
-		  "run": "run",
-		  "jump": "jump",
-		  "fall": "fall"
-		},
-		"sit": {
-		  "idle": "sit"
-		}
-	},
-	"walkAnims" : "normal",
-	"shadow" : 16,
-	"configs": {
-		"normal": {
-		  "relativeVel": 0.5
-		},
-		"running": {
-		  "relativeVel": 1
-		},
-		"sit": {
-		  "walkAnims": "sit",
-		  "relativeVel": 0.5
-		}
-	},
-	"face" : {
-		"width" : 134,
-		"height" : 179,
-		"centerX" : 64,
-		"centerY" : 76,
-		"src" : "class/nathalie.png",
-		"parts" : [{
-			"normDefault" : {
-				"destX" : 0,
-				"destY" : 0,
-				"width" : 134,
-				"height" : 179,
-				"srcX" : 0,
-				"srcY" : 0
-			}
-		}],
-		"expressions" : {
-			"DEFAULT" : {
-				"faces" : [
-					["normDefault"]
-				]
-			}
-		}
-	}
+    "name": {
+        "en_US": "Nathalie",
+        "de_DE": "Nathalie",
+        "zh_CN": "Nathalie",
+        "ja_JP": "Nathalie",
+        "ko_KR": "Nathalie",
+        "langUid": 1
+    },
+    "realname": {
+        "en_US": "Nathalie DeRouville",
+        "de_DE": "Nathalie DeRouville",
+        "zh_CN": "Nathalie DeRouville",
+        "ja_JP": "Nathalie DeRouville",
+        "ko_KR": "Nathalie DeRouville",
+        "langUid": 2
+    },
+    "size": {
+        "x": 16,
+        "y": 16,
+        "z": 24
+    },
+    "animSheet": "class.nathalie",
+    "walkAnimSet": {
+        "normal": {
+            "idle": "idle",
+            "move": "walk",
+            "run": "run",
+            "jump": "jump",
+            "fall": "fall"
+        },
+        "sit": {
+            "idle": "sit"
+        }
+    },
+    "walkAnims": "normal",
+    "shadow": 16,
+    "configs": {
+        "normal": {
+            "relativeVel": 0.5
+        },
+        "running": {
+            "relativeVel": 1
+        },
+        "sit": {
+            "walkAnims": "sit",
+            "relativeVel": 0.5
+        }
+    },
+    "face": {
+        "width": 134,
+        "height": 179,
+        "centerX": 64,
+        "centerY": 76,
+        "src": "class/nathalie.png",
+        "parts": [{
+            "normDefault": {
+                "destX": 0,
+                "destY": 0,
+                "width": 134,
+                "height": 179,
+                "srcX": 0,
+                "srcY": 0
+            }
+        }],
+        "expressions": {
+            "DEFAULT": {
+                "faces": [
+                    ["normDefault"]
+                ]
+            }
+        }
+    }
 }

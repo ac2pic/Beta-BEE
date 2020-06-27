@@ -469,9 +469,9 @@
             "startCondition": "true",
             "endCondition": "false",
             "event": [{
-				"type" : "GOTO_LABEL",
-				"name" : "debug"
-			},{
+                "type": "GOTO_LABEL",
+                "name": "debug"
+            }, {
                 "type": "CHANGE_VAR_BOOL",
                 "varName": "tmp.login",
                 "changeType": "set",
@@ -567,14 +567,14 @@
                 "type": "SHOW_PARALLAX",
                 "parallax": "emilie-login"
             }, {
-				"type" : "LABEL",
-				"name" : "debug"
-			},{
-				"type" : "CHANGE_VAR_NUMBER",
-				"changeType" : "set",
-				"varName" : "plot.emilie.line",
-				"value" : 100
-			}, {
+                "type": "LABEL",
+                "name": "debug"
+            }, {
+                "type": "CHANGE_VAR_NUMBER",
+                "changeType": "set",
+                "varName": "plot.emilie.line",
+                "value": 100
+            }, {
                 "type": "TELEPORT",
                 "map": "test.scene_05_non_text_2",
                 "marker": "start"

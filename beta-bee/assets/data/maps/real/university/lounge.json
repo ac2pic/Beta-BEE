@@ -29,31 +29,31 @@
             "name": "talk",
             "eventType": "CUTSCENE",
             "triggerType": "ALWAYS",
-			"startCondition": "",
+            "startCondition": "",
             "endCondition": "plot.emilie.line >= 300",
             "event": [{
-				"type": "PUSH_BGM",
-				"mode": "fadeIn",
-				"bgm": "small_troubles"
-			}, {
+                "type": "PUSH_BGM",
+                "mode": "fadeIn",
+                "bgm": "small_troubles"
+            }, {
                 "alpha": 1,
                 "time": 0,
                 "lighter": false,
                 "type": "SET_OVERLAY",
                 "color": "black"
             }, {
-				"type": "HIDE_ENTITY",
-				"entity": {
-					"player": true
-				},
-				"skipEffects": true
-			},{
-				"type" : "SET_CAMERA_POS",
-				"pos" : {
-					"x": 360,
-					"y": 280
-				}
-			},{
+                "type": "HIDE_ENTITY",
+                "entity": {
+                    "player": true
+                },
+                "skipEffects": true
+            }, {
+                "type": "SET_CAMERA_POS",
+                "pos": {
+                    "x": 360,
+                    "y": 280
+                }
+            }, {
                 "entity": {
                     "name": "aiko"
                 },
@@ -91,7 +91,7 @@
                     "y": 0,
                     "z": 0
                 }
-            },{
+            }, {
                 "entity": {
                     "name": "nath"
                 },
@@ -120,7 +120,7 @@
                     "y": 280,
                     "z": 0
                 }
-            },{
+            }, {
                 "type": "SET_ENTITY_POS",
                 "entity": {
                     "name": "nath"
@@ -157,164 +157,164 @@
                 "type": "SET_OVERLAY",
                 "color": "black"
             }, {
-				"type": "WAIT",
-				"time" : 2
-			},{
-				"type" : "ADD_MSG_PERSON",
-				"person" : {
-					"person" : "npc.female2",
-					"expression" : "DEFAULT"
-				},
-				"side" : "RIGHT",
-				"order" : 0,
-				"clearSide": false
-			}, {
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "npc.female2",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "We made good progress today, I think we might be ahead!"
-				}
-			},{
-				"type" : "ADD_MSG_PERSON",
-				"person" : {
-					"person" : "npc.male",
-					"expression" : "DEFAULT"
-				},
-				"side" : "LEFT",
-				"order" : 0,
-				"clearSide": false
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "npc.male",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "For once! I was hoping to get a free weekend, just at the right time, my girlfriend wanted to visit town!"
-				}
-			}, {
-				"type" : "ADD_MSG_PERSON",
-				"person" : {
-					"person" : "npc.female",
-					"expression" : "DEFAULT"
-				},
-				"side" : "RIGHT",
-				"order" : 0,
-				"clearSide": false
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "npc.female",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Oh won’t you look at the ladies man! You go get her champ, but make sure you come back in one piece... We still need you for a bit!"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "npc.male",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Is that a worried tone I hear? Or maybe some jealousy?"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "npc.female",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "You wish! But I’m with you, a weekend off will do us all some good!"
-				}
-			}, {
-				"type" : "ADD_MSG_PERSON",
-				"person" : {
-					"person" : "npc.male",
-					"expression" : "DEFAULT"
-				},
-				"side" : "RIGHT",
-				"order" : 0,
-				"clearSide": false
-			}, {
-				"type" : "ADD_MSG_PERSON",
-				"person" : {
-					"person" : "npc.female2",
-					"expression" : "DEFAULT"
-				},
-				"side" : "LEFT",
-				"order" : 1,
-				"clearSide": false
-			}, {
-				"type" : "ADD_MSG_PERSON",
-				"person" : {
-					"person" : "main.emilie_civilian",
-					"expression" : "DEFAULT"
-				},
-				"side" : "LEFT",
-				"order" : 0,
-				"clearSide": false
-			}, {
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "npc.female",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Now that we all know Malik’s schedule, what about you two? How will you spend that limited freedom?"
-				}
-			},{
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "npc.female2",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Do you really need to ask? Sleep!"
-				}
-			}, {
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "main.emilie_civilian",
-					"expression" : "CURIOUS"
-				},
-				"message" : {
-					"en_US" : "I honestly thought we’d have so much more to do, I didn’t make plans… I’ll see if I can catch up with some friends… or you know… Aller au pub! (eng Alt.: ( [...] Go to the pub!)"
-				}
-			}, {
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "npc.female",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Didn’t you use to play that computer game last semester? That MMO you were so into… I’d had thought you’d get some progress in! I know I want to progress in my game of “Ultimate Fantasy XI” myself!"
-				}
-			}, {
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "main.emilie_civilian",
-					"expression" : "SHRUG"
-				},
-				"message" : {
-					"en_US" : "I guess I got tired of the game… It just doesn’t feel the same anymore…"
-				}
-			}, {
-				"type" : "SHOW_MSG",
-				"person" : {
-					"person" : "npc.female",
-					"expression" : "DEFAULT"
-				},
-				"message" : {
-					"en_US" : "Well, no matter, I say it’s about time we leave our brains here and get out of here!"
-				}
-			},{
-				"type" : "CLEAR_MSG"
-			}, {
+                "type": "WAIT",
+                "time": 2
+            }, {
+                "type": "ADD_MSG_PERSON",
+                "person": {
+                    "person": "npc.female2",
+                    "expression": "DEFAULT"
+                },
+                "side": "RIGHT",
+                "order": 0,
+                "clearSide": false
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "npc.female2",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "We made good progress today, I think we might be ahead!"
+                }
+            }, {
+                "type": "ADD_MSG_PERSON",
+                "person": {
+                    "person": "npc.male",
+                    "expression": "DEFAULT"
+                },
+                "side": "LEFT",
+                "order": 0,
+                "clearSide": false
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "npc.male",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "For once! I was hoping to get a free weekend, just at the right time, my girlfriend wanted to visit town!"
+                }
+            }, {
+                "type": "ADD_MSG_PERSON",
+                "person": {
+                    "person": "npc.female",
+                    "expression": "DEFAULT"
+                },
+                "side": "RIGHT",
+                "order": 0,
+                "clearSide": false
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "npc.female",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Oh won’t you look at the ladies man! You go get her champ, but make sure you come back in one piece... We still need you for a bit!"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "npc.male",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Is that a worried tone I hear? Or maybe some jealousy?"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "npc.female",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "You wish! But I’m with you, a weekend off will do us all some good!"
+                }
+            }, {
+                "type": "ADD_MSG_PERSON",
+                "person": {
+                    "person": "npc.male",
+                    "expression": "DEFAULT"
+                },
+                "side": "RIGHT",
+                "order": 0,
+                "clearSide": false
+            }, {
+                "type": "ADD_MSG_PERSON",
+                "person": {
+                    "person": "npc.female2",
+                    "expression": "DEFAULT"
+                },
+                "side": "LEFT",
+                "order": 1,
+                "clearSide": false
+            }, {
+                "type": "ADD_MSG_PERSON",
+                "person": {
+                    "person": "main.emilie_civilian",
+                    "expression": "DEFAULT"
+                },
+                "side": "LEFT",
+                "order": 0,
+                "clearSide": false
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "npc.female",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Now that we all know Malik’s schedule, what about you two? How will you spend that limited freedom?"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "npc.female2",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Do you really need to ask? Sleep!"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie_civilian",
+                    "expression": "CURIOUS"
+                },
+                "message": {
+                    "en_US": "I honestly thought we’d have so much more to do, I didn’t make plans… I’ll see if I can catch up with some friends… or you know… Aller au pub! (eng Alt.: ( [...] Go to the pub!)"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "npc.female",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Didn’t you use to play that computer game last semester? That MMO you were so into… I’d had thought you’d get some progress in! I know I want to progress in my game of “Ultimate Fantasy XI” myself!"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie_civilian",
+                    "expression": "SHRUG"
+                },
+                "message": {
+                    "en_US": "I guess I got tired of the game… It just doesn’t feel the same anymore…"
+                }
+            }, {
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "npc.female",
+                    "expression": "DEFAULT"
+                },
+                "message": {
+                    "en_US": "Well, no matter, I say it’s about time we leave our brains here and get out of here!"
+                }
+            }, {
+                "type": "CLEAR_MSG"
+            }, {
                 "type": "DO_ACTION",
                 "entity": {
                     "name": "aiko"
@@ -342,7 +342,7 @@
                     },
                     "precise": false
                 }]
-            },{
+            }, {
                 "type": "DO_ACTION",
                 "entity": {
                     "name": "emilie"
@@ -385,21 +385,21 @@
                 "varName": "plot.emilie.line",
                 "value": 300
             }, {
-				"type": "POP_BGM",
-				"mode": "fadeOut"
-			}, {
+                "type": "POP_BGM",
+                "mode": "fadeOut"
+            }, {
                 "changeType": "set",
                 "map": "real.home.room_emilie_night",
                 "type": "CHANGE_VAR_BOOL",
                 "varName": "map.cutscene",
                 "value": true
             }, {
-				"type": "TELEPORT",
-				"map": "real.home.room_emilie_night",
-				"marker": "center"
-			}]
+                "type": "TELEPORT",
+                "map": "real.home.room_emilie_night",
+                "marker": "center"
+            }]
         }
-    },{
+    }, {
         "type": "Marker",
         "x": 360,
         "y": 283,

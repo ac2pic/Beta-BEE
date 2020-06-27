@@ -1,82 +1,81 @@
 {
-	"lydia": {
-		"introPath": "media/bgm/lydia_intro.ogg",
-		"path": "media/bgm/lydia_loop.ogg",
-		"introEnd": 42.667,
-		"loopEnd": 85.333,
-		"volume": 0.5
-	},
-	 "autumn_remix": {
-		"loopEnd": 195.305,
-		"path": "media/bgm/Autumns_Ballad_Loop.ogg",
-		"volume": 1
-	},
-	"aubade_dahoge": {
-		"loopEnd": 124.2,
-		"path": "media/bgm/Aubade_dAhoge_Loop.ogg",
-		"volume": 0.5
-	},
-	"melancholy": {
-		"loopEnd": 109.623,
-		"path": "media/bgm/Melancholy_Loop.ogg",
-		"volume": 0.5
-	},
-	"small_troubles": {
-		"introEnd": 16.695,
-		"loopEnd": 183.647,
-		"introPath": "media/bgm/Small_Troubles_Intro.ogg",
-		"path": "media/bgm/Small_Troubles_Loop.ogg",
-		"volume": 0.5
-	},
-	"galaxy_berry": {
-		"introEnd": 28.444,
-		"loopEnd": 211.553,
-		"introPath": "media/bgm/Galaxy_Berry_Intro.ogg",
-		"path": "media/bgm/Galaxy_Berry_Loop.ogg",
-		"volume": 0.5
-	},
-	"halcyon": {
+    "lydia": {
+        "introPath": "media/bgm/lydia_intro.ogg",
+        "path": "media/bgm/lydia_loop.ogg",
+        "introEnd": 42.667,
+        "loopEnd": 85.333,
+        "volume": 0.5
+    },
+    "autumn_remix": {
+        "loopEnd": 195.305,
+        "path": "media/bgm/Autumns_Ballad_Loop.ogg",
+        "volume": 1
+    },
+    "aubade_dahoge": {
+        "loopEnd": 124.2,
+        "path": "media/bgm/Aubade_dAhoge_Loop.ogg",
+        "volume": 0.5
+    },
+    "melancholy": {
+        "loopEnd": 109.623,
+        "path": "media/bgm/Melancholy_Loop.ogg",
+        "volume": 0.5
+    },
+    "small_troubles": {
+        "introEnd": 16.695,
+        "loopEnd": 183.647,
+        "introPath": "media/bgm/Small_Troubles_Intro.ogg",
+        "path": "media/bgm/Small_Troubles_Loop.ogg",
+        "volume": 0.5
+    },
+    "galaxy_berry": {
+        "introEnd": 28.444,
+        "loopEnd": 211.553,
+        "introPath": "media/bgm/Galaxy_Berry_Intro.ogg",
+        "path": "media/bgm/Galaxy_Berry_Loop.ogg",
+        "volume": 0.5
+    },
+    "halcyon": {
         "introEnd": 24.097,
         "loopEnd": 249.517,
         "introPath": "media/bgm/Halcyon_Droplet_Intro.ogg",
         "path": "media/bgm/Halcyon_Droplet_Loop.ogg",
         "volume": 1
     },
-	"rise_and_rumble": {
+    "rise_and_rumble": {
         "loopEnd": 115.189,
         "path": "media/bgm/Rise_And_Rumble_Loop.ogg",
         "volume": 1
-	},
-	"heavens_seed" : {
+    },
+    "heavens_seed": {
         "introEnd": 45.341,
-        "loopEnd": 261.330,
+        "loopEnd": 261.33,
         "introPath": "media/bgm/Heavens_Seed_Intro.ogg",
         "path": "media/bgm/Heavens_Seed_Loop.ogg",
         "volume": 1
-	},
-	"portrait_of_ruin": {
+    },
+    "portrait_of_ruin": {
         "loopEnd": 247.502,
         "path": "media/bgm/Portrait_of_Ruin_Loop.ogg",
         "volume": 1
-	},
-	"nocturne_dahoge" : {
-		"loopEnd": 139.498,
-		"path": "media/bgm/Nocturne_dAhoge_Loop.ogg",
-		"volume": 1
-	},
-	"everlasting_amber": {
-		"introPath": "media/bgm/Everlasting_Amber_Intro.ogg",
-		"introEnd": 22.199,
-		"path": "media/bgm/Everlasting_Amber_Loop.ogg",
-		"loopEnd": 177.773,
-		"volume": 1
-	},
-	"dream_globe": {
-		"introPath": "media/bgm/Dream_Globe_Intro.ogg",
-		"introEnd": 39.447,
-		"path": "media/bgm/Dream_Globe_Loop.ogg",
-		"loopEnd": 226.276,
-		"volume": 1
-	}
-
+    },
+    "nocturne_dahoge": {
+        "loopEnd": 139.498,
+        "path": "media/bgm/Nocturne_dAhoge_Loop.ogg",
+        "volume": 1
+    },
+    "everlasting_amber": {
+        "introPath": "media/bgm/Everlasting_Amber_Intro.ogg",
+        "introEnd": 22.199,
+        "path": "media/bgm/Everlasting_Amber_Loop.ogg",
+        "loopEnd": 177.773,
+        "volume": 1
+    },
+    "dream_globe": {
+        "introPath": "media/bgm/Dream_Globe_Intro.ogg",
+        "introEnd": 39.447,
+        "path": "media/bgm/Dream_Globe_Loop.ogg",
+        "loopEnd": 226.276,
+        "volume": 1
+    }
 }

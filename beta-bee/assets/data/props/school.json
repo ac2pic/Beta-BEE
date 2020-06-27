@@ -1,62 +1,62 @@
 {
-	"DOCTYPE": "PROP_SHEET",
-	"props": [{
-		"name": "computerScreen",
-		"size": {
-			"x": 24,
-			"y": 24,
-			"z": 15
-		},
-		"collType": "NONE",
-		"anims": {
-			"sheet" : {
-				"src": "media/map/school.png",
-				"width": 24,
-				"height": 24,
-				"offX": 96,
-				"offY": 0,
-				"xCount": 8
-			},
-			"repeat": true,
-			"SUB": [{
-				"name": "off",
-				"time": 0.05,
-				"frames": [0]
-			},{
-				"name": "turnOn",
-				"time": 0.1,
-				"frames": [1, 2],
-				"repeat": false
-			},{
-				"name": "turnOff",
-				"time": 0.1,
-				"frames": [2, 1],
-				"repeat": false
-			}, {
-				"name": "idle",
-				"time": 0.5,
-				"frames": [3,4,5,6]
-			}, {
-				"name": "error",
-				"frames": [7]
-			}]
-		}
-	}, {
-		"name": "table",
-		"size": {
-			"x": 32,
-			"y": 26,
-			"z": 15
-		},
-		"collType": "Y_FLAT",
-		"fix": {
-			"gfx": "media/map/school.png",
-			"x": 96,
-			"y": 55,
-			"w": 32,
-			"h": 26,
-			"flipX": false,
-			"shape": "Y_FLAT"
-		}
+    "DOCTYPE": "PROP_SHEET",
+    "props": [{
+        "name": "computerScreen",
+        "size": {
+            "x": 24,
+            "y": 24,
+            "z": 15
+        },
+        "collType": "NONE",
+        "anims": {
+            "sheet": {
+                "src": "media/map/school.png",
+                "width": 24,
+                "height": 24,
+                "offX": 96,
+                "offY": 0,
+                "xCount": 8
+            },
+            "repeat": true,
+            "SUB": [{
+                "name": "off",
+                "time": 0.05,
+                "frames": [0]
+            }, {
+                "name": "turnOn",
+                "time": 0.1,
+                "frames": [1, 2],
+                "repeat": false
+            }, {
+                "name": "turnOff",
+                "time": 0.1,
+                "frames": [2, 1],
+                "repeat": false
+            }, {
+                "name": "idle",
+                "time": 0.5,
+                "frames": [3, 4, 5, 6]
+            }, {
+                "name": "error",
+                "frames": [7]
+            }]
+        }
+    }, {
+        "name": "table",
+        "size": {
+            "x": 32,
+            "y": 26,
+            "z": 15
+        },
+        "collType": "Y_FLAT",
+        "fix": {
+            "gfx": "media/map/school.png",
+            "x": 96,
+            "y": 55,
+            "w": 32,
+            "h": 26,
+            "flipX": false,
+            "shape": "Y_FLAT"
+        }
     }]
 }

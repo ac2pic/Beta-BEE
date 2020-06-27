@@ -26,7 +26,7 @@
         "settings": {
             "name": "talk",
             "eventType": "CUTSCENE",
-			"event" : [{
+            "event": [{
                 "side": "LEFT",
                 "order": 0,
                 "clearSide": false,
@@ -35,57 +35,57 @@
                     "person": "main.emilie",
                     "expression": "ANGRY"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "How could this happen… again?"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "main.emilie",
                     "expression": "ANGRY"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "Evotars… being in the middle of a conspiracy…"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "main.emilie",
                     "expression": "ANGRY"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "But he’s got Lea… or a Lea… is it even the one that knows me?"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "main.emilie",
                     "expression": "PAIN"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "Can I even get her out of there?"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "main.emilie",
                     "expression": "PAIN"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "Maybe I should let the others know..."
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "main.emilie",
                     "expression": "PAIN"
                 }
-            },{
+            }, {
                 "side": "RIGHT",
                 "order": 0,
                 "clearSide": false,
@@ -94,110 +94,110 @@
                     "person": "cross-worlds.triblader-female-black",
                     "expression": "DEFAULT"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "Emilienator is it?"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "cross-worlds.triblader-female-black",
                     "expression": "SMILE"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "..."
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "main.emilie",
                     "expression": "SUSPICIOUS"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "... Yes?"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "main.emilie",
                     "expression": "SUSPICIOUS"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "Boss’n told us to lockdown anyone who’d leave the meeting to the city…"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "cross-worlds.triblader-female-black",
                     "expression": "DEFAULT"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "See how far you get without being able to fast travel!"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "cross-worlds.triblader-female-black",
                     "expression": "DEFAULT"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "..."
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "main.emilie",
                     "expression": "ANGRY"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "...!"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "main.emilie",
                     "expression": "SCREAM"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "I have had it with this crap!!"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "main.emilie",
                     "expression": "SCREAM"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "Why am I stuck in all this again!"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "main.emilie",
                     "expression": "SCREAM"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "Haven’t I suffered enough with her loss?!"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "main.emilie",
                     "expression": "SCREAM"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "I… I knew this was a bad idea…"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
@@ -205,9 +205,9 @@
                     "expression": "CRY"
                 }
             }, {
-				"type" : "WAIT",
-				"time" : 5
-			},{
+                "type": "WAIT",
+                "time": 5
+            }, {
                 "side": "RIGHT",
                 "order": 0,
                 "clearSide": false,
@@ -216,120 +216,120 @@
                     "person": "lore.lydia",
                     "expression": "DEFAULT"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "Hey you! The red haired pentafist!"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "main.emilie",
                     "expression": "CRY"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "..."
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "main.emilie",
                     "expression": "CRY"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "Hey you! The red haired pentafist!"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "lore.lydia",
                     "expression": "DEFAULT"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "I’m sorry, I don’t mean to intrude on what seems to be the worst day you’ve ever had…"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "lore.lydia",
                     "expression": "DEFAULT"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "But you having all this unwanted attention from the collective, I think you might need a bit of help."
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "lore.lydia",
                     "expression": "DEFAULT"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "And you are..?"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "main.emilie",
                     "expression": "SUSPICIOUS"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "Oh! Of course. I’m Lydia."
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "lore.lydia",
                     "expression": "DEFAULT"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "I’ve been on their tail for a while to stop them."
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "lore.lydia",
                     "expression": "DEFAULT"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "Had been clued about this meeting but I couldn’t get myself in obviously…"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "lore.lydia",
                     "expression": "DEFAULT"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "But after witnessing that they tried to rope you in, and how you didn’t take it, I think we might have some aligned interests."
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "lore.lydia",
                     "expression": "DEFAULT"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "And now I assume you want something from me too?"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
                     "person": "main.emilie",
                     "expression": "SUSPICIOUS"
                 }
-            },{
+            }, {
                 "message": {
                     "en_US": "I’ve caught on through my research about the stolen identities at this point…"
-				},
+                },
                 "autoContinue": false,
                 "type": "SHOW_MSG",
                 "person": {
@@ -341,16 +341,16 @@
             "endCondition": "false",
             "triggerType": "ONCE"
         }
-    },{
-      "type": "Marker",
-      "x": 200,
-      "y": 250,
-      "level": 0,
-      "settings": {
-        "name": "start",
-        "mapId": 5,
-        "dir": "SOUTH"
-      }
+    }, {
+        "type": "Marker",
+        "x": 200,
+        "y": 250,
+        "level": 0,
+        "settings": {
+            "name": "start",
+            "mapId": 5,
+            "dir": "SOUTH"
+        }
     }],
     "layer": [{
         "id": 0,
