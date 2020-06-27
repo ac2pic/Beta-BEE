@@ -16,86 +16,41 @@
         "y": -4,
         "z": 0
     },
-    "SUB": [
-        {
-            "sheet": "walk",
-            "SUB": [
-                {
-                    "name": "idle",
-                    "frames": [
-                        1
-                    ],
-                    "time": 1,
-                    "repeat": false
-                },
-                {
-                    "name": "preIdle",
-                    "time": 0.1,
-                    "repeat": false,
-                    "frames": [
-                        1
-                    ]
-                },
-                {
-                    "name": "walk",
-                    "time": 0.133,
-                    "repeat": true,
-                    "frames": [
-                        0,
-                        1,
-                        2,
-                        1
-                    ]
-                },
-                {
-                    "name": "run",
-                    "time": 0.133,
-                    "repeat": true,
-                    "frames": [
-                        0,
-                        1,
-                        2,
-                        1
-                    ]
-                },
-                {
-                    "name": "jump",
-                    "time": 0.0833,
-                    "repeat": true,
-                    "frames": [
-                        0
-                    ]
-                },
-                {
-                    "name": "fall",
-                    "time": 0.0833,
-                    "repeat": true,
-                    "frames": [
-                        2
-                    ]
-                }
-            ],
-            "dirs": "8",
-            "flipX": [
-                0,
-                0,
-                0,
-                0,
-                0,
-                1,
-                1,
-                1
-            ],
-            "tileOffsets": [
-                0,
-                3,
-                6,
-                9,
-                12,
-                9,
-                6,
-                3
-            ]
-        }
-    ]
+    "SUB": [{
+        "sheet": "walk",
+        "SUB": [{
+            "name": "idle",
+            "frames": [1],
+            "time": 1,
+            "repeat": false
+        }, {
+            "name": "preIdle",
+            "time": 0.1,
+            "repeat": false,
+            "frames": [1]
+        }, {
+            "name": "walk",
+            "time": 0.133,
+            "repeat": true,
+            "frames": [0, 1, 2, 1]
+        }, {
+            "name": "run",
+            "time": 0.133,
+            "repeat": true,
+            "frames": [0, 1, 2, 1]
+        }, {
+            "name": "jump",
+            "time": 0.0833,
+            "repeat": true,
+            "frames": [0]
+        }, {
+            "name": "fall",
+            "time": 0.0833,
+            "repeat": true,
+            "frames": [2]
+        }],
+        "dirs": "8",
+        "flipX": [0, 0, 0, 0, 0, 1, 1, 1],
+        "tileOffsets": [0, 3, 6, 9, 12, 9, 6, 3]
+    }]
 }
