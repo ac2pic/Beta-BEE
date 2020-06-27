@@ -1,0 +1,404 @@
+{
+    "name": "empty",
+    "levels": [{
+        "height": 0
+    }],
+    "mapWidth": 30,
+    "mapHeight": 30,
+    "masterLevel": 0,
+    "attributes": {
+        "saveMode": "",
+        "bgm": "rhombusSquare",
+        "cameraInBounds": false,
+        "mapStyle": "",
+        "weather": "NONE",
+        "area": "testing-grounds"
+    },
+    "screen": {
+        "x": 0,
+        "y": 0
+    },
+    "entities": [{
+        "type": "EventTrigger",
+        "x": 444,
+        "y": 242,
+        "level": 0,
+        "settings": {
+            "name": "talk",
+            "eventType": "CUTSCENE",
+			"event" : [{
+                "side": "LEFT",
+                "order": 0,
+                "clearSide": false,
+                "type": "ADD_MSG_PERSON",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "ANGRY"
+                }
+            },{
+                "message": {
+                    "en_US": "How could this happen… again?"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "ANGRY"
+                }
+            },{
+                "message": {
+                    "en_US": "Evotars… being in the middle of a conspiracy…"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "ANGRY"
+                }
+            },{
+                "message": {
+                    "en_US": "But he’s got Lea… or a Lea… is it even the one that knows me?"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "PAIN"
+                }
+            },{
+                "message": {
+                    "en_US": "Can I even get her out of there?"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "PAIN"
+                }
+            },{
+                "message": {
+                    "en_US": "Maybe I should let the others know..."
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "PAIN"
+                }
+            },{
+                "side": "RIGHT",
+                "order": 0,
+                "clearSide": false,
+                "type": "ADD_MSG_PERSON",
+                "person": {
+                    "person": "cross-worlds.triblader-female-black",
+                    "expression": "DEFAULT"
+                }
+            },{
+                "message": {
+                    "en_US": "Emilienator is it?"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "cross-worlds.triblader-female-black",
+                    "expression": "SMILE"
+                }
+            },{
+                "message": {
+                    "en_US": "..."
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "SUSPICIOUS"
+                }
+            },{
+                "message": {
+                    "en_US": "... Yes?"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "SUSPICIOUS"
+                }
+            },{
+                "message": {
+                    "en_US": "Boss’n told us to lockdown anyone who’d leave the meeting to the city…"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "cross-worlds.triblader-female-black",
+                    "expression": "DEFAULT"
+                }
+            },{
+                "message": {
+                    "en_US": "See how far you get without being able to fast travel!"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "cross-worlds.triblader-female-black",
+                    "expression": "DEFAULT"
+                }
+            },{
+                "message": {
+                    "en_US": "..."
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "ANGRY"
+                }
+            },{
+                "message": {
+                    "en_US": "...!"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "SCREAM"
+                }
+            },{
+                "message": {
+                    "en_US": "I have had it with this crap!!"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "SCREAM"
+                }
+            },{
+                "message": {
+                    "en_US": "Why am I stuck in all this again!"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "SCREAM"
+                }
+            },{
+                "message": {
+                    "en_US": "Haven’t I suffered enough with her loss?!"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "SCREAM"
+                }
+            },{
+                "message": {
+                    "en_US": "I… I knew this was a bad idea…"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "CRY"
+                }
+            }, {
+				"type" : "WAIT",
+				"time" : 5
+			},{
+                "side": "RIGHT",
+                "order": 0,
+                "clearSide": false,
+                "type": "ADD_MSG_PERSON",
+                "person": {
+                    "person": "lore.lydia",
+                    "expression": "DEFAULT"
+                }
+            },{
+                "message": {
+                    "en_US": "Hey you! The red haired pentafist!"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "CRY"
+                }
+            },{
+                "message": {
+                    "en_US": "..."
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "CRY"
+                }
+            },{
+                "message": {
+                    "en_US": "Hey you! The red haired pentafist!"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.lydia",
+                    "expression": "DEFAULT"
+                }
+            },{
+                "message": {
+                    "en_US": "I’m sorry, I don’t mean to intrude on what seems to be the worst day you’ve ever had…"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.lydia",
+                    "expression": "DEFAULT"
+                }
+            },{
+                "message": {
+                    "en_US": "But you having all this unwanted attention from the collective, I think you might need a bit of help."
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.lydia",
+                    "expression": "DEFAULT"
+                }
+            },{
+                "message": {
+                    "en_US": "And you are..?"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "SUSPICIOUS"
+                }
+            },{
+                "message": {
+                    "en_US": "Oh! Of course. I’m Lydia."
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.lydia",
+                    "expression": "DEFAULT"
+                }
+            },{
+                "message": {
+                    "en_US": "I’ve been on their tail for a while to stop them."
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.lydia",
+                    "expression": "DEFAULT"
+                }
+            },{
+                "message": {
+                    "en_US": "Had been clued about this meeting but I couldn’t get myself in obviously…"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.lydia",
+                    "expression": "DEFAULT"
+                }
+            },{
+                "message": {
+                    "en_US": "But after witnessing that they tried to rope you in, and how you didn’t take it, I think we might have some aligned interests."
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.lydia",
+                    "expression": "DEFAULT"
+                }
+            },{
+                "message": {
+                    "en_US": "And now I assume you want something from me too?"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": "SUSPICIOUS"
+                }
+            },{
+                "message": {
+                    "en_US": "I’ve caught on through my research about the stolen identities at this point…"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "lore.lydia",
+                    "expression": "DEFAULT"
+                }
+            }],
+            "startCondition": "false",
+            "endCondition": "false",
+            "triggerType": "ONCE"
+        }
+    },{
+      "type": "Marker",
+      "x": 200,
+      "y": 250,
+      "level": 0,
+      "settings": {
+        "name": "start",
+        "mapId": 5,
+        "dir": "SOUTH"
+      }
+    }],
+    "layer": [{
+        "id": 0,
+        "type": "Background",
+        "name": "ground",
+        "level": 0,
+        "width": 30,
+        "height": 30,
+        "visible": 1,
+        "tilesetName": "media/map/cargo-ship-inner.png",
+        "repeat": false,
+        "distance": 1,
+        "tilesize": 16,
+        "moveSpeed": {
+            "x": 0,
+            "y": 0
+        },
+        "data": [
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 8, 40, 41, 14, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 14, 41, 42, 10, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 39, 40, 72, 73, 46, 73, 73, 73, 73, 73, 73, 73, 73, 73, 73, 73, 46, 73, 74, 42, 43, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 71, 72, 104, 105, 78, 105, 105, 105, 105, 105, 105, 105, 105, 105, 105, 105, 78, 105, 106, 74, 75, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 71, 104, 136, 137, 110, 137, 137, 137, 137, 137, 137, 137, 137, 137, 137, 137, 110, 137, 138, 106, 75, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 71, 136, 168, 169, 142, 169, 169, 169, 169, 169, 169, 169, 169, 169, 169, 169, 142, 169, 170, 138, 75, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 71, 168, 200, 201, 174, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 174, 201, 202, 170, 75, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 71, 200, 232, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 234, 202, 75, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 71, 232, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 234, 75, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 263, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 267, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 264, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 266, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 296, 264, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 266, 298, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 296, 297, 297, 297, 297, 297, 297, 297, 225, 226, 297, 297, 297, 297, 297, 297, 298, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        ]
+    }]
+}

@@ -1,0 +1,573 @@
+{
+    "name": "lounge",
+    "levels": [{
+        "height": 0
+    }],
+    "mapWidth": 50,
+    "mapHeight": 25,
+    "masterLevel": 0,
+    "attributes": {
+        "saveMode": "",
+        "bgm": "",
+        "cameraInBounds": false,
+        "map-sounds": "",
+        "mapStyle": "",
+        "weather": "",
+        "npcRunners": "",
+        "area": ""
+    },
+    "screen": {
+        "x": 0,
+        "y": 0
+    },
+    "entities": [{
+        "type": "EventTrigger",
+        "x": 444,
+        "y": 242,
+        "level": 0,
+        "settings": {
+            "name": "talk",
+            "eventType": "CUTSCENE",
+            "triggerType": "ALWAYS",
+			"startCondition": "",
+            "endCondition": "plot.emilie.line >= 300",
+            "event": [{
+				"type": "PUSH_BGM",
+				"mode": "fadeIn",
+				"bgm": "small_troubles"
+			}, {
+                "alpha": 1,
+                "time": 0,
+                "lighter": false,
+                "type": "SET_OVERLAY",
+                "color": "black"
+            }, {
+				"type": "HIDE_ENTITY",
+				"entity": {
+					"player": true
+				},
+				"skipEffects": true
+			},{
+				"type" : "SET_CAMERA_POS",
+				"pos" : {
+					"x": 360,
+					"y": 280
+				}
+			},{
+                "entity": {
+                    "name": "aiko"
+                },
+                "duration": -1,
+                "align": "BOTTOM",
+                "group": "",
+                "wait": false,
+                "waitSkip": 0,
+                "type": "SHOW_EFFECT",
+                "effect": {
+                    "sheet": "scene.dream",
+                    "name": "black"
+                },
+                "offset": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }, {
+                "entity": {
+                    "name": "malik"
+                },
+                "duration": -1,
+                "align": "BOTTOM",
+                "group": "",
+                "wait": false,
+                "waitSkip": 0,
+                "type": "SHOW_EFFECT",
+                "effect": {
+                    "sheet": "scene.dream",
+                    "name": "black"
+                },
+                "offset": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "entity": {
+                    "name": "nath"
+                },
+                "duration": -1,
+                "align": "BOTTOM",
+                "group": "",
+                "wait": false,
+                "waitSkip": 0,
+                "type": "SHOW_EFFECT",
+                "effect": {
+                    "sheet": "scene.dream",
+                    "name": "black"
+                },
+                "offset": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }, {
+                "type": "SET_ENTITY_POS",
+                "entity": {
+                    "name": "aiko"
+                },
+                "position": {
+                    "x": 340,
+                    "y": 280,
+                    "z": 0
+                }
+            },{
+                "type": "SET_ENTITY_POS",
+                "entity": {
+                    "name": "nath"
+                },
+                "position": {
+                    "x": 380,
+                    "y": 280,
+                    "z": 0
+                }
+            }, {
+                "type": "SET_ENTITY_POS",
+                "entity": {
+                    "name": "emilie"
+                },
+                "position": {
+                    "x": 360,
+                    "y": 300,
+                    "z": 0
+                }
+            }, {
+                "type": "SET_ENTITY_POS",
+                "entity": {
+                    "name": "malik"
+                },
+                "position": {
+                    "x": 360,
+                    "y": 260,
+                    "z": 0
+                }
+            }, {
+                "alpha": 0,
+                "time": 2,
+                "lighter": false,
+                "type": "SET_OVERLAY",
+                "color": "black"
+            }, {
+				"type": "WAIT",
+				"time" : 2
+			},{
+				"type" : "ADD_MSG_PERSON",
+				"person" : {
+					"person" : "npc.female2",
+					"expression" : "DEFAULT"
+				},
+				"side" : "RIGHT",
+				"order" : 0,
+				"clearSide": false
+			}, {
+				"type" : "SHOW_MSG",
+				"person" : {
+					"person" : "npc.female2",
+					"expression" : "DEFAULT"
+				},
+				"message" : {
+					"en_US" : "We made good progress today, I think we might be ahead!"
+				}
+			},{
+				"type" : "ADD_MSG_PERSON",
+				"person" : {
+					"person" : "npc.male",
+					"expression" : "DEFAULT"
+				},
+				"side" : "LEFT",
+				"order" : 0,
+				"clearSide": false
+			},{
+				"type" : "SHOW_MSG",
+				"person" : {
+					"person" : "npc.male",
+					"expression" : "DEFAULT"
+				},
+				"message" : {
+					"en_US" : "For once! I was hoping to get a free weekend, just at the right time, my girlfriend wanted to visit town!"
+				}
+			}, {
+				"type" : "ADD_MSG_PERSON",
+				"person" : {
+					"person" : "npc.female",
+					"expression" : "DEFAULT"
+				},
+				"side" : "RIGHT",
+				"order" : 0,
+				"clearSide": false
+			},{
+				"type" : "SHOW_MSG",
+				"person" : {
+					"person" : "npc.female",
+					"expression" : "DEFAULT"
+				},
+				"message" : {
+					"en_US" : "Oh won’t you look at the ladies man! You go get her champ, but make sure you come back in one piece... We still need you for a bit!"
+				}
+			},{
+				"type" : "SHOW_MSG",
+				"person" : {
+					"person" : "npc.male",
+					"expression" : "DEFAULT"
+				},
+				"message" : {
+					"en_US" : "Is that a worried tone I hear? Or maybe some jealousy?"
+				}
+			},{
+				"type" : "SHOW_MSG",
+				"person" : {
+					"person" : "npc.female",
+					"expression" : "DEFAULT"
+				},
+				"message" : {
+					"en_US" : "You wish! But I’m with you, a weekend off will do us all some good!"
+				}
+			}, {
+				"type" : "ADD_MSG_PERSON",
+				"person" : {
+					"person" : "npc.male",
+					"expression" : "DEFAULT"
+				},
+				"side" : "RIGHT",
+				"order" : 0,
+				"clearSide": false
+			}, {
+				"type" : "ADD_MSG_PERSON",
+				"person" : {
+					"person" : "npc.female2",
+					"expression" : "DEFAULT"
+				},
+				"side" : "LEFT",
+				"order" : 1,
+				"clearSide": false
+			}, {
+				"type" : "ADD_MSG_PERSON",
+				"person" : {
+					"person" : "main.emilie_civilian",
+					"expression" : "DEFAULT"
+				},
+				"side" : "LEFT",
+				"order" : 0,
+				"clearSide": false
+			}, {
+				"type" : "SHOW_MSG",
+				"person" : {
+					"person" : "npc.female",
+					"expression" : "DEFAULT"
+				},
+				"message" : {
+					"en_US" : "Now that we all know Malik’s schedule, what about you two? How will you spend that limited freedom?"
+				}
+			},{
+				"type" : "SHOW_MSG",
+				"person" : {
+					"person" : "npc.female2",
+					"expression" : "DEFAULT"
+				},
+				"message" : {
+					"en_US" : "Do you really need to ask? Sleep!"
+				}
+			}, {
+				"type" : "SHOW_MSG",
+				"person" : {
+					"person" : "main.emilie_civilian",
+					"expression" : "CURIOUS"
+				},
+				"message" : {
+					"en_US" : "I honestly thought we’d have so much more to do, I didn’t make plans… I’ll see if I can catch up with some friends… or you know… Aller au pub! (eng Alt.: ( [...] Go to the pub!)"
+				}
+			}, {
+				"type" : "SHOW_MSG",
+				"person" : {
+					"person" : "npc.female",
+					"expression" : "DEFAULT"
+				},
+				"message" : {
+					"en_US" : "Didn’t you use to play that computer game last semester? That MMO you were so into… I’d had thought you’d get some progress in! I know I want to progress in my game of “Ultimate Fantasy XI” myself!"
+				}
+			}, {
+				"type" : "SHOW_MSG",
+				"person" : {
+					"person" : "main.emilie_civilian",
+					"expression" : "SHRUG"
+				},
+				"message" : {
+					"en_US" : "I guess I got tired of the game… It just doesn’t feel the same anymore…"
+				}
+			}, {
+				"type" : "SHOW_MSG",
+				"person" : {
+					"person" : "npc.female",
+					"expression" : "DEFAULT"
+				},
+				"message" : {
+					"en_US" : "Well, no matter, I say it’s about time we leave our brains here and get out of here!"
+				}
+			},{
+				"type" : "CLEAR_MSG"
+			}, {
+                "type": "DO_ACTION",
+                "entity": {
+                    "name": "aiko"
+                },
+                "action": [{
+                    "type": "NAVIGATE_TO_POINT",
+                    "target": {
+                        "x": 30,
+                        "y": 280,
+                        "z": 0
+                    },
+                    "precise": false
+                }]
+            }, {
+                "type": "DO_ACTION",
+                "entity": {
+                    "name": "malik"
+                },
+                "action": [{
+                    "type": "NAVIGATE_TO_POINT",
+                    "target": {
+                        "x": 50,
+                        "y": 260,
+                        "z": 0
+                    },
+                    "precise": false
+                }]
+            },{
+                "type": "DO_ACTION",
+                "entity": {
+                    "name": "emilie"
+                },
+                "action": [{
+                    "type": "NAVIGATE_TO_POINT",
+                    "target": {
+                        "x": 50,
+                        "y": 300,
+                        "z": 0
+                    },
+                    "precise": false
+                }]
+            }, {
+                "type": "DO_ACTION",
+                "entity": {
+                    "name": "nath"
+                },
+                "action": [{
+                    "type": "NAVIGATE_TO_POINT",
+                    "target": {
+                        "x": 70,
+                        "y": 280,
+                        "z": 0
+                    },
+                    "precise": false
+                }]
+            }, {
+                "alpha": 1,
+                "time": 2,
+                "lighter": false,
+                "type": "SET_OVERLAY",
+                "color": "black"
+            }, {
+                "type": "WAIT",
+                "time": 2
+            }, {
+                "changeType": "set",
+                "type": "CHANGE_VAR_NUMBER",
+                "varName": "plot.emilie.line",
+                "value": 300
+            }, {
+				"type": "POP_BGM",
+				"mode": "fadeOut"
+			}, {
+                "changeType": "set",
+                "map": "real.home.room_emilie_night",
+                "type": "CHANGE_VAR_BOOL",
+                "varName": "map.cutscene",
+                "value": true
+            }, {
+				"type": "TELEPORT",
+				"map": "real.home.room_emilie_night",
+				"marker": "center"
+			}]
+        }
+    },{
+        "type": "Marker",
+        "x": 360,
+        "y": 283,
+        "level": 0,
+        "settings": {
+            "name": "center",
+            "dir": "EAST"
+        }
+    }, {
+        "type": "NPC",
+        "x": 350,
+        "y": 300,
+        "level": 0,
+        "settings": {
+            "name": "malik",
+            "characterName": "class.malik",
+            "mapId": 16,
+            "npcStates": [{
+                "reactType": "FIXED_POS",
+                "face": "SOUTH",
+                "action": [],
+                "hidden": false,
+                "condition": "",
+                "config": "normal",
+                "event": []
+            }]
+        }
+    }, {
+        "type": "NPC",
+        "x": 375,
+        "y": 300,
+        "level": 0,
+        "settings": {
+            "name": "nath",
+            "characterName": "class.nathalie",
+            "mapId": 16,
+            "npcStates": [{
+                "reactType": "FIXED_POS",
+                "face": "WEST",
+                "action": [],
+                "hidden": false,
+                "condition": "",
+                "config": "normal",
+                "event": []
+            }]
+        }
+    }, {
+        "type": "NPC",
+        "x": 400,
+        "y": 300,
+        "level": 0,
+        "settings": {
+            "name": "aiko",
+            "characterName": "class.aiko",
+            "mapId": 16,
+            "npcStates": [{
+                "reactType": "FIXED_POS",
+                "face": "EAST",
+                "action": [],
+                "hidden": false,
+                "condition": "",
+                "config": "normal",
+                "event": []
+            }]
+        }
+    }, {
+        "type": "NPC",
+        "x": 425,
+        "y": 300,
+        "level": 0,
+        "settings": {
+            "name": "emilie",
+            "characterName": "main.emilie_civilian",
+            "mapId": 16,
+            "npcStates": [{
+                "reactType": "FIXED_POS",
+                "face": "NORTH",
+                "action": [],
+                "hidden": false,
+                "condition": "",
+                "config": "normal",
+                "event": []
+            }]
+        }
+    }],
+    "layer": [{
+        "type": "Background",
+        "name": "Wall",
+        "level": 0,
+        "width": 50,
+        "height": 25,
+        "visible": 1,
+        "tilesetName": "media/map/school.png",
+        "repeat": false,
+        "distance": 1,
+        "tilesize": 16,
+        "moveSpeed": {
+            "x": 0,
+            "y": 0
+        },
+        "data": [
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+            [34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34],
+            [66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        ]
+    }, {
+        "type": "Background",
+        "name": "Floor",
+        "level": 0,
+        "width": 50,
+        "height": 25,
+        "visible": 1,
+        "tilesetName": "media/map/school.png",
+        "repeat": false,
+        "distance": 1,
+        "tilesize": 16,
+        "moveSpeed": {
+            "x": 0,
+            "y": 0
+        },
+        "data": [
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 231, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97],
+            [97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97],
+            [97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97],
+            [97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97],
+            [97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97],
+            [97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97],
+            [97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97],
+            [97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97],
+            [97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97],
+            [97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97],
+            [97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97],
+            [97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97],
+            [97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97],
+            [97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97],
+            [97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97],
+            [97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97],
+            [97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97, 97]
+        ]
+    }]
+}

@@ -1,0 +1,84 @@
+{
+  "name": "Pensive Test",
+  "levels": [
+    {
+      "height": 0
+    }
+  ],
+  "mapWidth": 50,
+  "mapHeight": 50,
+  "masterLevel": 0,
+  "attributes": {
+    "saveMode": "",
+    "bgm": "",
+    "cameraInBounds": false,
+    "map-sounds": "",
+    "mapStyle": "",
+    "weather": "",
+    "npcRunners": "",
+    "area": ""
+  },
+  "screen": {
+    "x": 0,
+    "y": 0
+  },
+  "entities": [{
+		"type": "EventTrigger",
+		"x": 249,
+		"y": 260,
+		"level": 0,
+		"settings": {
+			"mapId": 1,
+			"eventType": "CUTSCENE",
+			"triggerType": "ALWAYS",
+			"endCondition": "false",
+			"event": [{
+				"type": "SHOW_PENSIVE_MSG",
+				"dramatic": true,
+				"move": true,
+				"removeOnInteract" : false,
+				"name": "hi",
+				"text": {
+					"en_US": "\\c[5]Hi!"
+				}
+			},{
+				"type": "SHOW_PENSIVE_MSG",
+				"dramatic": false,
+				"move": true,
+				"center": {
+					"x": 125,
+					"y": 200
+				},
+				"text": {
+					"en_US": "Lea..."
+				}
+			},{
+				"type": "SHOW_PENSIVE_MSG",
+				"dramatic": true,
+				"move": false,
+				"center": {
+					"x": 135,
+					"y": 220
+				},
+				"text": {
+					"en_US": "Bye!"
+				}
+			}, {
+				"type" : "REMOVE_PENSIVE_MSG",
+				"name": "hi"
+			},{
+				"type": "SHOW_PENSIVE_MSG",
+				"dramatic": true,
+				"move": false,
+				"center": {
+					"x": 135,
+					"y": 220
+				},
+				"text": {
+					"en_US": "Should have removed hi!"
+				}
+			}]
+		}
+	}],
+  "layer": []
+}

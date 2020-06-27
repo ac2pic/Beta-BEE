@@ -24,5 +24,31 @@
             "x": -200,
             "y": -200
         }
+    },
+    "home": {
+        "name": {
+            "en_US": "Home",
+            "de_DE": "Home",
+            "ja_JP": "Home",
+            "ko_KR": "Home",
+            "zh_CN": "Home",
+            "langUid": 1
+        },
+        "description": {
+            "en_US": "Emilie's living area.",
+            "de_DE": "Emilie's living area.",
+            "ja_JP": "Emilie's living area.",
+            "ko_KR": "Emilie's living area.",
+            "zh_CN": "Emilie's living area.",
+            "langUid": 3
+        },
+        "areaType": "PATH",
+        "order": 0,
+        "track": false,
+        "chests": 0,
+        "position": {
+            "x": -200,
+            "y": -200
+        }
     }
 }

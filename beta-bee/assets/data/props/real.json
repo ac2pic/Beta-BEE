@@ -1,0 +1,100 @@
+{
+  "DOCTYPE": "PROP_SHEET",
+  "props": [
+    {
+      "name": "lampTable",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 14
+      },
+      "collType": "FENCE",
+      "fix": {
+        "gfx": "media/map/flat_emilie.png",
+        "x": 502,
+        "y": 16,
+        "w": 10,
+        "h": 22,
+        "flipX": false,
+        "shape": "Y_FLAT"
+      }
+    },
+    {
+      "name": "schoolBag",
+      "size": {
+        "x": 17,
+        "y": 16,
+        "z": 0
+      },
+      "collType": "NONE",
+      "fix": {
+        "gfx": "media/map/flat_emilie.png",
+        "x": 495,
+        "y": 0,
+        "w": 17,
+        "h": 16,
+        "flipX": false,
+        "shape": "Y_FLAT"
+      }
+    },
+    {
+      "name": "cellPhone",
+      "size": {
+        "x": 6,
+        "y": 7,
+        "z": 0
+      },
+      "collType": "NONE",
+      "anims": {
+        "sheet": {
+          "src": "media/map/flat_emilie.png",
+          "width": 6,
+          "height": 7,
+          "offX": 482,
+          "offY": 38
+        },
+        "repeat": true,
+        "SUB": [
+          {
+            "name": "default",
+            "time": 0.05,
+            "frames": [
+              0
+            ]
+          },
+          {
+            "name": "screenOn",
+            "time": 0.05,
+            "frames": [
+              1
+            ]
+          },
+          {
+            "name": "green",
+            "time": 1,
+            "frames": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "yellow",
+            "time": 1,
+            "frames": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "red",
+            "time": 1,
+            "frames": [
+              4,
+              0
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

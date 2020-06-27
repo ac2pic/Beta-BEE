@@ -1,0 +1,42 @@
+{
+	"name" : {
+		"en_US" : "Generic Male",
+		"de_DE" : "Generic Male",
+		"zh_CN" : "Generic Male",
+		"ja_JP" : "Generic Male",
+		"ko_KR" : "Generic Male",
+		"langUid" : 1
+	},
+	"realname" : {
+		"en_US" : "Generic Male",
+		"de_DE" : "Generic Male",
+		"zh_CN" : "Generic Male",
+		"ja_JP" : "Generic Male",
+		"ko_KR" : "Generic Male",
+		"langUid" : 2
+	},
+	"face" : {
+		"width" : 134,
+		"height" : 179,
+		"centerX" : 64,
+		"centerY" : 76,
+		"src" : "npc/male.png",
+		"parts" : [{
+			"normDefault" : {
+				"destX" : 0,
+				"destY" : 0,
+				"width" : 134,
+				"height" : 179,
+				"srcX" : 0,
+				"srcY" : 0
+			}
+		}],
+		"expressions" : {
+			"DEFAULT" : {
+				"faces" : [
+					["normDefault"]
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,62 @@
+{
+  "DOCTYPE": "MULTI_DIR_ANIMATION",
+  "namedSheets": {
+    "sidePoses": {
+      "src": "media/entity/player/poses.png",
+      "xCount": 7,
+      "offX": 96,
+      "offY": 128,
+      "width": 32,
+      "height": 32
+    },
+    "extraPoses": {
+      "src": "media/entity/player/lea_poses.png",
+      "xCount": 1,
+      "offX": 0,
+      "offY": 0,
+      "width": 32,
+      "height": 32
+    }
+  },
+  "shapeType": "Y_FLAT",
+  "dirs": "2",
+  "flipX": [
+    0,
+    1
+  ],
+  "tileOffsets": [
+    0,
+    0
+  ],
+  "offset": {
+    "x": 0,
+    "y": -2,
+    "z": 0
+  },
+  "time": 0.2,
+  "repeat": false,
+  "SUB": [
+    {
+      "sheet": "sidePoses",
+      "SUB": [
+        {
+          "name": "kneeNormal",
+          "frames": [
+            27
+          ]
+        }
+      ]
+    },
+    {
+      "sheet": "extraPoses",
+      "SUB": [
+        {
+          "name": "kneeLower",
+          "frames": [
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}

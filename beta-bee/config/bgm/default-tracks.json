@@ -1,0 +1,18 @@
+{
+	"emilieAutumn": {
+		"field" : {
+			"track": "autumn_remix",
+			"volume" : 1
+		},
+		"battle": {
+			"track": "rise_and_rumble",
+			"volume": 1
+		}
+	},
+	"emilieHome" : {
+		"field": {
+			"track": "nocturne_dahoge",
+			"volume": 1
+		}
+	}
+}

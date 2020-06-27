@@ -1,0 +1,555 @@
+{
+    "name": "empty",
+    "levels": [{
+        "height": 0
+    }],
+    "mapWidth": 30,
+    "mapHeight": 30,
+    "masterLevel": 0,
+    "attributes": {
+        "saveMode": "",
+        "bgm": "rhombusSquare",
+        "cameraInBounds": false,
+        "mapStyle": "",
+        "weather": "NONE",
+        "area": "testing-grounds"
+    },
+    "screen": {
+        "x": 0,
+        "y": 0
+    },
+    "entities": [{
+        "type": "EventTrigger",
+        "x": 444,
+        "y": 242,
+        "level": 0,
+        "settings": {
+            "name": "talk",
+            "eventType": "CUTSCENE",
+			"event" : [{
+				"type" : "GOTO_LABEL",
+				"name" : "testing"
+			},{
+                "side": "RIGHT",
+                "order": 0,
+                "clearSide": false,
+                "type": "ADD_MSG_PERSON",
+                "person": {
+                    "person": "main.emilie_civilian",
+                    "expression": "CURIOUS"
+                }
+            },{
+                "message": {
+                    "en_US": "I guess I should use this time and make it worthwhile."
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie_civilian",
+                    "expression": "CURIOUS"
+                }
+            },{
+				"type" : "PLAY_SOUND",
+				"name" : "ringtone",
+				"sound" : "media/sound/va/lea/haaaaii.ogg"
+			}, {
+				"type" : "WAIT",
+				"time" : 2
+			},{
+                "message": {
+                    "en_US": "Oh, I guess I missed some messages today!"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie_civilian",
+                    "expression": "CURIOUS"
+                }
+            },{
+				"type" : "LABEL",
+				"name" : "testing"
+			},{
+				"type" : "WAIT",
+				"time" : 0
+			},{
+				"type" : "SHOW_IMAGE",
+				"name" : "blank_image_bg",
+				"image" : {
+					"src" : "parallax/email/blank_background.jpg",
+					"width" : 237,
+					"height" : 150,
+					"offX" : 0,
+					"offY" : 0,
+					"xCount" : 0
+				},
+				"guiState" : {
+					"alpha" : 1,
+					"offsetX" : 0,
+					"offsetY" : 0,
+					"scaleX" : 5,
+					"scaleY" : 3,
+					"angle" : 0
+				},
+				"alignX" : "LEFT",
+				"alignY" : "TOP",
+				"overGui" : false
+			},{
+				"type" : "SHOW_IMAGE",
+				"name" : "first_line",
+				"image" : {
+					"src" : "parallax/email/email_message.png",
+					"width" : 565,
+					"height" : 16,
+					"offX" : 0,
+					"offY" : 28,
+					"xCount" : 0
+				},
+				"guiState" : {
+					"alpha" : 1,
+					"offsetX" : 58,
+					"offsetY" : 200,
+					"scaleX" : 0.75,
+					"scaleY" : 1,
+					"angle" : 0
+				},
+				"alignX" : "LEFT",
+				"alignY" : "TOP",
+				"overGui" : false
+			},{
+				"type" : "SHOW_IMAGE",
+				"name" : "second_line",
+				"image" : {
+					"src" : "parallax/email/email_message.png",
+					"width" : 151,
+					"height" : 16,
+					"offX" : 0,
+					"offY" : 44,
+					"xCount" : 0
+				},
+				"guiState" : {
+					"alpha" : 1,
+					"offsetX" : 125,
+					"offsetY" : 300,
+					"scaleX" : 1,
+					"scaleY" : 1,
+					"angle" : 0
+				},
+				"alignX" : "LEFT",
+				"alignY" : "TOP",
+				"overGui" : false
+			},{
+				"type" : "SHOW_IMAGE",
+				"name" : "leaImage",
+				"image" : {
+					"src" : "parallax/email/cute_lea.jpg",
+					"width" : 600,
+					"height" : 1009,
+					"offX" : 0,
+					"offY" : 0,
+					"xCount" : 0
+				},
+				"guiState" : {
+					"alpha" : 1,
+					"offsetX" : -110,
+					"offsetY" : 240,
+					"scaleX" : 0.12,
+					"scaleY" : 0.12,
+					"angle" : 0
+				},
+				"alignX" : "CENTER",
+				"alignY" : "CENTER",
+				"overGui" : false
+			},{
+				"type" : "SHOW_IMAGE",
+				"name" : "blank",
+				"image" : {
+					"src" : "parallax/email/blank_background.jpg",
+					"width" : 237,
+					"height" : 200,
+					"offX" : 0,
+					"offY" : 44,
+					"xCount" : 0
+				},
+				"guiState" : {
+					"alpha" : 1,
+					"offsetX" : 100,
+					"offsetY" : 0,
+					"scaleX" : 3,
+					"scaleY" : 0.5,
+					"angle" : 0
+				},
+				"alignX" : "LEFT",
+				"alignY" : "TOP",
+				"overGui" : true
+			},{
+				"type" : "SHOW_IMAGE",
+				"name" : "from text",
+				"image" : {
+					"src" : "parallax/email/text.png",
+					"width" : 128,
+					"height" : 64,
+					"offX" : 0,
+					"offY" : 0,
+					"xCount" : 0
+				},
+				"guiState" : {
+					"alpha" : 1,
+					"offsetX" : 82,
+					"offsetY" : 0,
+					"scaleX" : 0.25,
+					"scaleY" : 0.25,
+					"angle" : 0
+				},
+				"alignX" : "LEFT",
+				"alignY" : "TOP",
+				"overGui" : true
+			}, {
+				"type" : "SHOW_IMAGE",
+				"name" : "to text",
+				"image" : {
+					"src" : "parallax/email/text.png",
+					"width" : 60,
+					"height" : 64,
+					"offX" : 128,
+					"offY" : 0,
+					"xCount" : 0
+				},
+				"guiState" : {
+					"alpha" : 1,
+					"offsetX" : 107,
+					"offsetY" : 25,
+					"scaleX" : 0.25,
+					"scaleY" : 0.25,
+					"angle" : 0
+				},
+				"alignX" : "LEFT",
+				"alignY" : "TOP",
+				"overGui" : true
+			},{
+				"type" : "SHOW_IMAGE",
+				"name" : "anon email",
+				"image" : {
+					"src" : "parallax/email/email_addresses.png",
+					"width" : 224,
+					"height" : 68,
+					"offX" : 0,
+					"offY" : 0,
+					"xCount" : 0
+				},
+				"guiState" : {
+					"alpha" : 1,
+					"offsetX" : 100,
+					"offsetY" : -1,
+					"scaleX" : 0.4,
+					"scaleY" : 0.3,
+					"angle" : 0
+				},
+				"alignX" : "LEFT",
+				"alignY" : "TOP",
+				"overGui" : true
+			}, {
+				"type" : "SHOW_IMAGE",
+				"name" : "emilie email",
+				"image" : {
+					"src" : "parallax/email/email_addresses.png",
+					"width" : 358,
+					"height" : 68,
+					"offX" : 224,
+					"offY" : 0,
+					"xCount" : 0
+				},
+				"guiState" : {
+					"alpha" : 1,
+					"offsetX" : 59,
+					"offsetY" : 25,
+					"scaleX" : 0.4,
+					"scaleY" : 0.3,
+					"angle" : 0
+				},
+				"alignX" : "LEFT",
+				"alignY" : "TOP",
+				"overGui" : true
+			},{
+				"type" : "SHOW_IMAGE",
+				"name" : "emilie email",
+				"image" : {
+					"src" : "parallax/email/email_addresses.png",
+					"width" : 358,
+					"height" : 68,
+					"offX" : 224,
+					"offY" : 0,
+					"xCount" : 0
+				},
+				"guiState" : {
+					"alpha" : 1,
+					"offsetX" : 59,
+					"offsetY" : 25,
+					"scaleX" : 0.4,
+					"scaleY" : 0.3,
+					"angle" : 0
+				},
+				"alignX" : "LEFT",
+				"alignY" : "TOP",
+				"overGui" : true
+			},{
+                "side": "RIGHT",
+                "order": 0,
+                "clearSide": false,
+                "type": "ADD_MSG_PERSON",
+                "person": {
+                    "person": "main.emilie_civilian",
+                    "expression": "CURIOUS"
+                }
+            },{
+                "message": {
+                    "en_US": "\\c[2]Oh look. Another email…"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie_civilian",
+                    "expression": "MOPING"
+                }
+            }, {
+				"type" : "MOVE_IMAGE",
+				"name" : "first_line",
+				"guiState" : {
+					"alpha" : 1,
+					"offsetX" : 58,
+					"offsetY" : 40,
+					"scaleX" : 0.75,
+					"scaleY" : 1,
+					"angle" : 0
+				},
+				"time" : 1
+			},{
+                "message": {
+                    "en_US": "\\c[2]Uh… creepy phishing scam monsieur, I am not that thick to fall for anything, let’s see the rest for fun!"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie_civilian",
+                    "expression": "HAPPY"
+                }
+            },{
+				"type" : "CLEAR_MSG"
+			},{
+				"type" : "MOVE_IMAGE",
+				"name" : "second_line",
+				"guiState" : {
+					"alpha" : 1,
+					"offsetX" : 125,
+					"offsetY" : 100,
+					"scaleX" : 1,
+					"scaleY" : 1,
+					"angle" : 0
+				},
+				"time" : 1
+			},{
+				"type" : "MOVE_IMAGE",
+				"name" : "leaImage",
+				"guiState" : {
+					"alpha" : 1,
+					"offsetX" : -110,
+					"offsetY" : 40,
+					"scaleX" : 0.12,
+					"scaleY" : 0.12,
+					"angle" : 0
+				},
+				"time" : 1
+			},{
+				"type" : "WAIT",
+				"time" : 2
+			},{
+                "side": "RIGHT",
+                "order": 0,
+                "clearSide": false,
+                "type": "ADD_MSG_PERSON",
+                "person": {
+                    "person": "main.emilie_civilian",
+                    "expression": "CURIOUS"
+                }
+            },{
+                "message": {
+                    "en_US": "\\c[2]What the hell!"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie_civilian",
+                    "expression": "SHOCKED"
+                }
+            }, {
+				"type" : "GOTO_LABEL",
+				"name" : "end"
+			},{
+                "message": {
+                    "en_US": "\\c[2]...!"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie_civilian",
+                    "expression": "SHOCKED"
+                }
+            },{
+				"type" : "REMOVE_IMAGE",
+				"name" : "leaImage"
+			},{
+                "message": {
+                    "en_US": "\\c[2]Non mais… What kind of freaking joke is this!?"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie_civilian",
+                    "expression": "ANGRY"
+                }
+            },{
+                "message": {
+                    "en_US": "\\c[2]I swear I’m going to punch whoever thought this was funny!"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie_civilian",
+                    "expression": "ANGRY"
+                }
+            },{
+                "message": {
+                    "en_US": "\\c[2]Am I going nuts? Is the game reaching out to me since I left it?"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie_civilian",
+                    "expression": "SHOCKED"
+                }
+            },{
+                "message": {
+                    "en_US": "\\c[2]If this is the First Scholars or Sergey trying to lure me back in, I’ll send them straight to the fiery pits de l’enfer!"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie_civilian",
+                    "expression": "SHOCKED"
+                }
+            },{
+                "message": {
+                    "en_US": "\\c[2]But what if it’s something serious…?"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie_civilian",
+                    "expression": "SAD"
+                }
+            },{
+                "message": {
+                    "en_US": "\\c[2]Would it be that bad to just see what this is about?"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie_civilian",
+                    "expression": "SAD"
+                }
+            },{
+                "message": {
+                    "en_US": "\\c[2]I have some spare time, I guess I could just fulfill my curiosity…"
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie_civilian",
+                    "expression": "SAD"
+                }
+            },{
+                "message": {
+                    "en_US": "\\c[2]..."
+				},
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie_civilian",
+                    "expression": "SAD"
+                }
+            },{
+                "alpha": 0,
+                "time": 0,
+                "lighter": true,
+                "type": "SET_OVERLAY",
+                "color": "white"
+            }, {
+				"type" : "LABEL",
+				"name" : "end"
+			}, {
+				"type" : "GOTO_TITLE"
+			}],
+            "startCondition": "true",
+            "endCondition": "false",
+            "triggerType": "ONCE"
+        }
+    }, {
+      "type": "Marker",
+      "x": 200,
+      "y": 250,
+      "level": 0,
+      "settings": {
+        "name": "start",
+        "mapId": 5,
+        "dir": "SOUTH"
+      }
+    }],
+    "layer": [{
+        "id": 0,
+        "type": "Background",
+        "name": "ground",
+        "level": 0,
+        "width": 30,
+        "height": 30,
+        "visible": 1,
+        "tilesetName": "media/map/cargo-ship-inner.png",
+        "repeat": false,
+        "distance": 1,
+        "tilesize": 16,
+        "moveSpeed": {
+            "x": 0,
+            "y": 0
+        },
+        "data": [
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 8, 40, 41, 14, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 14, 41, 42, 10, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 39, 40, 72, 73, 46, 73, 73, 73, 73, 73, 73, 73, 73, 73, 73, 73, 46, 73, 74, 42, 43, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 71, 72, 104, 105, 78, 105, 105, 105, 105, 105, 105, 105, 105, 105, 105, 105, 78, 105, 106, 74, 75, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 71, 104, 136, 137, 110, 137, 137, 137, 137, 137, 137, 137, 137, 137, 137, 137, 110, 137, 138, 106, 75, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 71, 136, 168, 169, 142, 169, 169, 169, 169, 169, 169, 169, 169, 169, 169, 169, 142, 169, 170, 138, 75, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 71, 168, 200, 201, 174, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 174, 201, 202, 170, 75, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 71, 200, 232, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 234, 202, 75, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 71, 232, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 234, 75, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 263, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 267, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 264, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 266, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 296, 264, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 266, 298, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 296, 297, 297, 297, 297, 297, 297, 297, 225, 226, 297, 297, 297, 297, 297, 297, 298, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        ]
+    }]
+}
