@@ -1,8 +1,10 @@
 {
     "name": "empty",
-    "levels": [{
-        "height": 0
-    }],
+    "levels": [
+        {
+            "height": 0
+        }
+    ],
     "mapWidth": 30,
     "mapHeight": 30,
     "masterLevel": 0,
@@ -18,296 +20,1260 @@
         "x": 0,
         "y": 0
     },
-    "entities": [{
-        "type": "NPC",
-        "x": 260,
-        "y": 200,
-        "level": 0,
-        "settings": {
-            "name": "malik",
-            "characterName": "class.malik",
-            "mapId": 16,
-            "npcStates": [{
-                "reactType": "FIXED_POS",
-                "face": "SOUTH",
-                "action": [],
-                "hidden": false,
-                "condition": "",
-                "config": "normal",
-                "event": [{
-                    "type": "ADD_MSG_PERSON",
-                    "person": {
-                        "person": "class.malik",
-                        "expression": "DEFAULT"
-                    },
-                    "side": "RIGHT",
-                    "order": 0,
-                    "clearSide": false
-                }]
-            }]
-        }
-    }, {
-        "type": "NPC",
-        "x": 290,
-        "y": 200,
-        "level": 0,
-        "settings": {
-            "name": "nath",
-            "characterName": "class.nathalie",
-            "mapId": 16,
-            "npcStates": [{
-                "reactType": "FIXED_POS",
-                "face": "SOUTH",
-                "action": [],
-                "hidden": false,
-                "condition": "",
-                "config": "normal",
-                "event": []
-            }]
-        }
-    }, {
-        "type": "NPC",
-        "x": 200,
-        "y": 200,
-        "level": 0,
-        "settings": {
-            "name": "aiko",
-            "characterName": "class.aiko",
-            "mapId": 16,
-            "npcStates": [{
-                "reactType": "FIXED_POS",
-                "face": "SOUTH",
-                "action": [],
-                "hidden": false,
-                "condition": "",
-                "config": "normal",
-                "event": [{
-                    "type": "ADD_MSG_PERSON",
-                    "person": {
-                        "person": "npc.female2",
-                        "expression": "DEFAULT"
-                    },
-                    "side": "RIGHT",
-                    "order": 0,
-                    "clearSide": false
-                }, {
-                    "type": "SHOW_MSG",
-                    "person": {
-                        "person": "npc.female2",
-                        "expression": "DEFAULT"
-                    },
-                    "message": {
-                        "en_US": "We made good progress today, I think we might be ahead!"
+    "entities": [
+        {
+            "type": "NPC",
+            "x": 260,
+            "y": 200,
+            "level": 0,
+            "settings": {
+                "name": "malik",
+                "characterName": "class.malik",
+                "mapId": 16,
+                "npcStates": [
+                    {
+                        "reactType": "FIXED_POS",
+                        "face": "SOUTH",
+                        "action": [],
+                        "hidden": false,
+                        "condition": "",
+                        "config": "normal",
+                        "event": [
+                            {
+                                "type": "ADD_MSG_PERSON",
+                                "person": {
+                                    "person": "class.malik",
+                                    "expression": "DEFAULT"
+                                },
+                                "side": "RIGHT",
+                                "order": 0,
+                                "clearSide": false
+                            }
+                        ]
                     }
-                }, {
-                    "type": "ADD_MSG_PERSON",
-                    "person": {
-                        "person": "npc.male",
-                        "expression": "DEFAULT"
-                    },
-                    "side": "LEFT",
-                    "order": 0,
-                    "clearSide": false
-                }, {
-                    "type": "SHOW_MSG",
-                    "person": {
-                        "person": "npc.male",
-                        "expression": "DEFAULT"
-                    },
-                    "message": {
-                        "en_US": "For once! I was hoping to get a free weekend, just at the right time, my girlfriend wanted to visit town!"
-                    }
-                }, {
-                    "type": "ADD_MSG_PERSON",
-                    "person": {
-                        "person": "npc.female",
-                        "expression": "DEFAULT"
-                    },
-                    "side": "RIGHT",
-                    "order": 0,
-                    "clearSide": false
-                }, {
-                    "type": "SHOW_MSG",
-                    "person": {
-                        "person": "npc.female",
-                        "expression": "DEFAULT"
-                    },
-                    "message": {
-                        "en_US": "Oh won’t you look at the ladies man! You go get her champ, but make sure you come back in one piece... We still need you for a bit!"
-                    }
-                }, {
-                    "type": "SHOW_MSG",
-                    "person": {
-                        "person": "npc.male",
-                        "expression": "DEFAULT"
-                    },
-                    "message": {
-                        "en_US": "Is that a worried tone I hear? Or maybe some jealousy?"
-                    }
-                }, {
-                    "type": "SHOW_MSG",
-                    "person": {
-                        "person": "npc.female",
-                        "expression": "DEFAULT"
-                    },
-                    "message": {
-                        "en_US": "You wish! But I’m with you, a weekend off will do us all some good!"
-                    }
-                }, {
-                    "type": "ADD_MSG_PERSON",
-                    "person": {
-                        "person": "npc.male",
-                        "expression": "DEFAULT"
-                    },
-                    "side": "RIGHT",
-                    "order": 0,
-                    "clearSide": false
-                }, {
-                    "type": "ADD_MSG_PERSON",
-                    "person": {
-                        "person": "npc.female2",
-                        "expression": "DEFAULT"
-                    },
-                    "side": "LEFT",
-                    "order": 1,
-                    "clearSide": false
-                }, {
-                    "type": "ADD_MSG_PERSON",
-                    "person": {
-                        "person": "main.emilie_civilian",
-                        "expression": "DEFAULT"
-                    },
-                    "side": "LEFT",
-                    "order": 0,
-                    "clearSide": false
-                }, {
-                    "type": "SHOW_MSG",
-                    "person": {
-                        "person": "npc.female",
-                        "expression": "DEFAULT"
-                    },
-                    "message": {
-                        "en_US": "Now that we all know Malik’s schedule, what about you two? How will you spend that limited freedom?"
-                    }
-                }, {
-                    "type": "SHOW_MSG",
-                    "person": {
-                        "person": "npc.female2",
-                        "expression": "DEFAULT"
-                    },
-                    "message": {
-                        "en_US": "Do you really need to ask? Sleep!"
-                    }
-                }, {
-                    "type": "SHOW_MSG",
-                    "person": {
-                        "person": "main.emilie_civilian",
-                        "expression": "CURIOUS"
-                    },
-                    "message": {
-                        "en_US": "I honestly thought we’d have so much more to do, I didn’t make plans… I’ll see if I can catch up with some friends… or you know… Aller au pub! (eng Alt.: ( [...] Go to the pub!)"
-                    }
-                }, {
-                    "type": "SHOW_MSG",
-                    "person": {
-                        "person": "npc.female",
-                        "expression": "DEFAULT"
-                    },
-                    "message": {
-                        "en_US": "Didn’t you use to play that computer game last semester? That MMO you were so into… I’d had thought you’d get some progress in! I know I want to progress in my game of “Ultimate Fantasy XI” myself!"
-                    }
-                }, {
-                    "type": "SHOW_MSG",
-                    "person": {
-                        "person": "main.emilie_civilian",
-                        "expression": "SHRUG"
-                    },
-                    "message": {
-                        "en_US": "I guess I got tired of the game… It just doesn’t feel the same anymore…"
-                    }
-                }, {
-                    "type": "SHOW_MSG",
-                    "person": {
-                        "person": "npc.female",
-                        "expression": "DEFAULT"
-                    },
-                    "message": {
-                        "en_US": "Well, no matter, I say it’s about time we leave our brains here and get out of here!"
-                    }
-                }]
-            }]
-        }
-    }, {
-        "type": "EventTrigger",
-        "x": 444,
-        "y": 242,
-        "level": 0,
-        "settings": {
-            "name": "talk",
-            "eventType": "CUTSCENE",
-            "event": [],
-            "startCondition": "false",
-            "endCondition": "false",
-            "triggerType": "ONCE"
-        }
-    }, {
-        "type": "Marker",
-        "x": 200,
-        "y": 250,
-        "level": 0,
-        "settings": {
-            "name": "start",
-            "mapId": 5,
-            "dir": "SOUTH"
-        }
-    }],
-    "layer": [{
-        "id": 0,
-        "type": "Background",
-        "name": "ground",
-        "level": 0,
-        "width": 30,
-        "height": 30,
-        "visible": 1,
-        "tilesetName": "media/map/cargo-ship-inner.png",
-        "repeat": false,
-        "distance": 1,
-        "tilesize": 16,
-        "moveSpeed": {
-            "x": 0,
-            "y": 0
+                ]
+            }
         },
-        "data": [
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 8, 40, 41, 14, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 14, 41, 42, 10, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 39, 40, 72, 73, 46, 73, 73, 73, 73, 73, 73, 73, 73, 73, 73, 73, 46, 73, 74, 42, 43, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 71, 72, 104, 105, 78, 105, 105, 105, 105, 105, 105, 105, 105, 105, 105, 105, 78, 105, 106, 74, 75, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 71, 104, 136, 137, 110, 137, 137, 137, 137, 137, 137, 137, 137, 137, 137, 137, 110, 137, 138, 106, 75, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 71, 136, 168, 169, 142, 169, 169, 169, 169, 169, 169, 169, 169, 169, 169, 169, 142, 169, 170, 138, 75, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 71, 168, 200, 201, 174, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 174, 201, 202, 170, 75, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 71, 200, 232, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 234, 202, 75, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 71, 232, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 234, 75, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 263, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 267, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 264, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 266, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 296, 264, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 266, 298, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 296, 297, 297, 297, 297, 297, 297, 297, 225, 226, 297, 297, 297, 297, 297, 297, 298, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        ]
-    }]
+        {
+            "type": "NPC",
+            "x": 290,
+            "y": 200,
+            "level": 0,
+            "settings": {
+                "name": "nath",
+                "characterName": "class.nathalie",
+                "mapId": 16,
+                "npcStates": [
+                    {
+                        "reactType": "FIXED_POS",
+                        "face": "SOUTH",
+                        "action": [],
+                        "hidden": false,
+                        "condition": "",
+                        "config": "normal",
+                        "event": []
+                    }
+                ]
+            }
+        },
+        {
+            "type": "NPC",
+            "x": 200,
+            "y": 200,
+            "level": 0,
+            "settings": {
+                "name": "aiko",
+                "characterName": "class.aiko",
+                "mapId": 16,
+                "npcStates": [
+                    {
+                        "reactType": "FIXED_POS",
+                        "face": "SOUTH",
+                        "action": [],
+                        "hidden": false,
+                        "condition": "",
+                        "config": "normal",
+                        "event": [
+                            {
+                                "type": "ADD_MSG_PERSON",
+                                "person": {
+                                    "person": "npc.female2",
+                                    "expression": "DEFAULT"
+                                },
+                                "side": "RIGHT",
+                                "order": 0,
+                                "clearSide": false
+                            },
+                            {
+                                "type": "SHOW_MSG",
+                                "person": {
+                                    "person": "npc.female2",
+                                    "expression": "DEFAULT"
+                                },
+                                "message": {
+                                    "en_US": "We made good progress today, I think we might be ahead!"
+                                }
+                            },
+                            {
+                                "type": "ADD_MSG_PERSON",
+                                "person": {
+                                    "person": "npc.male",
+                                    "expression": "DEFAULT"
+                                },
+                                "side": "LEFT",
+                                "order": 0,
+                                "clearSide": false
+                            },
+                            {
+                                "type": "SHOW_MSG",
+                                "person": {
+                                    "person": "npc.male",
+                                    "expression": "DEFAULT"
+                                },
+                                "message": {
+                                    "en_US": "For once! I was hoping to get a free weekend, just at the right time, my girlfriend wanted to visit town!"
+                                }
+                            },
+                            {
+                                "type": "ADD_MSG_PERSON",
+                                "person": {
+                                    "person": "npc.female",
+                                    "expression": "DEFAULT"
+                                },
+                                "side": "RIGHT",
+                                "order": 0,
+                                "clearSide": false
+                            },
+                            {
+                                "type": "SHOW_MSG",
+                                "person": {
+                                    "person": "npc.female",
+                                    "expression": "DEFAULT"
+                                },
+                                "message": {
+                                    "en_US": "Oh won’t you look at the ladies man! You go get her champ, but make sure you come back in one piece... We still need you for a bit!"
+                                }
+                            },
+                            {
+                                "type": "SHOW_MSG",
+                                "person": {
+                                    "person": "npc.male",
+                                    "expression": "DEFAULT"
+                                },
+                                "message": {
+                                    "en_US": "Is that a worried tone I hear? Or maybe some jealousy?"
+                                }
+                            },
+                            {
+                                "type": "SHOW_MSG",
+                                "person": {
+                                    "person": "npc.female",
+                                    "expression": "DEFAULT"
+                                },
+                                "message": {
+                                    "en_US": "You wish! But I’m with you, a weekend off will do us all some good!"
+                                }
+                            },
+                            {
+                                "type": "ADD_MSG_PERSON",
+                                "person": {
+                                    "person": "npc.male",
+                                    "expression": "DEFAULT"
+                                },
+                                "side": "RIGHT",
+                                "order": 0,
+                                "clearSide": false
+                            },
+                            {
+                                "type": "ADD_MSG_PERSON",
+                                "person": {
+                                    "person": "npc.female2",
+                                    "expression": "DEFAULT"
+                                },
+                                "side": "LEFT",
+                                "order": 1,
+                                "clearSide": false
+                            },
+                            {
+                                "type": "ADD_MSG_PERSON",
+                                "person": {
+                                    "person": "main.civilian.emilie",
+                                    "expression": "DEFAULT"
+                                },
+                                "side": "LEFT",
+                                "order": 0,
+                                "clearSide": false
+                            },
+                            {
+                                "type": "SHOW_MSG",
+                                "person": {
+                                    "person": "npc.female",
+                                    "expression": "DEFAULT"
+                                },
+                                "message": {
+                                    "en_US": "Now that we all know Malik’s schedule, what about you two? How will you spend that limited freedom?"
+                                }
+                            },
+                            {
+                                "type": "SHOW_MSG",
+                                "person": {
+                                    "person": "npc.female2",
+                                    "expression": "DEFAULT"
+                                },
+                                "message": {
+                                    "en_US": "Do you really need to ask? Sleep!"
+                                }
+                            },
+                            {
+                                "type": "SHOW_MSG",
+                                "person": {
+                                    "person": "main.civilian.emilie",
+                                    "expression": "CURIOUS"
+                                },
+                                "message": {
+                                    "en_US": "I honestly thought we’d have so much more to do, I didn’t make plans… I’ll see if I can catch up with some friends… or you know… Aller au pub! (eng Alt.: ( [...] Go to the pub!)"
+                                }
+                            },
+                            {
+                                "type": "SHOW_MSG",
+                                "person": {
+                                    "person": "npc.female",
+                                    "expression": "DEFAULT"
+                                },
+                                "message": {
+                                    "en_US": "Didn’t you use to play that computer game last semester? That MMO you were so into… I’d had thought you’d get some progress in! I know I want to progress in my game of “Ultimate Fantasy XI” myself!"
+                                }
+                            },
+                            {
+                                "type": "SHOW_MSG",
+                                "person": {
+                                    "person": "main.civilian.emilie",
+                                    "expression": "SHRUG"
+                                },
+                                "message": {
+                                    "en_US": "I guess I got tired of the game… It just doesn’t feel the same anymore…"
+                                }
+                            },
+                            {
+                                "type": "SHOW_MSG",
+                                "person": {
+                                    "person": "npc.female",
+                                    "expression": "DEFAULT"
+                                },
+                                "message": {
+                                    "en_US": "Well, no matter, I say it’s about time we leave our brains here and get out of here!"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "type": "EventTrigger",
+            "x": 444,
+            "y": 242,
+            "level": 0,
+            "settings": {
+                "name": "talk",
+                "eventType": "CUTSCENE",
+                "event": [],
+                "startCondition": "false",
+                "endCondition": "false",
+                "triggerType": "ONCE"
+            }
+        },
+        {
+            "type": "Marker",
+            "x": 200,
+            "y": 250,
+            "level": 0,
+            "settings": {
+                "name": "start",
+                "mapId": 5,
+                "dir": "SOUTH"
+            }
+        }
+    ],
+    "layer": [
+        {
+            "id": 0,
+            "type": "Background",
+            "name": "ground",
+            "level": 0,
+            "width": 30,
+            "height": 30,
+            "visible": 1,
+            "tilesetName": "media/map/cargo-ship-inner.png",
+            "repeat": false,
+            "distance": 1,
+            "tilesize": 16,
+            "moveSpeed": {
+                "x": 0,
+                "y": 0
+            },
+            "data": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    8,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    10,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    8,
+                    40,
+                    41,
+                    14,
+                    41,
+                    41,
+                    41,
+                    41,
+                    41,
+                    41,
+                    41,
+                    41,
+                    41,
+                    41,
+                    41,
+                    14,
+                    41,
+                    42,
+                    10,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    39,
+                    40,
+                    72,
+                    73,
+                    46,
+                    73,
+                    73,
+                    73,
+                    73,
+                    73,
+                    73,
+                    73,
+                    73,
+                    73,
+                    73,
+                    73,
+                    46,
+                    73,
+                    74,
+                    42,
+                    43,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    71,
+                    72,
+                    104,
+                    105,
+                    78,
+                    105,
+                    105,
+                    105,
+                    105,
+                    105,
+                    105,
+                    105,
+                    105,
+                    105,
+                    105,
+                    105,
+                    78,
+                    105,
+                    106,
+                    74,
+                    75,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    71,
+                    104,
+                    136,
+                    137,
+                    110,
+                    137,
+                    137,
+                    137,
+                    137,
+                    137,
+                    137,
+                    137,
+                    137,
+                    137,
+                    137,
+                    137,
+                    110,
+                    137,
+                    138,
+                    106,
+                    75,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    71,
+                    136,
+                    168,
+                    169,
+                    142,
+                    169,
+                    169,
+                    169,
+                    169,
+                    169,
+                    169,
+                    169,
+                    169,
+                    169,
+                    169,
+                    169,
+                    142,
+                    169,
+                    170,
+                    138,
+                    75,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    71,
+                    168,
+                    200,
+                    201,
+                    174,
+                    201,
+                    201,
+                    201,
+                    201,
+                    201,
+                    201,
+                    201,
+                    201,
+                    201,
+                    201,
+                    201,
+                    174,
+                    201,
+                    202,
+                    170,
+                    75,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    71,
+                    200,
+                    232,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    234,
+                    202,
+                    75,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    71,
+                    232,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    234,
+                    75,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    263,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    267,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    264,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    266,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    296,
+                    264,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    266,
+                    298,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    296,
+                    297,
+                    297,
+                    297,
+                    297,
+                    297,
+                    297,
+                    297,
+                    225,
+                    226,
+                    297,
+                    297,
+                    297,
+                    297,
+                    297,
+                    297,
+                    298,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            ]
+        }
+    ]
 }
