@@ -1,11 +1,11 @@
 {
-    "name": "beta-bee",
+    "id": "beta-bee",
     "version": "0.2.1-0",
-    "description": "Emilie neutral arts",
-    "module": true,
+    "description": "WIP story mod",
+    "main": "main.js",
     "postload": "postload.js",
     "prestart": "prestart.js",
-    "ccmodDependencies": {
+    "dependencies": {
         "hardcoded-config-injector": "0.1.0",
         "unified-steps": "0.x.x",
         "mirabelle": "1.x.x",
