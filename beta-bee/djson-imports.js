@@ -15,12 +15,26 @@ export default function DjsonImports(mod) {
     });
 
 
+    /*function ajaxRequest(url) {
+        return new Promise((resolve, reject) => {
+            $.ajax({
+                dataType: 'json',
+                url,
+                success: (data) => {
+                    resolve(data)
+                },
+                error: (err) => {
+                    reject(err)
+                }
+            })
+        });
+    }
+
 
     DynamicJson.forExactUrl('data/maps/emilie/face-test.json', async function() {
         const emptyMap = await fetch(`/${mod.baseDirectory}assets/data/maps/empty.json`)
             .then(resp => resp.json());
-        const emilieChar = await fetch(`/${mod.baseDirectory}assets/data/characters/main/civilian/emilie.json`)
-            .then(resp => resp.json());
+        const emilieChar = await ajaxRequest(`data/characters/main/civilian/emilie.json`);
         // change the player to emilie
         const events = [{
             "name": "civilian.emilie",
@@ -32,6 +46,15 @@ export default function DjsonImports(mod) {
             "type": "ADD_MSG_PERSON",
             "person": {
                 "person": "main.civilian.emilie",
+                "expression": "DEFAULT"
+            }
+        }, {
+            "side": "LEFT",
+            "order": 0,
+            "clearSide": false,
+            "type": "ADD_MSG_PERSON",
+            "person": {
+                "person": "main.emilie",
                 "expression": "DEFAULT"
             }
         }];
@@ -48,6 +71,18 @@ export default function DjsonImports(mod) {
                 }
             };
             events.push(eventItem);
+            const eventItemCompare = {
+                "message": {
+                    "en_US": expressionName
+                },
+                "autoContinue": false,
+                "type": "SHOW_MSG",
+                "person": {
+                    "person": "main.emilie",
+                    "expression": expressionName
+                }
+            };
+            events.push(eventItemCompare);
         }
 
         const entity = {
