@@ -50,8 +50,8 @@
     "face": {
         "width": 112,
         "height": 168,
-        "centerX": 30,
-        "centerY": 58,
+        "centerX": 40,
+        "centerY": 64,
         "src": "civilian/emilie.png",
         "parts": [{
             "straight": {
