@@ -107,9 +107,9 @@
                 "srcY": 4,
                 "width": 80,
                 "height": 36,
-                "destX": 16,
+                "destX": 18,
                 "destY": 0,
-                "subX": 0
+                "subX": 2
             }
         }, {
             "normNeutral": {
