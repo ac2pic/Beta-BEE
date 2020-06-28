@@ -15,17 +15,17 @@ export default function DjsonImports(mod) {
     });
 
 
-    
+
     DynamicJson.forExactUrl('data/maps/emilie/face-test.json', async function() {
         const emptyMap = await fetch(`/${mod.baseDirectory}assets/data/maps/empty.json`)
-                            .then(resp => resp.json());
+            .then(resp => resp.json());
         const emilieChar = await fetch(`/${mod.baseDirectory}assets/data/characters/main/civilian/emilie.json`)
-                            .then(resp => resp.json());
+            .then(resp => resp.json());
         // change the player to emilie
         const events = [{
             "name": "civilian.emilie",
             "type": "SWITCH_PLAYER_CONFIG"
-        },{
+        }, {
             "side": "RIGHT",
             "order": 0,
             "clearSide": false,
@@ -50,7 +50,7 @@ export default function DjsonImports(mod) {
             events.push(eventItem);
         }
 
-        const entity =  {
+        const entity = {
             "type": "EventTrigger",
             "x": 0,
             "y": 0,

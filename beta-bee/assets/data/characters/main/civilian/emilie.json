@@ -53,359 +53,351 @@
         "centerX": 40,
         "centerY": 68,
         "src": "civilian/emilie.png",
-        "parts": [
-            {
-                "straight": {
-                    "srcX": 0,
-                    "srcY": 95,
-                    "width": 104,
-                    "height": 72,
-                    "destX": 2,
-                    "destY": 97
-                },
-                "tired": {
-                    "srcX": 0,
-                    "srcY": 168,
-                    "width": 99,
-                    "height": 80,
-                    "destX": -3,
-                    "destY": 89,
-                    "subY": 11,
-                    "subX": -16
-                },
-                "shrug": {
-                    "srcX": 0,
-                    "srcY": 231,
-                    "width": 168,
-                    "height": 81,
-                    "destX": -44,
-                    "destY": 83,
-                    "subX": 0
-                }
+        "parts": [{
+            "straight": {
+                "srcX": 0,
+                "srcY": 95,
+                "width": 104,
+                "height": 72,
+                "destX": 2,
+                "destY": 97
             },
-            {
-                "norm": {
-                    "srcX": 12,
-                    "srcY": 4,
-                    "width": 80,
-                    "height": 40,
-                    "destX": 16,
-                    "destY": 0
-                },
-                "up": {
-                    "srcX": 180,
-                    "srcY": 0,
-                    "width": 80,
-                    "height": 40,
-                    "destX": 18,
-                    "destY": 1,
-                    "subX": -2,
-                    "subY": 1
-                },
-                "away": {
-                    "srcX": 160,
-                    "srcY": 0,
-                    "width": 80,
-                    "height": 40,
-                    "destX": 16,
-                    "destY": 0
-                }
+            "tired": {
+                "srcX": 0,
+                "srcY": 168,
+                "width": 99,
+                "height": 80,
+                "destX": -3,
+                "destY": 89,
+                "subY": 11,
+                "subX": -16
             },
-            {
-                "normNeutral": {
-                    "srcX": 12,
-                    "srcY": 44,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 17,
-                    "destY": 41,
-                    "subX": 0,
-                    "subY": 0,
-                    "img": ""
-                },
-                "normSuspicious": {
-                    "srcX": 0,
-                    "srcY": 96,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40
-                },
-                "normDetermined": {
-                    "srcX": 0,
-                    "srcY": 152,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40
-                },
-                "normSmile": {
-                    "srcX": 0,
-                    "srcY": 208,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40,
-                    "subX": 0,
-                    "subY": 0,
-                    "img": ""
-                },
-                "normSad": {
-                    "srcX": 0,
-                    "srcY": 264,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40
-                },
-                "normBroken": {
-                    "srcX": 0,
-                    "srcY": 320,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40,
-                    "subX": 0,
-                    "subY": 0,
-                    "img": ""
-                },
-                "normScream": {
-                    "srcX": 0,
-                    "srcY": 376,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40,
-                    "subX": 0,
-                    "subY": 0,
-                    "img": ""
-                },
-                "normDeadInside": {
-                    "srcX": 0,
-                    "srcY": 432,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40,
-                    "subX": 0,
-                    "subY": 0,
-                    "img": ""
-                },
-                "upNeutral": {
-                    "srcX": 180,
-                    "srcY": 40,
-                    "width": 80,
-                    "height": 56,
-                    "destX": 20,
-                    "destY": 40,
-                    "subX": 0,
-                    "subY": 0,
-                    "img": ""
-                },
-                "upShrug": {
-                    "srcX": 80,
-                    "srcY": 96,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40,
-                    "subX": 0,
-                    "subY": 0,
-                    "img": ""
-                },
-                "upTaunting": {
-                    "srcX": 80,
-                    "srcY": 152,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40,
-                    "subX": 0,
-                    "subY": 0,
-                    "img": ""
-                },
-                "upSweatySmile": {
-                    "srcX": 80,
-                    "srcY": 208,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40,
-                    "subX": 0,
-                    "subY": 0,
-                    "img": ""
-                },
-                "upAstonished": {
-                    "srcX": 80,
-                    "srcY": 264,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40
-                },
-                "upShocked": {
-                    "srcX": 80,
-                    "srcY": 320,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40
-                },
-                "upHappy": {
-                    "srcX": 80,
-                    "srcY": 376,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40
-                },
-                "upPain": {
-                    "srcX": 80,
-                    "srcY": 432,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40,
-                    "subX": 0,
-                    "subY": 0,
-                    "img": ""
-                },
-                "awayNeutral": {
-                    "srcX": 160,
-                    "srcY": 40,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40,
-                    "subX": 0,
-                    "subY": 0,
-                    "img": ""
-                },
-                "awayEmbarrassed": {
-                    "srcX": 160,
-                    "srcY": 96,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40,
-                    "subX": 0,
-                    "subY": 0,
-                    "img": ""
-                },
-                "awayWatchOutBadass": {
-                    "srcX": 160,
-                    "srcY": 152,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40
-                },
-                "awayExhausted": {
-                    "srcX": 160,
-                    "srcY": 208,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40
-                },
-                "awayMoping": {
-                    "srcX": 160,
-                    "srcY": 264,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40,
-                    "subX": 0,
-                    "subY": 0,
-                    "img": ""
-                },
-                "awayCurious": {
-                    "srcX": 160,
-                    "srcY": 320,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40,
-                    "subX": 0,
-                    "subY": 0,
-                    "img": ""
-                },
-                "upScolding": {
-                    "srcX": 160,
-                    "srcY": 376,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40,
-                    "subX": 0,
-                    "subY": 0,
-                    "img": ""
-                },
-                "normAngry": {
-                    "srcX": 240,
-                    "srcY": 152,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40,
-                    "subX": 0,
-                    "subY": 0,
-                    "img": ""
-                },
-                "upShout": {
-                    "srcX": 240,
-                    "srcY": 208,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40,
-                    "subX": 0,
-                    "subY": 0,
-                    "img": ""
-                },
-                "normUncertain": {
-                    "srcX": 240,
-                    "srcY": 264,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40,
-                    "subX": 0,
-                    "subY": 0,
-                    "img": ""
-                },
-                "upPreCry": {
-                    "srcX": 240,
-                    "srcY": 320,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40,
-                    "subX": 0,
-                    "subY": 0,
-                    "img": ""
-                },
-                "upCry": {
-                    "srcX": 240,
-                    "srcY": 376,
-                    "width": 80,
-                    "height": 52,
-                    "destX": 16,
-                    "destY": 40,
-                    "subX": 0,
-                    "subY": 0,
-                    "img": ""
-                }
+            "shrug": {
+                "srcX": 0,
+                "srcY": 231,
+                "width": 168,
+                "height": 81,
+                "destX": -44,
+                "destY": 83,
+                "subX": 0
             }
-        ],
+        }, {
+            "norm": {
+                "srcX": 12,
+                "srcY": 4,
+                "width": 80,
+                "height": 40,
+                "destX": 16,
+                "destY": 0
+            },
+            "up": {
+                "srcX": 180,
+                "srcY": 0,
+                "width": 80,
+                "height": 40,
+                "destX": 18,
+                "destY": 1,
+                "subX": -2,
+                "subY": 1
+            },
+            "away": {
+                "srcX": 160,
+                "srcY": 0,
+                "width": 80,
+                "height": 40,
+                "destX": 16,
+                "destY": 0
+            }
+        }, {
+            "normNeutral": {
+                "srcX": 12,
+                "srcY": 44,
+                "width": 80,
+                "height": 52,
+                "destX": 17,
+                "destY": 41,
+                "subX": 0,
+                "subY": 0,
+                "img": ""
+            },
+            "normSuspicious": {
+                "srcX": 0,
+                "srcY": 96,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40
+            },
+            "normDetermined": {
+                "srcX": 0,
+                "srcY": 152,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40
+            },
+            "normSmile": {
+                "srcX": 0,
+                "srcY": 208,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40,
+                "subX": 0,
+                "subY": 0,
+                "img": ""
+            },
+            "normSad": {
+                "srcX": 0,
+                "srcY": 264,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40
+            },
+            "normBroken": {
+                "srcX": 0,
+                "srcY": 320,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40,
+                "subX": 0,
+                "subY": 0,
+                "img": ""
+            },
+            "normScream": {
+                "srcX": 0,
+                "srcY": 376,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40,
+                "subX": 0,
+                "subY": 0,
+                "img": ""
+            },
+            "normDeadInside": {
+                "srcX": 0,
+                "srcY": 432,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40,
+                "subX": 0,
+                "subY": 0,
+                "img": ""
+            },
+            "upNeutral": {
+                "srcX": 180,
+                "srcY": 40,
+                "width": 80,
+                "height": 56,
+                "destX": 20,
+                "destY": 40,
+                "subX": 0,
+                "subY": 0,
+                "img": ""
+            },
+            "upShrug": {
+                "srcX": 80,
+                "srcY": 96,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40,
+                "subX": 0,
+                "subY": 0,
+                "img": ""
+            },
+            "upTaunting": {
+                "srcX": 80,
+                "srcY": 152,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40,
+                "subX": 0,
+                "subY": 0,
+                "img": ""
+            },
+            "upSweatySmile": {
+                "srcX": 80,
+                "srcY": 208,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40,
+                "subX": 0,
+                "subY": 0,
+                "img": ""
+            },
+            "upAstonished": {
+                "srcX": 80,
+                "srcY": 264,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40
+            },
+            "upShocked": {
+                "srcX": 80,
+                "srcY": 320,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40
+            },
+            "upHappy": {
+                "srcX": 80,
+                "srcY": 376,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40
+            },
+            "upPain": {
+                "srcX": 80,
+                "srcY": 432,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40,
+                "subX": 0,
+                "subY": 0,
+                "img": ""
+            },
+            "awayNeutral": {
+                "srcX": 160,
+                "srcY": 40,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40,
+                "subX": 0,
+                "subY": 0,
+                "img": ""
+            },
+            "awayEmbarrassed": {
+                "srcX": 160,
+                "srcY": 96,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40,
+                "subX": 0,
+                "subY": 0,
+                "img": ""
+            },
+            "awayWatchOutBadass": {
+                "srcX": 160,
+                "srcY": 152,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40
+            },
+            "awayExhausted": {
+                "srcX": 160,
+                "srcY": 208,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40
+            },
+            "awayMoping": {
+                "srcX": 160,
+                "srcY": 264,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40,
+                "subX": 0,
+                "subY": 0,
+                "img": ""
+            },
+            "awayCurious": {
+                "srcX": 160,
+                "srcY": 320,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40,
+                "subX": 0,
+                "subY": 0,
+                "img": ""
+            },
+            "upScolding": {
+                "srcX": 160,
+                "srcY": 376,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40,
+                "subX": 0,
+                "subY": 0,
+                "img": ""
+            },
+            "normAngry": {
+                "srcX": 240,
+                "srcY": 152,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40,
+                "subX": 0,
+                "subY": 0,
+                "img": ""
+            },
+            "upShout": {
+                "srcX": 240,
+                "srcY": 208,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40,
+                "subX": 0,
+                "subY": 0,
+                "img": ""
+            },
+            "normUncertain": {
+                "srcX": 240,
+                "srcY": 264,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40,
+                "subX": 0,
+                "subY": 0,
+                "img": ""
+            },
+            "upPreCry": {
+                "srcX": 240,
+                "srcY": 320,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40,
+                "subX": 0,
+                "subY": 0,
+                "img": ""
+            },
+            "upCry": {
+                "srcX": 240,
+                "srcY": 376,
+                "width": 80,
+                "height": 52,
+                "destX": 16,
+                "destY": 40,
+                "subX": 0,
+                "subY": 0,
+                "img": ""
+            }
+        }],
         "expressions": {
             "UP": {
                 "faces": [
-                    [
-                        "straight",
-                        "up",
-                        "upNeutral"
-                    ]
+                    ["straight", "up", "upNeutral"]
                 ]
             }
         }

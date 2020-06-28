@@ -1,4 +1,4 @@
-ig.module("game.feature.bee.party.party").requires("game.feature.party.party").defines(function () {
+ig.module("game.feature.bee.party.party").requires("game.feature.party.party").defines(function() {
     function addEnumValue(instance, name) {
 
         if (instance[name] !== undefined) {
@@ -19,26 +19,26 @@ ig.module("game.feature.bee.party.party").requires("game.feature.party.party").d
 
     const NO = !1;
     sc.PartyModel.inject({
-        init: function () {
+        init: function() {
             this.parent();
             addEnumValue(sc.PARTY_MSG, 'SET_MEMBERS');
             addEnumValue(sc.PARTY_MSG, 'ADDED_MEMBER');
             addEnumValue(sc.PARTY_MSG, 'REMOVED_MEMBER');
         },
-        onMapEnter: function () {
+        onMapEnter: function() {
             this.parent();
             for (const partyMember in this.partyEntities) {
                 sc.Model.notifyObserver(this, sc.PARTY_MSG.ADDED_MEMBER, [partyMember, this.models[partyMember]]);
             }
         },
-        addPartyMember: function (name, npcEntity, e, skipEffect, temporary) {
+        addPartyMember: function(name, npcEntity, e, skipEffect, temporary) {
             const willBeAdded = !this.isPartyMember(name);
             this.parent(name, npcEntity, e, skipEffect, temporary);
             if (willBeAdded) {
                 sc.Model.notifyObserver(this, sc.PARTY_MSG.ADDED_MEMBER, [name, this.models[name]]);
             }
         },
-        removePartyMember: function (name, npcEntity, skipEffect) {
+        removePartyMember: function(name, npcEntity, skipEffect) {
             if (this.isPartyMember(name)) {
                 sc.Model.notifyObserver(this, sc.PARTY_MSG.REMOVED_MEMBER, [name, null]);
             }
