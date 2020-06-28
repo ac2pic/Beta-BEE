@@ -1,11 +1,11 @@
 DynamicJson.forExactUrl('data/characters/main/civilian/emilie.json', async function() {
     const emilie = await fetch(`/${mod.baseDirectory}assets/data/characters/main/civilian/emilie.json`)
-                            .then(resp => resp.json());
+        .then(resp => resp.json());
 
     const newFaces = {};
 
     parts[2] = newFaces;
-   
+
     // isolated case
     newFaces.normNeutral = {
         srcX: 18,
@@ -13,7 +13,7 @@ DynamicJson.forExactUrl('data/characters/main/civilian/emilie.json', async funct
         width: 80,
         height: 56,
         destX: 16,
-        destY: 36 
+        destY: 36
     };
 
     // col 1
@@ -38,7 +38,7 @@ DynamicJson.forExactUrl('data/characters/main/civilian/emilie.json', async funct
             "width": 80,
             "height": 56,
             "destX": 16,
-            "destY": 36 
+            "destY": 36
         };
         // upScolding destX = 0
         offY += 56;
@@ -66,7 +66,7 @@ DynamicJson.forExactUrl('data/characters/main/civilian/emilie.json', async funct
                 "width": 80,
                 "height": 56,
                 "destX": 16,
-                "destY": 36 
+                "destY": 36
             }
         }
 
@@ -93,7 +93,7 @@ DynamicJson.forExactUrl('data/characters/main/civilian/emilie.json', async funct
                 "width": 80,
                 "height": 56,
                 "destX": 16,
-                "destY": 36 
+                "destY": 36
             }
         }
         offY += 56;
@@ -121,7 +121,7 @@ DynamicJson.forExactUrl('data/characters/main/civilian/emilie.json', async funct
             "width": 80,
             "height": 56,
             "destX": 16,
-            "destY": 36 
+            "destY": 36
         }
         offY += 56;
     }
