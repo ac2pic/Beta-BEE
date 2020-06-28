@@ -60,8 +60,8 @@
                     "srcY": 95,
                     "width": 104,
                     "height": 72,
-                    "destX": 5,
-                    "destY": 92
+                    "destX": 2,
+                    "destY": 97
                 },
                 "tired": {
                     "srcX": 0,
@@ -85,21 +85,22 @@
             },
             {
                 "norm": {
-                    "srcX": 0,
-                    "srcY": 0,
+                    "srcX": 12,
+                    "srcY": 4,
                     "width": 80,
                     "height": 40,
                     "destX": 16,
                     "destY": 0
                 },
                 "up": {
-                    "srcX": 80,
+                    "srcX": 180,
                     "srcY": 0,
                     "width": 80,
                     "height": 40,
                     "destX": 18,
-                    "destY": 0,
-                    "subX": 2
+                    "destY": 1,
+                    "subX": -2,
+                    "subY": 1
                 },
                 "away": {
                     "srcX": 160,
@@ -112,12 +113,12 @@
             },
             {
                 "normNeutral": {
-                    "srcX": 0,
-                    "srcY": 40,
+                    "srcX": 12,
+                    "srcY": 44,
                     "width": 80,
                     "height": 52,
-                    "destX": 16,
-                    "destY": 40,
+                    "destX": 17,
+                    "destY": 41,
                     "subX": 0,
                     "subY": 0,
                     "img": ""
@@ -191,11 +192,11 @@
                     "img": ""
                 },
                 "upNeutral": {
-                    "srcX": 80,
+                    "srcX": 180,
                     "srcY": 40,
                     "width": 80,
-                    "height": 52,
-                    "destX": 16,
+                    "height": 56,
+                    "destX": 20,
                     "destY": 40,
                     "subX": 0,
                     "subY": 0,
@@ -398,255 +399,12 @@
             }
         ],
         "expressions": {
-            "DEFAULT": {
-                "faces": [
-                    [
-                        "straight",
-                        "norm",
-                        "normNeutral"
-                    ]
-                ]
-            },
-            "SUSPICIOUS": {
-                "faces": [
-                    [
-                        "straight",
-                        "norm",
-                        "normSuspicious"
-                    ]
-                ]
-            },
-            "DETERMINED": {
-                "faces": [
-                    [
-                        "straight",
-                        "norm",
-                        "normDetermined"
-                    ]
-                ]
-            },
-            "SMILE": {
-                "faces": [
-                    [
-                        "straight",
-                        "norm",
-                        "normSmile"
-                    ]
-                ]
-            },
-            "SAD": {
-                "faces": [
-                    [
-                        "straight",
-                        "norm",
-                        "normSad"
-                    ]
-                ]
-            },
-            "BROKEN": {
-                "faces": [
-                    [
-                        "tired",
-                        "norm",
-                        "normBroken"
-                    ]
-                ]
-            },
-            "SCREAM": {
-                "faces": [
-                    [
-                        "tired",
-                        "norm",
-                        "normScream"
-                    ]
-                ]
-            },
-            "DEAD_INSIDE": {
-                "faces": [
-                    [
-                        "straight",
-                        "norm",
-                        "normDeadInside"
-                    ]
-                ]
-            },
             "UP": {
                 "faces": [
                     [
                         "straight",
                         "up",
                         "upNeutral"
-                    ]
-                ]
-            },
-            "SHRUG": {
-                "faces": [
-                    [
-                        "shrug",
-                        "up",
-                        "upShrug"
-                    ]
-                ]
-            },
-            "TAUNTING": {
-                "faces": [
-                    [
-                        "straight",
-                        "up",
-                        "upTaunting"
-                    ]
-                ]
-            },
-            "SWEATY_SMILE": {
-                "faces": [
-                    [
-                        "straight",
-                        "up",
-                        "upSweatySmile"
-                    ]
-                ]
-            },
-            "ASTONISHED": {
-                "faces": [
-                    [
-                        "straight",
-                        "up",
-                        "upAstonished"
-                    ]
-                ]
-            },
-            "SHOCKED": {
-                "faces": [
-                    [
-                        "straight",
-                        "up",
-                        "upShocked"
-                    ]
-                ]
-            },
-            "HAPPY": {
-                "faces": [
-                    [
-                        "straight",
-                        "up",
-                        "upHappy"
-                    ]
-                ]
-            },
-            "PAIN": {
-                "faces": [
-                    [
-                        "straight",
-                        "up",
-                        "upPain"
-                    ]
-                ]
-            },
-            "AWAY": {
-                "faces": [
-                    [
-                        "straight",
-                        "away",
-                        "awayNeutral"
-                    ]
-                ]
-            },
-            "EMBARRASSED": {
-                "faces": [
-                    [
-                        "straight",
-                        "away",
-                        "awayEmbarrassed"
-                    ]
-                ]
-            },
-            "WATCH_OUT_BADASS": {
-                "faces": [
-                    [
-                        "shrug",
-                        "away",
-                        "awayWatchOutBadass"
-                    ]
-                ]
-            },
-            "EXHAUSTED": {
-                "faces": [
-                    [
-                        "tired",
-                        "away",
-                        "awayExhausted"
-                    ]
-                ]
-            },
-            "MOPING": {
-                "faces": [
-                    [
-                        "straight",
-                        "away",
-                        "awayMoping"
-                    ]
-                ]
-            },
-            "CURIOUS": {
-                "faces": [
-                    [
-                        "straight",
-                        "away",
-                        "awayCurious"
-                    ]
-                ]
-            },
-            "SCOLDING": {
-                "faces": [
-                    [
-                        "straight",
-                        "up",
-                        "upScolding"
-                    ]
-                ]
-            },
-            "ANGRY": {
-                "faces": [
-                    [
-                        "straight",
-                        "norm",
-                        "normAngry"
-                    ]
-                ]
-            },
-            "SHOUT": {
-                "faces": [
-                    [
-                        "straight",
-                        "up",
-                        "upShout"
-                    ]
-                ]
-            },
-            "UNCERTAIN": {
-                "faces": [
-                    [
-                        "straight",
-                        "norm",
-                        "normUncertain"
-                    ]
-                ]
-            },
-            "PRE_CRY": {
-                "faces": [
-                    [
-                        "straight",
-                        "up",
-                        "upPreCry"
-                    ]
-                ]
-            },
-            "CRY": {
-                "faces": [
-                    [
-                        "straight",
-                        "up",
-                        "upCry"
                     ]
                 ]
             }
