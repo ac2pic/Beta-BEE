@@ -5,7 +5,7 @@ export default class BetaBee {
         this.mod = mod;
     }
 
-    postload() {
+    registerDynamicJsonGenerators() {
         DjsonImports(this.mod);
     }
 }
