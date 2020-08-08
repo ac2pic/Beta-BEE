@@ -1,20 +1,20 @@
 export default function DjsonImports(mod) {
 
     DynamicJson.forTemplateUrl(
-        '/data/animations/class/*.json', 
+        '/data/animations/class/*.json',
         [
             ['aiko'],
             ['nathalie'],
             ['malik']
-        ], 
+        ],
         async function(name) {
-                const genericData = await fetch(`/${mod.baseDirectory}assets/data/animations/class/generic.json`).then(resp => resp.json());
-                if (name === 'aiko') {
-                    genericData.namedSheets.walk.offY = 120;
-                } else if (name === 'nathalie') {
-                    genericData.namedSheets.walk.offY = 240;
-                }
-                return genericData;
+            const genericData = await fetch(`/${mod.baseDirectory}assets/data/animations/class/generic.json`).then(resp => resp.json());
+            if (name === 'aiko') {
+                genericData.namedSheets.walk.offY = 120;
+            } else if (name === 'nathalie') {
+                genericData.namedSheets.walk.offY = 240;
+            }
+            return genericData;
         });
 
     DynamicJson.forTemplateUrl(
